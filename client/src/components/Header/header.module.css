@@ -1,0 +1,14 @@
+.navbar{
+    @apply w-full bg-black h-[10vh] justify-between flex text-white items-center px-10 text-2xl  font-bold
+}
+
+.navItem{
+    
+    transition: all ease-in-out 0.3s;
+    @apply px-5 text-lg
+    
+}
+
+.navItem:hover{
+    @apply text-red-400 cursor-pointer
+}

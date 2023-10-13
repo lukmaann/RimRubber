@@ -1,0 +1,102 @@
+.topdiv{
+  
+    @apply h-[100vh] w-full bg-black
+}
+
+.tagline{
+    @apply absolute top-[25%] right-[48%]  rotate-[-25deg] text-2xl text-black  z-10 bg-yellow-400 px-5 p-2 rounded-xl
+}
+.arrow{
+  @apply absolute top-[10%] right-[35%]  rotate-[-20deg] w-[20%] z-20
+}
+
+
+.txt{
+  @apply text-gray-300 w-[270px] text-xl text-right absolute top-[45%] capitalize right-[40%]
+}
+
+.login{
+    /* background-image: url("../../assets/tyre.png"); */
+    transition: all ease-in-out 0.3s;
+
+    
+    @apply absolute  w-[350px] p-5 h-auto bg-gray-200 right-[100px] top-[100px]  rounded-lg
+}
+
+
+
+
+
+.loginSelector{
+    transition: all ease-in-out 0.3s;
+    @apply bg-yellow-400 p-2 w-[50%] text-center   hover:cursor-pointer
+}
+
+
+.mainimg{
+    @apply w-[30%] h-[85%] absolute top-[100px] z-0
+}
+
+.rotatetyre{
+
+    animation: rotate 6s 1s   infinite   ;
+    
+
+    @apply w-[4%] absolute top-[8%] right-[30%] 
+}
+
+
+
+
+@keyframes rotate {
+
+  0%{
+    /* background-color: aqua; */
+
+    transform: rotate(0deg);
+  }
+  50%{
+    /* background-color: azure; */
+    transform: rotate(728deg);
+    right: 8%;
+  }
+  100%{
+    transform: rotate(0deg);
+    right: 30%;
+
+  }
+    
+}
+
+
+@media only screen and (max-width:600px){
+
+  
+  
+  .mainimg{
+    @apply static w-[30%] h-[20%]
+  }
+
+  .login{
+    @apply static mx-auto
+  }
+
+  .rotatetyre{
+    @apply hidden
+  }
+
+  .tagline{
+    @apply rotate-[8deg] right-5 top-[100px] bg-black text-yellow-400 font-bold 
+  }
+
+  .txt{
+    @apply text-lg top-[140px] w-[200px] right-12 rotate-[8deg]
+  }
+
+  .arrow{
+    @apply rotate-[60deg] top-[178px] 
+
+  }
+ 
+
+}

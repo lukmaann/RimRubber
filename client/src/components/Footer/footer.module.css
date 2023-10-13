@@ -1,0 +1,68 @@
+
+.footer{
+ @apply w-[100%] bg-gray-900 relative p-10 flex justify-center   
+}
+
+
+.tagline{
+    transition: all ease-in-out 0.5s;
+    @apply text-white text-xl text-center 
+}
+
+.emailbox input{
+
+    @apply p-2 w-[70%] h-full m-2 rounded-md mr-0 rounded-r-none focus:outline-none max-sm:w-[67%]
+
+}
+.emailbox{
+    @apply flex justify-center h-[60px]
+}
+.emailbox form{
+    @apply w-[100%] h-10
+}
+
+.emailbox button {
+    transition: all ease-in-out 0.3s;
+   
+    @apply p-1 bg-yellow-400 rounded-r-md rounded-l-none m-2 ml-0 text-sm w-[27%] h-[100%]
+}
+
+.emailbox button:hover{
+    @apply bg-black text-white border 
+} 
+
+.emailbox {
+    @apply  bg-slate-800 rounded-sm
+}
+
+.socialbox ul{
+    
+    @apply text-white p-2 m-2 flex gap-10 justify-center 
+}
+
+.socialbox li{
+    transition: all ease-in-out 0.3s;
+}
+
+
+.socialbox li:hover {
+    @apply text-yellow-400
+
+}
+
+
+.copyrightbox{
+    @apply p-2 text-gray-400 text-center text-sm
+}
+.copyrightbox h1{
+    @apply text-3xl text-white text-center p-2 
+}
+
+.copyrightbox button{
+    @apply p-2 text-black bg-white rounded-lg m-5
+}
+
+
+@media only screen  and (max-width:600px){
+   
+}

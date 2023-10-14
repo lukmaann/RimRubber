@@ -7,12 +7,11 @@
     @apply w-full p-2 focus:outline-none mb-2 
 }
 
-form button{
+.btn{
     transition: all ease-in-out 0.4s;
     @apply rounded-sm p-2 bg-yellow-400 w-full
 }
-
-form button:hover{
+.btn:hover{
     @apply bg-black  text-white
 }
 

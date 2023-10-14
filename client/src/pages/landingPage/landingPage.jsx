@@ -7,13 +7,15 @@ import SignupForm from "../../components/login/signupForm";
 import LoginForm from "../../components/login/loginForm";
 import Arrow from "../../assets/arrow.png"
 import tyre2 from "../../assets/tyre.png"
+import { Toaster } from "react-hot-toast";
 
 
 
 const LandingPage = () => {
   const [login, selectLogin] = useState("signUp");
   return (
-    <div className={Style.main}>
+    <div className={Style.main} >
+    <Toaster position="top-center"></Toaster>
       <Header />
       <div className="h-[100vh] ">
         <div className={Style.topdiv}>

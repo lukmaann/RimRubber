@@ -26,7 +26,7 @@ const LandingPage = () => {
               <h1
                 className={
                   login == "signUp"
-                    ? `${Style.loginSelector} bg-gray-200 border `
+                    ? `${Style.loginSelector} bg-white border rounded-xl`
                     : `${Style.loginSelector}`
                 }
                 onClick={() => selectLogin("signUp")}
@@ -36,7 +36,7 @@ const LandingPage = () => {
               <h1
                 className={
                   login == "login"
-                    ? `${Style.loginSelector} bg-gray-200 border `
+                    ? `${Style.loginSelector} bg-white rounded-xl border `
                     : `${Style.loginSelector}`
                 }
                 onClick={() => selectLogin("login")}

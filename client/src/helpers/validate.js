@@ -32,7 +32,7 @@ const emailVerify=(error={},values)=>{
 // --------------------------------------------------------------------
 
 export const LoginValidate = async (values) => {
-  const errors = mobileverify({}, values);
+  const errors = emailVerify({},values)
   passwordverify(errors, values);
   return errors;
 };

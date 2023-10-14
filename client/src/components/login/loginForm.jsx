@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [showPass, setShowPass] = useState(false);
   const formik = useFormik({
     initialValues: {
-      mobile: "",
+      email: "",
       password: "",
     },
     validateOnBlur: false,
@@ -24,8 +24,8 @@ const LoginForm = () => {
       <form onSubmit={formik.handleSubmit}>
         <input
           type="text"
-          placeholder="Mobile"
-          {...formik.getFieldProps("mobile")}
+          placeholder="Email"
+          {...formik.getFieldProps("email")}
           className={Style.credentials}
         />
         <section className="relative">

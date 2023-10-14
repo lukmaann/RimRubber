@@ -4,8 +4,10 @@
 }
 
 .credentials{
-    @apply w-full p-2 focus:outline-none mb-2 
+    @apply w-full p-2 focus:outline-none mb-2 border border-gray-400
 }
+
+
 
 .btn{
     transition: all ease-in-out 0.4s;

@@ -4,24 +4,37 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { SignUpValidate } from "../../helpers/validate";
+import { registerUser } from "../../helper/helper";
+import {toast} from "react-hot-toast"
 
 const SignupForm = () => {
   const [showPass, setShowPass] = useState(false);
 
   const formik = useFormik({
     initialValues: {
+      username:"",
       firstName: "",
       lastName: "",
       email: "",
       mobile: "",
       password: "",
-      address: "",
+
     },
     validateOnBlur: false,
     validateOnChange: false,
     validate:SignUpValidate,
     onSubmit: async (value) => {
-      console.log(value);
+      console.log(value.username);
+      const register=registerUser(value)
+      toast.promise(register,{
+        loading:"Registering",
+        success:"User registered",
+        error:"cant register"
+      })
+
+      register.then((status)=>{
+        console.log(status);
+      })
     },
   });
 
@@ -33,15 +46,22 @@ const SignupForm = () => {
             type="text"
             placeholder="First name"
             {...formik.getFieldProps("firstName")}
-            className={`${Style.credentials} w-[50%]`}
+            className={`${Style.credentials} w-[50%] border-r-0`}
           />
           <input
             type="text"
             placeholder="Last name"
             {...formik.getFieldProps("lastName")}
-            className={`${Style.credentials} w-[50%]`}
+            className={`${Style.credentials} w-[50%] border-l-0`}
           />
         </div>
+        <input
+          type="text"
+          {...formik.getFieldProps("username")}
+          placeholder="Username"
+          className={`${Style.credentials}`}
+        />
+
         <input
           type="email"
           {...formik.getFieldProps("email")}
@@ -72,15 +92,7 @@ const SignupForm = () => {
           {...formik.getFieldProps("mobile")}
           className={`${Style.credentials} `}
         />
-        <textarea
-          name=""
-          id=""
-          cols="10"
-          rows="3"
-          placeholder="Address"
-          {...formik.getFieldProps("address")}
-          className={`${Style.credentials}`}
-        ></textarea>
+        
 
         <button type="submit" className={`${Style.btn} bg-yellow-400`}>Sign UP</button>
       </form>

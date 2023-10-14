@@ -4,11 +4,18 @@ import dotenv from "dotenv";
 import cors from "cors";
 import loginRoutes from "./Routes/loginRoutes.js"
 import connectDB from "./database/conn.js";
+import passport from "passport";
+import session from "express-session";
+
+
 
 
 dotenv.config();
 const app=express();
 
+
+
+app.use(cors())
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json({extended:true}));
@@ -17,6 +24,23 @@ app.use(express.json());
 app.get("/",(req,res)=>{
     res.send("hello")
 })
+// ----------------------------------session creation-----------
+
+
+app.use(
+    session({
+        saveUninitialized:false,
+        secret:process.env.SECRET,
+        resave:false,
+    })
+)
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
 
 app.use("/api",loginRoutes)
 

@@ -2,11 +2,19 @@ import mongoose from "mongoose";
 import passportLocalMongoose from "passport-local-mongoose";
 
 const userSchema = new mongoose.Schema({
-    firstname:String,
-    lastname:String,
     username:{
         required:true,
         type:String
+    },
+    firstName:{
+        type:String,
+        required:true
+       
+    },
+    lastName:{
+        type:String,
+        required:true
+       
     },
     email:{
         type:String,
@@ -19,7 +27,7 @@ const userSchema = new mongoose.Schema({
         unique:true
     },
     password:{
-        required:true,
+     
         type:String
     },
    

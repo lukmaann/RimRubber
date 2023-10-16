@@ -1,5 +1,6 @@
 import { toast } from "react-hot-toast";
 
+
 const mobileverify = (error = {}, value) => {
   if (!value.mobile) {
     error.mobile = toast.error("Enter Username");
@@ -19,31 +20,47 @@ const passwordverify = (error = {}, value) => {
   return error;
 };
 
+const emailVerify = (error = {}, values) => {
+  if (!values.email) {
+    error = toast.error("Enter email");
+  }
+  return error;
+};
 
-const emailVerify=(error={},values)=>{
-    if(!values.email){
-        error=toast.error("Enter email");
-    }
-    return error
-}
+const usernameVerify = async (error = {}, value) => {
+  if (!value.username) {
+    error.username = toast.error("Username required");
+  }
 
 
+  
+  
+  return error;
+};
+
+const namesVerify = (error = {}, value) => {
+  if (!value.firstName || !value.lastName) {
+    error.name = toast.error("Full name required");
+  }
+  return error;
+};
 
 // --------------------------------------------------------------------
 
 export const LoginValidate = async (values) => {
-  const errors = emailVerify({},values)
+  const errors = usernameVerify({}, values);
   passwordverify(errors, values);
   return errors;
 };
 
-export const SignUpValidate=async(values)=>{
-    const errors=mobileverify({},values);
-    emailVerify(errors,values);
-    passwordverify(errors,values);
+export const SignUpValidate = async (values) => {
+  const errors = mobileverify({}, values);
+  emailVerify(errors, values);
+  passwordverify(errors, values);
+  usernameVerify(errors, values);
+  namesVerify(errors, values);
+
+  return errors;
+};
 
 
-
-    return errors
-
-}

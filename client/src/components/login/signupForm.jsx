@@ -3,38 +3,43 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useFormik } from "formik";
 import { useState } from "react";
-import { SignUpValidate } from "../../helpers/validate";
-import { registerUser } from "../../helper/helper";
-import {toast} from "react-hot-toast"
+import { SignUpValidate } from "../../helper/validate";
+import { registerUser, userExist } from "../../helper/helper";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
+  const navigate=useNavigate();
   const [showPass, setShowPass] = useState(false);
 
   const formik = useFormik({
     initialValues: {
-      username:"",
+      username: "",
       firstName: "",
       lastName: "",
       email: "",
       mobile: "",
       password: "",
-
     },
     validateOnBlur: false,
     validateOnChange: false,
-    validate:SignUpValidate,
+    validate: SignUpValidate,
     onSubmit: async (value) => {
-      console.log(value.username);
-      const register=registerUser(value)
-      toast.promise(register,{
-        loading:"Registering",
-        success:"User registered",
-        error:"cant register"
-      })
-
-      register.then((status)=>{
-        console.log(status);
-      })
+      userExist({ username: value.username })
+        .then(() => {
+          toast.error("Username already exists");
+        })
+        .catch(() => {
+          const register=registerUser(value)
+          toast.promise(register, {
+            loading: "Registering",
+            success: "User Registered",
+            error: "Failed User Creation",
+          });
+          register.then(()=>{
+            navigate('/home')
+          })
+        });
     },
   });
 
@@ -47,6 +52,7 @@ const SignupForm = () => {
             placeholder="First name"
             {...formik.getFieldProps("firstName")}
             className={`${Style.credentials} w-[50%] border-r-0`}
+            autoComplete="off"
           />
           <input
             type="text"
@@ -92,9 +98,10 @@ const SignupForm = () => {
           {...formik.getFieldProps("mobile")}
           className={`${Style.credentials} `}
         />
-        
 
-        <button type="submit" className={`${Style.btn} bg-yellow-400`}>Sign UP</button>
+        <button type="submit" className={`${Style.btn} bg-yellow-400`}>
+          Sign UP
+        </button>
       </form>
     </div>
   );

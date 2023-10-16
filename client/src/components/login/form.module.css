@@ -4,6 +4,7 @@
 }
 
 .credentials{
+    
     @apply w-full p-2 focus:outline-none mb-2 border border-gray-400
 }
 

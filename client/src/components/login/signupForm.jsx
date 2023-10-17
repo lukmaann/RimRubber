@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
 
   const formik = useFormik({
@@ -30,22 +30,22 @@ const SignupForm = () => {
           toast.error("Username already exists");
         })
         .catch(() => {
-          const register=registerUser(value)
+          const register = registerUser(value);
           toast.promise(register, {
             loading: "Registering",
             success: "User Registered",
             error: "Failed User Creation",
           });
-          register.then(()=>{
-            navigate('/home')
-          })
+          register.then(() => {
+            navigate("/home");
+          });
         });
     },
   });
 
   return (
     <div className={Style.main}>
-      <form action="" onSubmit={formik.handleSubmit}>
+      <form action="" onSubmit={formik.handleSubmit} autoComplete="off">
         <div className="flex">
           <input
             type="text"
@@ -101,6 +101,22 @@ const SignupForm = () => {
 
         <button type="submit" className={`${Style.btn} bg-yellow-400`}>
           Sign UP
+        </button>
+        <section className="flex h-8 justify-center items-center text-gray-400 ">
+        ----------or----------
+        </section>
+        <button
+        type="button"
+          className={`${Style.btn} ${Style.gbtn} `}
+        >
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/color/48/google-logo.png"
+            alt="google-logo"
+            className="w-[8%] mx-2"
+          />
+          <h1>sign up with google</h1>
         </button>
       </form>
     </div>

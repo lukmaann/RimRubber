@@ -68,6 +68,22 @@ const LoginForm = () => {
         <button className={`${Style.btn} bg-yellow-400`} type="submit">
           Login
         </button>
+        <section className="flex h-8 justify-center items-center text-gray-400 ">
+        ----------or----------
+        </section>
+        <button
+        type="button"
+          className={`${Style.btn} ${Style.gbtn} `}
+        >
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/color/48/google-logo.png"
+            alt="google-logo"
+            className="w-[8%] mx-2"
+          />
+          <h1>Login with google</h1>
+        </button>
       </form>
     </div>
   );

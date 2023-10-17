@@ -48,11 +48,16 @@ export const registerUser = async (req, res) => {
 
     await userModel.register(user, password, (err) => {
       if (!err) {
-        return res.status(201).json({ message: "user created" });
+        passport.authenticate('local')(req,res,()=>{
+
+          return res.status(201).json({ message: "user created" });
+        })
       } else {
         return res.status(500).json({ err: err.message });
       }
     });
+
+    
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }

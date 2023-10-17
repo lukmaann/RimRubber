@@ -12,10 +12,10 @@
 
 .btn{
     transition: all ease-in-out 0.4s;
-    @apply rounded-sm p-2 bg-yellow-400 w-full capitalize shadow-md mb-1
+    @apply rounded-sm p-2 bg-yellow-400 w-full capitalize shadow-md mb-1 border border-black
 }
 .btn:hover{
-    @apply bg-black  text-white
+    @apply bg-black  text-white border-black
 }
 
 
@@ -26,5 +26,5 @@
 }
 
 .gbtn:hover{
-    @apply bg-white text-black
+    @apply bg-gray-200 text-black border-b-4 border-black
 }

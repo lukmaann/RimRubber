@@ -84,3 +84,13 @@ export const authenticateUser=async()=>{
     }
 
 }
+
+
+// ---------------------------google authentication--------------
+export const googleauth=async()=>{
+    try {
+        window.location.href="http://localhost:3000/auth/google/callback"
+    } catch (error) {
+        Promise.reject()
+    }
+}

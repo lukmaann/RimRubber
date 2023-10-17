@@ -6,6 +6,7 @@ import loginRoutes from "./Routes/loginRoutes.js";
 import connectDB from "./database/conn.js";
 import passport from "passport";
 import session from "express-session";
+import authRoute from "./Routes/auth.js"
 
 dotenv.config();
 const app = express();
@@ -38,6 +39,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/api", loginRoutes);
+
+app.use("/auth",authRoute)
 
 connectDB().then(() => {
   app.listen(3000, () => {

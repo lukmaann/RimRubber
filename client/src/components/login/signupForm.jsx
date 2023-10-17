@@ -4,7 +4,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { SignUpValidate } from "../../helper/validate";
-import { registerUser, userExist } from "../../helper/helper";
+import { googleauth, registerUser, userExist } from "../../helper/helper";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -42,6 +42,8 @@ const SignupForm = () => {
         });
     },
   });
+
+
 
   return (
     <div className={Style.main}>
@@ -106,6 +108,7 @@ const SignupForm = () => {
         ----------or----------
         </section>
         <button
+        onClick={()=>googleauth()}
         type="button"
           className={`${Style.btn} ${Style.gbtn} `}
         >

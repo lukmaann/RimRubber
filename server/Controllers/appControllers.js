@@ -1,10 +1,36 @@
 import userModel from "../models/userModel.js";
 import passport from "passport";
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import findOrCreate from "mongoose-findorcreate"
+import dotenv from "dotenv";
+dotenv.config()
+
 
 passport.use(userModel.createStrategy());
-passport.serializeUser(userModel.serializeUser());
-passport.deserializeUser(userModel.deserializeUser());
+passport.serializeUser((user,done)=>{
+  done(null,user)
+});
 
+
+passport.deserializeUser((user,done)=>{
+  done(null,user)
+})
+
+
+
+passport.use(new GoogleStrategy({
+  clientID: process.env.GOOGLEID,
+  clientSecret: process.env.GOOGLESECRET,
+  callbackURL: "http://localhost:3000/auth/google/callback",
+  scope:["profile","email"]
+},
+function(accessToken, refreshToken, profile, cb) {
+  console.log(profile._json);
+ userModel.findOrCreate({ googleId: profile._json.sub ,username:profile._json.name,email:profile._json.email}, function (err, user) {
+    return cb(err, user);
+  });
+}
+));
 
 
 

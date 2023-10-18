@@ -10,7 +10,8 @@ const router=createBrowserRouter([
     element:<LandingPage/>
   },{
     path:"/home",
-    element:<AuthorisedUser><Home/></AuthorisedUser>
+    // element:<AuthorisedUser><Home/></AuthorisedUser>
+    element:<Home/>
   }
 ])
 

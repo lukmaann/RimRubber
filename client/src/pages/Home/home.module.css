@@ -1,0 +1,38 @@
+.main{
+    @apply bg-gray-900 h-[100vh] w-full 
+}
+
+
+
+.topdiv{
+    @apply h-[92%] w-full relative bg-gradient-to-bl from-white via-gray-50 to-gray-100 text-white flex items-center justify-center flex-col
+}
+
+
+.btn{
+    @apply bg-black text-white w-[100px] m-2 shadow-lg border  border-black  text-lg  block p-1 px-4 rounded-lg
+}
+.btn:nth-child(2){
+    @apply bg-white text-black
+}
+
+.txt{
+    @apply text-purple-900  text-xl w-[250px] capitalize mb-10
+}
+
+.txt h2{
+    @apply text-gray-800 text-sm
+}
+
+@media only screen and (max-width:600px){
+    .main {
+        @apply w-[100vw]
+    }
+
+    .topdiv{
+        @apply rounded-br-[50px]
+    }
+ 
+
+
+}

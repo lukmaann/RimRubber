@@ -84,7 +84,7 @@ const LoginForm = () => {
             alt="google-logo"
             className="w-[8%] mx-2"
           />
-          <h1>Login with google</h1>
+          <h1>continue with google</h1>
         </button>
       </form>
     </div>

@@ -17,7 +17,7 @@ const LandingPage = () => {
     <div className={Style.main} >
     <Toaster position="top-center"></Toaster>
       <Header />
-      <div className="h-[100vh] ">
+      <div className="h-[90vh] ">
         <div className={Style.topdiv}>
         <img src={tyre} alt="Tyre image" className={`${Style.mainimg} `} />
           <div className={`${Style.login} `}>

@@ -1,6 +1,6 @@
 .topdiv{
   
-    @apply h-[100vh] w-full bg-black
+    @apply h-[100%]  w-full bg-black
 }
 
 .tagline{
@@ -34,7 +34,7 @@
 
 
 .mainimg{
-    @apply w-[30%] h-[85%] absolute top-[100px] z-0
+    @apply w-[30%] h-[85%] absolute top-[100px] z-0 
 }
 
 .rotatetyre{
@@ -74,11 +74,11 @@
   
   
   .mainimg{
-    @apply static w-[30%] h-[20%]
+    @apply static w-[30%] h-[20%] p-2
   }
 
   .login{
-    @apply static mx-auto
+    @apply static mx-auto m-[70px]
   }
 
   .rotatetyre{

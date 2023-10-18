@@ -11,28 +11,12 @@
 
 .emailbox input{
 
-    @apply p-2 w-[70%] h-full m-2 rounded-md mr-0 rounded-r-none focus:outline-none max-sm:w-[67%]
+    @apply p-2 w-[70%] h-10 m-2 rounded-md mr-0 rounded-r-none focus:outline-none max-sm:w-[67%]
 
 }
-.emailbox{
-    @apply flex justify-center h-[60px]
-}
-.emailbox form{
-    @apply w-[100%] h-10
-}
 
-.emailbox button {
-    transition: all ease-in-out 0.3s;
-   
-    @apply p-0 bg-yellow-400 rounded-r-md rounded-l-none  ml-0 text-sm w-[27%] h-[100%]
-}
-
-.emailbox button:hover{
-    @apply bg-black text-white border 
-} 
-
-.emailbox {
-    @apply  bg-slate-800 rounded-sm 
+.emailbox button{
+    @apply bg-yellow-400 h-10 px-2 rounded-r-md
 }
 
 .socialbox ul{

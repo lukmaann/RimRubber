@@ -17,6 +17,7 @@ passport.deserializeUser((user,done)=>{
 })
 
 
+// ----------------login user useing google with passportjs-------------------
 
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLEID,

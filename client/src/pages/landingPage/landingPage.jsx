@@ -6,7 +6,7 @@ import { useState } from "react";
 import SignupForm from "../../components/login/signupForm";
 import LoginForm from "../../components/login/loginForm";
 import Arrow from "../../assets/arrow.png"
-import tyre2 from "../../assets/tyre.png"
+// import tyre2 from "../../assets/tyre.png"
 import { Toaster } from "react-hot-toast";
 
 
@@ -17,7 +17,7 @@ const LandingPage = () => {
     <div className={Style.main} >
     <Toaster position="top-center"></Toaster>
       <Header />
-      <div className="h-[90vh] ">
+      <div className="h-[92%] ">
         <div className={Style.topdiv}>
         <img src={tyre} alt="Tyre image" className={`${Style.mainimg} `} />
           <div className={`${Style.login} `}>
@@ -51,7 +51,7 @@ const LandingPage = () => {
           <h1 className={Style.txt}>To buy and sell the second hand Tyres</h1>
         </div>
         <img src={Arrow} alt="" className={`${Style.arrow}`}/>
-        <img src={tyre2} className={Style.rotatetyre} alt="" />
+        {/* <img src={tyre2} className={Style.rotatetyre} alt="" /> */}
       </div>
 
       <Footer />

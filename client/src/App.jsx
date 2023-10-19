@@ -3,6 +3,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import LandingPage from "./pages/landingPage/landingPage";
 import Home from "./pages/Home/home";
 import { AuthorisedUser } from "./helper/auth";
+import SellItem from "./pages/SellItems/sellitem";
+import BuyItem from "./pages/BuyItem/buyitem";
 
 const router=createBrowserRouter([
   {
@@ -12,6 +14,14 @@ const router=createBrowserRouter([
     path:"/home",
     // element:<AuthorisedUser><Home/></AuthorisedUser>
     element:<Home/>
+  },
+  {
+    path:"/sellitem",
+    "element":<SellItem/>
+  },
+  {
+    path:"/buyitem",
+    element:<BuyItem/>
   }
 ])
 

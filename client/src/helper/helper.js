@@ -66,11 +66,14 @@ export const logoutUser=async()=>{
     try {
         const {status,data}=await axios.get('/logout',{withCredentials:true});
         
+        
        
     } catch (error) {
         Promise.reject()
     }
 } 
+
+// ----------------------------checks user is authenticated or not-------------------
 
 export const authenticateUser=async()=>{
     try {

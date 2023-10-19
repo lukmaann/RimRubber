@@ -5,24 +5,43 @@
 
 
 .topdiv{
-    @apply h-[92%] w-full relative bg-gradient-to-bl from-white via-gray-50 to-gray-100 text-white flex items-center justify-center flex-col
+    @apply h-[92%] w-full relative bg-gradient-to-br from-black via-zinc-950 to-black text-white flex items-center justify-center flex-col
 }
 
 
 .btn{
-    @apply bg-black text-white w-[100px] m-2 shadow-lg border  border-black  text-lg  block p-1 px-4 rounded-lg
+    transition: all ease-in-out 0.2s;
+    @apply bg-yellow-400 text-black w-[80%] m-2 shadow-lg border  border-black  text-lg  block p-1 px-4 rounded-lg
 }
 .btn:nth-child(2){
     @apply bg-white text-black
 }
 
+.btn:hover{
+    @apply border border-b-4 bg-yellow-500
+}
+
+.btn:nth-child(2):hover{
+    @apply bg-gray-100 border border-black border-b-4
+}
+
 .txt{
-    @apply text-purple-900  text-xl w-[250px] capitalize mb-10
+    @apply text-white text-xl w-[250px] capitalize mb-10
 }
 
 .txt h2{
-    @apply text-gray-800 text-sm
+    @apply text-gray-500 text-sm
 }
+
+.img{
+    @apply w-[10%] 
+}
+
+.btndiv{
+    @apply bg-white p-2 py-10 rounded-lg w-[300px] flex justify-center flex-col items-center
+}
+
+
 
 @media only screen and (max-width:600px){
     .main {

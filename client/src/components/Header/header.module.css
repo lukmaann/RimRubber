@@ -5,7 +5,7 @@
 .navItem{
     
     transition: all ease-in-out 0.3s;
-    @apply px-5 text-lg relative
+    @apply px-2 text-lg relative 
     
 }
 

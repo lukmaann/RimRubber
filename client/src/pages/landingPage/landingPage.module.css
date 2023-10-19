@@ -45,7 +45,10 @@
     @apply w-[4%] absolute top-[8%] right-[30%] 
 }
 
+.main{
+  @apply h-[100vh] bg-black
 
+}
 
 
 @keyframes rotate {
@@ -78,7 +81,7 @@
   }
 
   .login{
-    @apply static mx-auto m-[70px]
+    @apply static mx-auto 
   }
 
   .rotatetyre{
@@ -86,15 +89,15 @@
   }
 
   .tagline{
-    @apply rotate-[8deg] right-5 top-[100px] bg-black text-yellow-400 font-bold 
+    @apply rotate-[8deg] right-5 top-[70px] bg-black text-yellow-400 font-bold 
   }
 
   .txt{
-    @apply text-lg top-[140px] w-[200px] right-12 rotate-[8deg]
+    @apply text-lg top-[110px] w-[200px] right-12 rotate-[8deg]
   }
 
   .arrow{
-    @apply rotate-[60deg] top-[178px] 
+    @apply rotate-[60deg] top-[150px] 
 
   }
  

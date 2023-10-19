@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy({
   scope:["profile","email"]
 },
 function(accessToken, refreshToken, profile, cb) {
-  console.log(profile._json);
+
  userModel.findOrCreate({ googleId: profile._json.sub ,username:profile._json.name,email:profile._json.email}, function (err, user) {
     return cb(err, user);
   });

@@ -1,39 +1,50 @@
 import userModel from "../models/userModel.js";
 import passport from "passport";
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-import findOrCreate from "mongoose-findorcreate"
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import findOrCreate from "mongoose-findorcreate";
 import dotenv from "dotenv";
-dotenv.config()
-
+dotenv.config();
 
 passport.use(userModel.createStrategy());
-passport.serializeUser((user,done)=>{
-  done(null,user)
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
 
-
-passport.deserializeUser((user,done)=>{
-  done(null,user)
-})
-
+passport.deserializeUser((id, done) => {
+  userModel
+    .findById(id)
+    .then((user) => {
+      done(null, user);
+    })
+    .catch((err) => {
+      done(err, null);
+    });
+});
 
 // ----------------login user useing google with passportjs-------------------
 
-passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLEID,
-  clientSecret: process.env.GOOGLESECRET,
-  callbackURL: "http://localhost:3000/auth/google/callback",
-  scope:["profile","email"]
-},
-function(accessToken, refreshToken, profile, cb) {
-
- userModel.findOrCreate({ googleId: profile._json.sub ,username:profile._json.name,email:profile._json.email}, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
-
-
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLEID,
+      clientSecret: process.env.GOOGLESECRET,
+      callbackURL: "http://localhost:3000/auth/google/callback",
+      scope: ["profile", "email"],
+    },
+    function (accessToken, refreshToken, profile, cb) {
+      userModel.findOrCreate(
+        {
+          googleId: profile._json.sub,
+          username: profile._json.name,
+          email: profile._json.email,
+        },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
+    }
+  )
+);
 
 // ------------------------verify if user exists or not ----------------------
 export const userVerify = async (req, res) => {
@@ -50,10 +61,6 @@ export const userVerify = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
-
-
-
 
 // ----------------------------------register new user-------------------------
 export const registerUser = async (req, res) => {
@@ -75,28 +82,22 @@ export const registerUser = async (req, res) => {
 
     await userModel.register(user, password, (err) => {
       if (!err) {
-        passport.authenticate('local')(req,res,()=>{
-
+        passport.authenticate("local")(req, res, () => {
           return res.status(201).json({ message: "user created" });
-        })
+        });
       } else {
         return res.status(500).json({ err: err.message });
       }
     });
-
-    
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 };
 
-
-
-
 // ------------------------------login user------------------------------------
-export const loginuser = async (req, res,next) => {
+export const loginuser = async (req, res, next) => {
   try {
-    passport.authenticate("local", (err, user,info) => {
+    passport.authenticate("local", (err, user, info) => {
       if (err) return res.status(500).json({ error: "internal error" });
 
       if (!user) return res.status(401).json({ error: "Invalid credentials" });
@@ -105,36 +106,45 @@ export const loginuser = async (req, res,next) => {
         const { hash, salt, ...rest } = user._doc;
         res.status(200).json(rest);
       });
-    })(req, res,next);
+    })(req, res, next);
   } catch (error) {
     return res.status(401).json({ error: error.message });
   }
 };
 
-
-
 // ----------------------- check user is authenticated or not------------------
 
-export const auth =async(req,res)=>{
+export const auth = async (req, res) => {
   try {
     res.send(req.isAuthenticated());
   } catch (error) {
-    res.status(500).json({error:error.message})
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
+export const authuser = async (req, res, next) => {
+  try {
+    if (req.isAuthenticated()) {
+      return next();
+    } else {
+      res.status(401).send("unauthorised");
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 // --------------------------------logout user---------------------------------
 
-export const logoutUser=async(req,res)=>{
+export const logoutUser = async (req, res) => {
   try {
-    req.logout((err)=>{
-      if(err){
-        res.send(err)
+    req.logout((err) => {
+      if (err) {
+        res.send(err);
       }
-      res.send("logged out")
+      res.send("logged out");
     });
   } catch (error) {
-    res.status(500).json({error:error.message})
+    res.status(500).json({ error: error.message });
   }
-}
+};

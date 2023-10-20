@@ -80,6 +80,7 @@ export const authenticateUser=async()=>{
         const {data}=await axios.get('/auth',{withCredentials:true})
         
         
+        
         return Promise.resolve(data)
         
     } catch (error) {
@@ -95,5 +96,35 @@ export const googleauth=async()=>{
         window.location.href="http://localhost:3000/auth/google/callback"
     } catch (error) {
         Promise.reject()
+    }
+}
+
+
+// ------------------------------calls sellitem api------------------------
+
+
+export const SellItemapi=async(values)=>{
+    try {
+        const {brand,price,location,image,description}=values
+
+        const formdata=new FormData();
+        formdata.append('brand',brand);
+        formdata.append('location',location);
+        formdata.append('image',image);
+        formdata.append('price',price);
+        formdata.append('description',description);
+
+
+
+
+        const {status,data}=await axios.post('/sellitem',formdata,{withCredentials:true})
+        if (status===200){
+            alert("done")
+        }
+
+        return Promise.resolve(data)
+        
+    } catch (error) {
+        return Promise.reject(error.message)
     }
 }

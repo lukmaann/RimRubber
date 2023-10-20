@@ -23,7 +23,7 @@
 
 @media only screen and (max-width:600px){
     .navbar{
-        @apply  px-2 h-[8%]
+        @apply  px-2 h-[8vh]
     }
  
 }

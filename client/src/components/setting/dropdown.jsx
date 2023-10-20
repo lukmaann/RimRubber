@@ -1,7 +1,7 @@
 import { logoutUser } from "../../helper/helper"
 import Style from "./dropdown.module.css"
 import { useNavigate } from "react-router-dom"
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const Dropdown=()=>{
@@ -14,7 +14,7 @@ const Dropdown=()=>{
     return <div className={Style.main}>
         <ul>
             
-            <li><button onClick={logout}><ExitToAppIcon/> Logout </button></li>
+            <li><button onClick={logout}><LogoutIcon/> Logout </button></li>
 
             
         </ul>

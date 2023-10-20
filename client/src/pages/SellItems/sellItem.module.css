@@ -1,0 +1,7 @@
+.main{
+    @apply bg-black h-min 
+}
+
+.topdiv{
+    @apply min-h-screen bg-black p-2 text-white
+}

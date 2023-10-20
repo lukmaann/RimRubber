@@ -1,7 +1,7 @@
 .main{
-    @apply absolute top-[8vh]  right-[2vw] bg-white capitalize text-gray-500 p-2 px-3 text-sm rounded-sm z-20
+    @apply absolute top-[8vh] min-w-[200px] shadow-2xl shadow-slate-500 right-[2vw] bg-white capitalize text-gray-900 p-2 px-3 text-sm rounded-sm z-20
 }
 
 .main li{
-    @apply my-2 
+    @apply p-2  hover:bg-gray-100
 }

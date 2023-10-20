@@ -8,7 +8,7 @@ export const AuthorisedUser = ({ children }) => {
   
   useEffect(() => {
     authenticateUser().then((info) => {
-      setData(info);
+      setData(true);
     });
   }, []);
 

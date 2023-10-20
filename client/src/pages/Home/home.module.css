@@ -11,7 +11,7 @@
 
 .btn{
     transition: all ease-in-out 0.2s;
-    @apply bg-yellow-400 text-black w-[80%] m-2 shadow-lg border  border-black  text-lg  block p-1 px-4 rounded-lg
+    @apply bg-yellow-400 text-black w-[80%] m-2 shadow-lg border  border-black  text-lg  block p-1 px-4 rounded-md
 }
 .btn:nth-child(2){
     @apply bg-white text-black

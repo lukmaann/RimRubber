@@ -12,12 +12,12 @@ const router=createBrowserRouter([
     element:<LandingPage/>
   },{
     path:"/home",
-    // element:<AuthorisedUser><Home/></AuthorisedUser>
-    element:<Home/>
+    element:<AuthorisedUser><Home/></AuthorisedUser>
+    // element:<Home/>
   },
   {
     path:"/sellitem",
-    "element":<SellItem/>
+    element:<AuthorisedUser><SellItem/></AuthorisedUser>
   },
   {
     path:"/buyitem",

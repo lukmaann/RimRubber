@@ -5,7 +5,7 @@ import passport from "passport";
 
 export const sellItem = async (req, res) => {
   try {
-    const { seller, description, price, brand, location } = req.body;
+    const { seller, description, price, brand, location ,rim,profile,width} = req.body;
     const imagePath = req.file.filename;
 
     console.log("user from sellitem "+ req.user._id);
@@ -19,6 +19,9 @@ export const sellItem = async (req, res) => {
       price,
       brand,
       location,
+      rim,
+      profile,
+      width,
       image:imagePath
     });
 

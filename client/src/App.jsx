@@ -5,6 +5,7 @@ import Home from "./pages/Home/home";
 import { AuthorisedUser } from "./helper/auth";
 import SellItem from "./pages/SellItems/sellitem";
 import BuyItem from "./pages/BuyItem/buyitem";
+import TyreSizeHelp from "./pages/help/tyresizehelp";
 
 const router=createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router=createBrowserRouter([
   {
     path:"/buyitem",
     element:<BuyItem/>
+  },
+  {
+    path:"identifysize",
+    element:<TyreSizeHelp/>
   }
 ])
 

@@ -1,11 +1,11 @@
 .main{
-    @apply bg-gray-900 h-[100vh] w-full 
+    @apply bg-gradient-to-b from-black via-gray-900 to-gray-900 h-[100vh] w-full 
 }
 
 
 
 .topdiv{
-    @apply h-[92%] w-full relative bg-gradient-to-br from-black via-zinc-950 to-black text-white flex items-center justify-center flex-col
+    @apply h-[92%] w-full relative bg-gradient-to-b from-black via-zinc-950 to-gray-900 text-white flex items-center justify-center flex-col
 }
 
 

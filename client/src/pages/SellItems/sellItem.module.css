@@ -1,7 +1,46 @@
 .main{
-    @apply bg-black h-min 
+    @apply bg-gradient-to-b from-black via-gray-900 to-gray-900 h-min 
 }
 
 .topdiv{
-    @apply min-h-screen bg-black p-2 text-white
+    @apply min-h-screen  p-2 text-white 
+}
+
+.uploadimg{
+    @apply w-[300px] h-[250px] rounded-md m-5 bg-white object-cover 
+
+}
+
+.form{
+    @apply flex w-[100%]  justify-center items-center  
+}
+
+
+
+
+
+
+.input{
+    @apply p-1 px-2 m-1 rounded-sm focus:outline-none h-10 w-[200px] text-black
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:600px){
+    .form{
+        @apply flex-wrap
+    }
+
+    .details{
+        @apply flex justify-center items-center flex-col
+    }
+
+    .input{
+        @apply w-[300px]
+    }
 }

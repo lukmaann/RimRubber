@@ -21,7 +21,8 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.16.0",
-    "styled-components": "^6.0.9"
+    "styled-components": "^6.0.9",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

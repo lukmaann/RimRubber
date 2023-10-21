@@ -1,6 +1,6 @@
 
 .footer{
- @apply w-[100%] bg-gray-900 relative p-10 flex justify-center   
+ @apply w-[100%] bg-gradient-to-b from-gray-900 via-gray-950 to-black relative p-10 flex justify-center   
 }
 
 

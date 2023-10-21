@@ -6,12 +6,16 @@ const ItemSchema = new mongoose.Schema(
     description: String,
     price: Number,
     brand: String,
+    rim:String,
+    width:String ,
+    profile:String,
     
     location: String,
     seller: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
     },
+   
   },
   {
     timestamps: true,

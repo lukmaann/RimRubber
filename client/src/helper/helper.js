@@ -105,7 +105,8 @@ export const googleauth=async()=>{
 
 export const SellItemapi=async(values)=>{
     try {
-        const {brand,price,location,image,description}=values
+        const {brand,price,location,image,description,rim,profile,width}=values
+       
 
         const formdata=new FormData();
         formdata.append('brand',brand);
@@ -113,14 +114,16 @@ export const SellItemapi=async(values)=>{
         formdata.append('image',image);
         formdata.append('price',price);
         formdata.append('description',description);
+        formdata.append('rim',rim);
+        formdata.append('profile',profile);
+        formdata.append('width',width);
+
 
 
 
 
         const {status,data}=await axios.post('/sellitem',formdata,{withCredentials:true})
-        if (status===200){
-            alert("done")
-        }
+       
 
         return Promise.resolve(data)
         

@@ -1,0 +1,13 @@
+.select{ 
+    @apply text-black rounded-sm px-2 focus:outline-none my-1 w-[90px]
+}
+
+.select option{
+    @apply rounded-sm
+}
+.section h1{
+    @apply text-start 
+}
+.helplink {
+    @apply text-sm text-left w-[100%]  my-5 underline underline-offset-[3px]  hover:cursor-pointer
+}

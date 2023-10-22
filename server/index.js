@@ -8,6 +8,8 @@ import passport from "passport";
 import session from "express-session";
 import authRoute from "./Routes/auth.js"
 import sellRoute from "./Routes/sellRoutes.js"
+import adRoutes from "./Routes/adRoute.js"
+
 
 dotenv.config();
 const app = express();
@@ -42,6 +44,8 @@ app.use(passport.session())
 app.use("/api", loginRoutes);
 app.use("/auth",authRoute)
 app.use('/api',sellRoute)
+app.use('/api',adRoutes)
+
 
 connectDB().then(() => {
   app.listen(3000, () => {

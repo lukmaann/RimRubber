@@ -6,6 +6,7 @@ import { AuthorisedUser } from "./helper/auth";
 import SellItem from "./pages/SellItems/sellitem";
 import BuyItem from "./pages/BuyItem/buyitem";
 import TyreSizeHelp from "./pages/help/tyresizehelp";
+import Myads from "./pages/myads/myads";
 
 const router=createBrowserRouter([
   {
@@ -25,8 +26,12 @@ const router=createBrowserRouter([
     element:<BuyItem/>
   },
   {
-    path:"identifysize",
+    path:"/identifysize",
     element:<TyreSizeHelp/>
+  },
+  {
+    path:"/myads",
+    element:<Myads/>
   }
 ])
 

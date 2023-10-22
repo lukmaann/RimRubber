@@ -9,7 +9,7 @@ const Header = () => {
   const [authenticated,setauthenticated]=useState(false)
   useEffect(()=>{
     authenticateUser().then((data)=>{
-      setauthenticated(data)
+      setauthenticated(true)
     })
   },[])
 

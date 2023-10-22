@@ -11,12 +11,12 @@
 
 .emailbox input{
 
-    @apply p-2 w-[70%] h-10 m-2 rounded-md mr-0 rounded-r-none focus:outline-none max-sm:w-[67%]
+    @apply p-2 w-[70%] h-10 m-2 rounded-md mr-0 rounded-r-none focus:outline-none max-sm:w-[60%]
 
 }
 
 .emailbox button{
-    @apply bg-yellow-400 h-10 px-2 rounded-r-md
+    @apply bg-yellow-400 h-10 px-2 rounded-r-md 
 }
 
 .socialbox ul{

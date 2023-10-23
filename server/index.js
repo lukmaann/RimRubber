@@ -37,7 +37,8 @@ app.use(
     saveUninitialized: false,
     secret: process.env.SECRET,
     resave: false,
-    cookie:{secure:false,
+    cookie:{secure:true,
+      sameSite:"none"
     
     }
   })

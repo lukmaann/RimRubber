@@ -41,6 +41,7 @@ app.use(
       secure: true,
       sameSite: "none",
       domain: ".rimrubber.netlify.app",
+path:"/"
     },
   })
 );

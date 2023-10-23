@@ -41,7 +41,7 @@ app.use(
     cookie: {
       secure: true,
       sameSite: "none",
-      domain: ".rimrubber.netlify.app",
+      domain: "..rimrubberbackend.onrender.com",
 path:"/"
     },
   })

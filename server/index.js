@@ -41,7 +41,7 @@ app.use(
     cookie: {
       secure: true,
       sameSite: "none",
-      domain: "..rimrubberbackend.onrender.com",
+      domain: ".rimrubberbackend.onrender.com",
 path:"/"
     },
   })

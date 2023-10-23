@@ -6,22 +6,22 @@ import loginRoutes from "./Routes/loginRoutes.js";
 import connectDB from "./database/conn.js";
 import passport from "passport";
 import session from "express-session";
-import authRoute from "./Routes/auth.js"
-import sellRoute from "./Routes/sellRoutes.js"
-import adRoutes from "./Routes/adRoute.js"
-
+import authRoute from "./Routes/auth.js";
+import sellRoute from "./Routes/sellRoutes.js";
+import adRoutes from "./Routes/adRoute.js";
 
 dotenv.config();
 const app = express();
 
-app.use(cors({
-  origin: ["https://rimrubber.netlify.app", "http://localhost:5173"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-}));
-
+app.use(
+  cors({
+    origin: ["https://rimrubber.netlify.app", "http://localhost:5173"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
+);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
@@ -37,22 +37,21 @@ app.use(
     saveUninitialized: false,
     secret: process.env.SECRET,
     resave: false,
-    cookie:{secure:true,
-      sameSite:"none",
-      domain: "rimrubber.netlify.app", 
-    
-    }
+    cookie: {
+      secure: true,
+      sameSite: "none",
+      domain: "rimrubber.netlify.app",
+    },
   })
 );
 
 app.use(passport.initialize());
-app.use(passport.session())
+app.use(passport.session());
 
 app.use("/api", loginRoutes);
-app.use("/auth",authRoute)
-app.use('/api',sellRoute)
-app.use('/api',adRoutes)
-
+app.use("/auth", authRoute);
+app.use("/api", sellRoute);
+app.use("/api", adRoutes);
 
 connectDB().then(() => {
   app.listen(process.env.PORT || 3000, () => {

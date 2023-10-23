@@ -1,0 +1,15 @@
+export const sampledata = {
+  brand: "jkl",
+  createdAt: "2023-10-22T13:25:16.728Z",
+  description: "very good tyre i love to sell it",
+  image: "1697981116706-Add a heading (1).png",
+  location: "Belgaum",
+  price: 900,
+  profile: "70",
+  rim: "14",
+  seller: "65322edb7d94288569d71236",
+  updatedAt: "2023-10-22T13:25:16.728Z",
+  width: "175",
+  __v: 0,
+  _id: "653522bc9256a1b8c1f75a35",
+};

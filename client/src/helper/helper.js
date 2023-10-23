@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3000/api";
+axios.defaults.baseURL = "https://rimrubberbackend.onrender.com/api";
 
 // ----------------calls api to check user exists or not --------------------------
 
 export const userExist = async (value) => {
   try {
     const { username } = value;
-    const { status } = await axios.post("/userexist", { username });
+    const { status } = await axios.post("/userexist", { username },{withCredentials:true});
     if (status === 200) {
       Promise.reject(status);
     }
@@ -74,7 +74,7 @@ export const logoutUser = async () => {
 
 export const authenticateUser = async () => {
   try {
-    const { data } = await axios.get("/auth", { withCredentials: true });
+    const { data } = await axios.get("/auth",{ withCredentials: true });
 
     return Promise.resolve(data);
   } catch (error) {
@@ -85,7 +85,7 @@ export const authenticateUser = async () => {
 // ---------------------------google authentication--------------
 export const googleauth = async () => {
   try {
-    window.location.href = "http://localhost:3000/auth/google/callback";
+    window.location.href = "https://rimrubberbackend.onrender.com/auth/google/";
   } catch (error) {
     Promise.reject();
   }

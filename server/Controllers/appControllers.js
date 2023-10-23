@@ -97,6 +97,7 @@ export const registerUser = async (req, res) => {
 // ------------------------------login user------------------------------------
 export const loginuser = async (req, res, next) => {
   try {
+    console.log("login");
     passport.authenticate("local", (err, user, info) => {
       if (err) return res.status(500).json({ error: "internal error" });
 

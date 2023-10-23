@@ -42,7 +42,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = "https://rimrubberbackend.onrender.com/api";
+axios.defaults.baseURL = "https://rimrubberbackend.onrender.com/api" || "http://localhost:3000/api";
 
 const useFecthMyAds = () => {
   const [getdata, setdata] = useState({

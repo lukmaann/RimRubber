@@ -16,8 +16,11 @@ const app = express();
 
 app.use(cors(
   {
-    origin:"http://localhost:5173",
-    credentials:true
+    origin: "http://localhost:5173",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
   }
 ));
 
@@ -35,7 +38,9 @@ app.use(
     saveUninitialized: false,
     secret: process.env.SECRET,
     resave: false,
-    cookie:{secure:false}
+    cookie:{secure:false,
+    sameSite:"none"
+    }
   })
 );
 

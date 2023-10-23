@@ -40,7 +40,7 @@ app.use(
     cookie: {
       secure: true,
       sameSite: "none",
-      domain: "rimrubber.netlify.app",
+      domain: ".rimrubber.netlify.app",
     },
   })
 );

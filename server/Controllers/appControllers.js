@@ -28,7 +28,7 @@ passport.use(
     {
       clientID: process.env.GOOGLEID,
       clientSecret: process.env.GOOGLESECRET,
-      callbackURL: "http://localhost:3000/auth/google/callback",
+      callbackURL: "https://rimrubberbackend.onrender.com/auth/google/callback",
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {

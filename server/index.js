@@ -48,7 +48,7 @@ app.use('/api',adRoutes)
 
 
 connectDB().then(() => {
-  app.listen(3000, () => {
-    console.log("server connected to database and started on port 3000");
+  app.listen(process.env.PORT || 3000, () => {
+    console.log("server connected to database and started ");
   });
 });

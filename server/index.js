@@ -14,15 +14,14 @@ import adRoutes from "./Routes/adRoute.js"
 dotenv.config();
 const app = express();
 
-app.use(cors(
-  {
-    origin: "https://rimrubber.netlify.app/" ||"http://localhost:5173",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-  }
-));
+app.use(cors({
+  origin: ["https://rimrubber.netlify.app", "http://localhost:5173"],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+}));
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));

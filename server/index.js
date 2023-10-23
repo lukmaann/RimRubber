@@ -38,7 +38,8 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     cookie:{secure:true,
-      sameSite:"none"
+      sameSite:"none",
+      domain: "rimrubber.netlify.app", 
     
     }
   })

@@ -1,6 +1,6 @@
 .topdiv{
   
-    @apply  w-full bg-gradient-to-r from-black via-zinc-950 to-black  border-b-2 border-gray-500
+    @apply  w-full bg-gradient-to-r from-black via-zinc-950 to-black  
 }
 
 .tagline{
@@ -81,7 +81,7 @@
   }
 
   .login{
-    @apply static mx-auto 
+    @apply static mx-auto w-[350px]
   }
 
   .rotatetyre{

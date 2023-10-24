@@ -19,7 +19,6 @@ app.use(
     origin: ["https://rimrubber.netlify.app", "http://localhost:5174","http://localhost:5173"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
-    preflightContinue: false,
     optionsSuccessStatus: 204,
   })
 );

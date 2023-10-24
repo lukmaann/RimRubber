@@ -7,7 +7,7 @@ const router=Router();
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const imagePath = path.resolve(__dirname, "../client/src/images");
+    const imagePath =  "../client/src/images";
     cb(null, imagePath);
   },
   filename: (req, file, cb) => {

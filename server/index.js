@@ -39,8 +39,8 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     cookie: {
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
       domain: ".rimrubberbackend.onrender.com",
 path:"/"
     },

@@ -20,7 +20,7 @@
     transition: all ease-in-out 0.3s;
 
     
-    @apply absolute  w-[350px] p-5 h-auto bg-white right-[100px] top-[100px]  rounded-lg
+    @apply absolute  w-[300px] p-5  bg-white right-[100px] top-[80px]  rounded-lg
 }
 
 

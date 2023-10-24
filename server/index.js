@@ -16,7 +16,7 @@ app.set('trust proxy', 1);
 
 app.use(
   cors({
-    origin: ["https://rimrubber.netlify.app", "http://localhost:5173"],
+    origin: ["https://rimrubber.netlify.app", "http://localhost:5174","http://localhost:5173"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     preflightContinue: false,
@@ -39,8 +39,8 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     cookie: {
-      secure: true,
-      sameSite: "none",
+      secure: false,
+      sameSite: "lax",
       domain: ".rimrubberbackend.onrender.com",
 path:"/"
     },

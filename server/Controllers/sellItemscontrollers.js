@@ -18,6 +18,7 @@ export const sellItem = async (req, res) => {
     
 
     const file=req.file
+    let imagePath=''
 
 
 
@@ -29,7 +30,7 @@ export const sellItem = async (req, res) => {
     
 
     const mycloud= await cloudinary.v2.uploader.upload(datauri).then((data)=>{
-      return imagePath=data.url
+      imagePath=data.url
     }).catch((error)=>{
       return res.status(500).json({error:error.message})
     })

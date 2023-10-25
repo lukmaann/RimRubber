@@ -1,0 +1,7 @@
+const Myads=()=>{
+    return <div>
+        Lukmaan
+    </div>
+}
+
+export default Myads

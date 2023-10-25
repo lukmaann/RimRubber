@@ -10,3 +10,9 @@ export const useTyreSizeStore=create((set)=>({
     setrim:(data)=>set({rim:data})
 
 }))
+
+
+export const myAdsStore=create((set)=>({
+    ads:[],
+    setAds:(data)=>set({ads:data})
+}))

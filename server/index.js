@@ -31,11 +31,11 @@ cloudinary.config({
 
 app.use(
   cors({
-    origin: [
-      "https://rimrubber.netlify.app",
-      "http://localhost:5174",
-      "http://localhost:5173",
-    ],
+    // origin: [
+    //   "https://rimrubber.netlify.app",
+    //   "http://localhost:5174",
+    //   "http://localhost:5173/",
+    // ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,

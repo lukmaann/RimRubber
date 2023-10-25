@@ -8,11 +8,11 @@ import { sampledata } from "../../../data/sample";
 import { myAdsStore } from "../../store/store";
 
 const Myads = () => {
-    const myads=myAdsStore((state)=>state.ads)
+    const myads=myAdsStore((state)=>state.ads);
+
 
     
   const [getdata] = useFecthMyAds();
-  console.log(getdata.apiData);
 
   if (getdata.isLoading) {
     return (

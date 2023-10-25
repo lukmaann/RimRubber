@@ -9,14 +9,33 @@ import session from "express-session";
 import authRoute from "./Routes/auth.js";
 import sellRoute from "./Routes/sellRoutes.js";
 import adRoutes from "./Routes/adRoute.js";
+import {v2 as cloudinary} from 'cloudinary';
+
 
 dotenv.config();
 const app = express();
-app.set('trust proxy', 1);
+app.set("trust proxy", 1);
+
+dotenv.config();
+
+          
+
+          
+cloudinary.config({ 
+  cloud_name: process.env.CLOUDINARY_CLOUD, 
+  api_key: process.env.CLOUDINARY_APIKEY, 
+  api_secret: process.env.CLOUDINARY_SECRET 
+});
+
+
 
 app.use(
   cors({
-    origin: ["https://rimrubber.netlify.app", "http://localhost:5174","http://localhost:5173"],
+    origin: [
+      "https://rimrubber.netlify.app",
+      "http://localhost:5174",
+      "http://localhost:5173",
+    ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,
@@ -26,7 +45,10 @@ app.use(
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://rimrubber.netlify.app");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
   res.header("Access-Control-Allow-Credentials", true);
   next();
 });
@@ -49,7 +71,7 @@ app.use(
       secure: true,
       sameSite: "none",
       domain: ".rimrubberbackend.onrender.com",
-path:"/"
+      path: "/",
     },
   })
 );

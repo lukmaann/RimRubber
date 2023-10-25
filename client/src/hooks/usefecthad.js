@@ -23,8 +23,8 @@ const useFecthMyAds = () => {
 
       if (status === 200) {
          setdata((prev) => ({ ...prev, isLoading: false}));
-         myads.setAds(data)
-          setdata((prev) => ({ ...prev, apiData:data }));
+         
+          setdata((prev) => ({ ...prev, apiData:data.items }));
 
       }
     } catch (error) {

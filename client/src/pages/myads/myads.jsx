@@ -13,7 +13,6 @@ const Myads = () => {
     
   const [getdata] = useFecthMyAds();
   console.log(getdata.apiData);
-  console.log(myads.length);
 
   if (getdata.isLoading) {
     return (

@@ -11,7 +11,7 @@ const AdComponent=(props)=>{
         <div className={Style.main}>
         
            <div className={Style.topdiv}>
-           <img src={demoImage||image} alt="ad image"  className={Style.img}/>
+           <img src={image||demoImage} alt="ad image"  className={Style.img}/>
            <h1>{brand}</h1>
            </div>
            <h2>₹{price} </h2>

@@ -11,6 +11,10 @@ const ItemSchema = new mongoose.Schema(
     profile:String,
     
     location: String,
+    status:{
+      type:String,
+      default:"pending"
+    },
     seller: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",

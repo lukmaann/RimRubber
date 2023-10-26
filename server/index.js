@@ -33,8 +33,8 @@ app.use(
   cors({
     origin: [
       "https://rimrubber.netlify.app",
+      "http://localhost:5173",
       "http://localhost:5174",
-      "http://localhost:5173/",
     ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
@@ -42,8 +42,11 @@ app.use(
   })
 );
 
+const domainname=process.env.NODE_ENV==='production'?"https://rimrubber.netlify.app":"http://localhost:5173"
+console.log(domainname);
+
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://rimrubber.netlify.app");
+  res.header("Access-Control-Allow-Origin", domainname );
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header(
     "Access-Control-Allow-Headers",
@@ -62,15 +65,19 @@ app.get("/", (req, res) => {
 });
 // ----------------------------------session creation-----------
 
+let domain = process.env.NODE_ENV === 'production' ? ".rimrubberbackend.onrender.com" : ".localhost";
+let secure =process.env.NODE_ENV ==='production'
+let samesite=process.env.NODE_ENV ==='production'?'none':'lax'
+
 app.use(
   session({
     saveUninitialized: false,
     secret: process.env.SECRET,
     resave: false,
     cookie: {
-      secure: true,
-      sameSite: "none",
-      domain: ".rimrubberbackend.onrender.com",
+      secure: secure,
+      sameSite: samesite,
+      domain: domain,
       path: "/",
     },
   })

@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/footer";
 import Style from "./myads.module.css";
 import { Toaster } from "react-hot-toast";
 import useFecthMyAds from "../../hooks/usefecthad";
-import { sampledata } from "../../../data/sample";
+// import { sampledata } from "../../../data/sample";
 import { myAdsStore } from "../../store/store";
 import AdComponent from "../../components/ads/ad-component";
 import { useNavigate } from "react-router-dom";
@@ -57,6 +57,7 @@ const Myads = () => {
                 width={item.width}
                 rim={item.rim}
                 id={item._id}
+                status={item.status}
               />
             );
           })}

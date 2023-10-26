@@ -15,7 +15,14 @@
 }
 
 .topdiv{
-    @apply flex gap-5 items-center
+    @apply flex gap-5 items-center w-[20%]
+}
+
+.middiv{
+    @apply flex justify-between m-2 gap-2 w-[50%] 
+}
+.middiv h1{
+    @apply  p-1 px-2 rounded-sm text-black font-thin
 }
 
 @media only screen and (max-width:600px){
@@ -31,4 +38,8 @@
         @apply flex flex-col
     }
     
+
+    .middiv{
+        @apply w-[90%]
+    }
 }

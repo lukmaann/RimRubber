@@ -8,16 +8,28 @@ import { toast } from "react-hot-toast"
 const AdComponent=(props)=>{
     const removeAds=myAdsStore((state)=>state.removeAds)
 
-    const {image,brand,price,id}=props
+    const {image,brand,price,id,status}=props
     const delItem=()=>{
-        removeAds(id)
         toast.promise(delAd(id),{
             loading:"Deleting ad",
-            success:"AD deleted",
+            success:"Ad deleted",
             error:"error"
         })
+        removeAds(id)
 
     }
+
+   let statusbg='';
+   if(status==='active'){
+    statusbg='bg-green-500'
+   }else if(status==='pending'){
+    statusbg='bg-pink-500'
+   }else if(status==='rejected'){
+    statusbg='bg-red-500'
+   }else if(status==='sold'){
+    statusbg='bg-purple-500'
+   }
+    
     return (
         <div className={Style.main}>
         
@@ -25,7 +37,10 @@ const AdComponent=(props)=>{
            <img src={image||demoImage} alt="ad image"  className={Style.img}/>
            <h1>{brand}</h1>
            </div>
+           <div className={Style.middiv}>
            <h2>₹{price} </h2>
+           <h1 className={statusbg} >{status}</h1>
+           </div>
            <div className="flex flex-col">
             <button>Mark as sold</button>
             <button onClick={delItem}> Delete Ad</button>

@@ -13,6 +13,7 @@ export const sampledata = [
     width: "175",
     __v: 0,
     _id: "653522bc9256a1b8c1f75a35",
+    status:"active"
   },
   {
     
@@ -23,6 +24,8 @@ export const sampledata = [
     location: "sankeshwar",
     price: 1900,
     profile: "90",
+    status:"pending"
+,
     rim: "14",
     seller: "65322edb7d94288569d71236",
     updatedAt: "2023-10-22T13:25:16.728Z",
@@ -42,6 +45,7 @@ export const sampledata = [
     seller: "65322edb7d94288569d71236",
     updatedAt: "2023-10-22T13:25:16.728Z",
     width: "175",
+    status:'rejected',
     __v: 0,
     _id: "653522bc9256a1b8c1f75a35",
   },
@@ -58,6 +62,7 @@ export const sampledata = [
     updatedAt: "2023-10-22T13:25:16.728Z",
     width: "175",
     __v: 0,
+    status:'sold',
     _id: "653522bc9256a1b8c1f75a35",
   },
   

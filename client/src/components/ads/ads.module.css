@@ -20,7 +20,7 @@
 
 @media only screen and (max-width:600px){
     .main{
-        @apply block h-mi
+        @apply block h-min
     }
 
     .img{

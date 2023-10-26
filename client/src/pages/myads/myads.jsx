@@ -45,6 +45,7 @@ const Myads = () => {
                 profile={item.profile}
                 width={item.width}
                 rim={item.rim}
+                id={item._id}
               />
             );
           })}

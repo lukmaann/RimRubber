@@ -14,5 +14,7 @@ export const useTyreSizeStore=create((set)=>({
 
 export const myAdsStore=create((set)=>({
     ads:[],
-    setAds:(data)=>set({ads:data})
+    setAds:(data)=>set({ads:data}),
+    removeAds:(id)=>set((state)=>({ads:state.ads.filter((ad)=>ad._id!==id)}))
+    
 }))

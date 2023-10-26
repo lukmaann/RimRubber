@@ -132,3 +132,17 @@ export const getAds=async()=>{
         Promise.reject(error.message)
     }
 }
+
+// ---------------------------------------del ads-------------------------------
+export const delAd=async(id)=>{
+  try {
+    const {status}=await axios.get(`/delad/${id}`);
+    if(status===200){
+      return Promise.resolve(status);
+    }else{
+     return Promise.reject()
+    }
+  } catch (error) {
+    Promise.reject(error.message)
+  }
+}

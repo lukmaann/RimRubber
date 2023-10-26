@@ -15,6 +15,7 @@ export const sampledata = [
     _id: "653522bc9256a1b8c1f75a35",
   },
   {
+    
     brand: "Jk",
     createdAt: "2023-10-22T13:25:16.728Z",
     description: "very good tyre i love to sell it",

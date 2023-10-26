@@ -1,12 +1,23 @@
 /* eslint-disable react/prop-types */
 import demoImage from "../../assets/demoimg.png"
+import { delAd } from "../../helper/helper"
 import Style from "./ads.module.css"
-
+import { myAdsStore } from "../../store/store"
+import { toast } from "react-hot-toast"
 
 const AdComponent=(props)=>{
+    const removeAds=myAdsStore((state)=>state.removeAds)
 
-    const {image,brand,price}=props
-    
+    const {image,brand,price,id}=props
+    const delItem=()=>{
+        removeAds(id)
+        toast.promise(delAd(id),{
+            loading:"Deleting ad",
+            success:"AD deleted",
+            error:"error"
+        })
+
+    }
     return (
         <div className={Style.main}>
         
@@ -17,7 +28,7 @@ const AdComponent=(props)=>{
            <h2>₹{price} </h2>
            <div className="flex flex-col">
             <button>Mark as sold</button>
-            <button>Delete Ad</button>
+            <button onClick={delItem}> Delete Ad</button>
            </div>
 
 

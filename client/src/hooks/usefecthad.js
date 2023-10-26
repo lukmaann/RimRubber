@@ -1,10 +1,12 @@
 
 
 import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { myAdsStore } from "../store/store";
 
-axios.defaults.baseURL = "https://rimrubberbackend.onrender.com/api" || "http://localhost:3000/api";
+// axios.defaults.baseURL = "https://rimrubberbackend.onrender.com/api" || "http://localhost:3000/api";
+axios.defaults.baseURL="http://localhost:3000/api" || "https://rimrubberbackend.onrender.com/api"
 
 const useFecthMyAds = () => {
   const myads=myAdsStore((state)=>state)

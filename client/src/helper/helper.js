@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 
-axios.defaults.baseURL =     "https://rimrubberbackend.onrender.com/api" || "http://localhost:3000/api";
+// axios.defaults.baseURL =     "https://rimrubberbackend.onrender.com/api" || "http://localhost:3000/api";
+axios.defaults.baseURL="http://localhost:3000/api" || "https://rimrubberbackend.onrender.com/api"
 axios.defaults.withCredentials=true
 
 // ----------------calls api to check user exists or not --------------------------

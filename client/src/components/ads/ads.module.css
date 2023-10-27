@@ -35,7 +35,7 @@
     }
 
     .topdiv{
-        @apply flex flex-col
+        @apply flex flex-col w-[90%]
     }
     
 

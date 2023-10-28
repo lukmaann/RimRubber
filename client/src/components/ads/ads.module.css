@@ -31,11 +31,11 @@
     }
 
     .img{
-        @apply w-[200px] h-[200px]
+        @apply w-[200px] h-[200px] bg-white
     }
 
     .topdiv{
-        @apply flex flex-col
+        @apply flex flex-col w-[90%]
     }
     
 

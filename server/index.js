@@ -43,7 +43,6 @@ app.use(
 );
 
 const domainname=process.env.NODE_ENV==='production'?"https://rimrubber.netlify.app":"http://localhost:5173"
-console.log(domainname);
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", domainname );

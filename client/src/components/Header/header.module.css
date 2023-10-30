@@ -21,9 +21,17 @@
 }
 
 
+.suggestbtn{
+    @apply  bg-white font-mono text-black  rounded-md px-2 mx-3 hover:bg-gray-700 hover:text-white
+}
+
 @media only screen and (max-width:600px){
     .navbar{
         @apply  px-2 h-[8vh]
+    }
+
+    .suggestbtn{
+        @apply  p-1  text-xs
     }
  
 }

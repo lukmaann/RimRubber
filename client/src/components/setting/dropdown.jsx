@@ -5,6 +5,9 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import TireRepairIcon from "@mui/icons-material/TireRepair";
 import SellIcon from "@mui/icons-material/Sell";
 import StoreIcon from '@mui/icons-material/Store';
+import FeedbackIcon from "@mui/icons-material/Feedback";
+
+
 
 const Dropdown = () => {
   const navigate = useNavigate();
@@ -33,6 +36,12 @@ const Dropdown = () => {
           <button onClick={() => navigate("/myads")}>
             {" "}
             <TireRepairIcon /> My Ads
+          </button>
+        </li>
+        <li>
+          <button onClick={() => navigate("/feedback")}>
+            {" "}
+            <FeedbackIcon /> FeedBack
           </button>
         </li>
         <li>

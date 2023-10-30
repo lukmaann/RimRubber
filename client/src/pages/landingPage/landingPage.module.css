@@ -20,7 +20,7 @@
     transition: all ease-in-out 0.3s;
 
     
-    @apply absolute  w-[350px] p-5  bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 right-[100px] top-[80px]  rounded-xl shadow-md border-b-4 border-gray-500
+    @apply absolute  w-[350px] p-5  bg-white right-[100px] top-[80px]  rounded-xl shadow-md border-b-4 border-gray-500
 }
 
 

@@ -1,16 +1,22 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
+import checkMode from "./devOrProduction";
 
-axios.defaults.baseURL =     "https://rimrubberbackend.onrender.com/api" || "http://localhost:3000/api";
-// axios.defaults.baseURL="http://localhost:3000/api" || "https://rimrubberbackend.onrender.com/api"
-axios.defaults.withCredentials=true
+axios.defaults.baseURL = checkMode()
+  ? "http://localhost:3000/api"
+  : "https://rimrubberbackend.onrender.com/api";
+axios.defaults.withCredentials = true;
 
 // ----------------calls api to check user exists or not --------------------------
 
 export const userExist = async (value) => {
   try {
     const { username } = value;
-    const { status } = await axios.post("/userexist", { username },{withCredentials:true});
+    const { status } = await axios.post(
+      "/userexist",
+      { username },
+      { withCredentials: true }
+    );
     if (status === 200) {
       Promise.reject(status);
     }
@@ -76,7 +82,7 @@ export const logoutUser = async () => {
 
 export const authenticateUser = async () => {
   try {
-    const { data } = await axios.get("/auth",{ withCredentials: true });
+    const { data } = await axios.get("/auth", { withCredentials: true });
 
     return Promise.resolve(data);
   } catch (error) {
@@ -120,29 +126,29 @@ export const SellItemapi = async (values) => {
   }
 };
 
-
-
 // -----------------------------------getMyAds--------------------------------
-export const getAds=async()=>{
-    try {
-        const {status,data}=await axios.get('/getmyad',{withCredentials:true})
+export const getAds = async () => {
+  try {
+    const { status, data } = await axios.get("/getmyad", {
+      withCredentials: true,
+    });
 
-        return Promise.resolve(data)
-    } catch (error) {
-        Promise.reject(error.message)
-    }
-}
+    return Promise.resolve(data);
+  } catch (error) {
+    Promise.reject(error.message);
+  }
+};
 
 // ---------------------------------------del ads-------------------------------
-export const delAd=async(id)=>{
+export const delAd = async (id) => {
   try {
-    const {status}=await axios.get(`/delad/${id}`);
-    if(status===200){
+    const { status } = await axios.get(`/delad/${id}`);
+    if (status === 200) {
       return Promise.resolve(status);
-    }else{
-     return Promise.reject()
+    } else {
+      return Promise.reject();
     }
   } catch (error) {
-    Promise.reject(error.message)
+    Promise.reject(error.message);
   }
-}
+};

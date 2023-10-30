@@ -1,0 +1,26 @@
+.main{
+    @apply  min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white
+     flex  justify-around pt-10 p-10 
+}
+
+.main h1{
+    @apply text-2xl  my-4
+}
+
+.txt {
+    @apply text-base w-[500px] 
+}
+
+.txt h2{
+    @apply text-gray-500
+}
+
+@media only screen and (max-width:600px){
+    .txt{
+        @apply w-[320px]
+    }
+
+    .main{
+        @apply flex-wrap 
+    }
+}

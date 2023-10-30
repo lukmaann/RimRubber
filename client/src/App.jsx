@@ -7,6 +7,7 @@ import SellItem from "./pages/SellItems/sellitem";
 import BuyItem from "./pages/BuyItem/buyitem";
 import TyreSizeHelp from "./pages/help/tyresizehelp";
 import Myads from "./pages/myads/myads";
+import FeedBack from "./pages/feedback/feedback";
 
 const router=createBrowserRouter([
   {
@@ -32,6 +33,9 @@ const router=createBrowserRouter([
   {
     path:"/myads",
     element:<Myads/>
+  },{
+    path:'/feedback',
+    element:<FeedBack/>
   }
 ])
 

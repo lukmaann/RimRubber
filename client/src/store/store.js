@@ -12,6 +12,11 @@ export const useTyreSizeStore=create((set)=>({
 }))
 
 
+export const useUserStore=create((set)=>({
+    user:null,
+    setUser:(data)=>set({user:data})
+}))
+
 export const myAdsStore=create((set)=>({
     ads:[],
     setAds:(data)=>set({ads:data}),

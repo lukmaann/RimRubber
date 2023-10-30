@@ -117,7 +117,8 @@ export const loginuser = async (req, res, next) => {
 
 export const auth = async (req, res) => {
   try {
-    res.send(req.isAuthenticated());
+    const user=req.user
+    res.json({authenticated:req.isAuthenticated(),user});
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

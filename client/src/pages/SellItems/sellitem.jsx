@@ -9,8 +9,7 @@ import convertToBase64 from "../../helper/convert";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import TyreSize from "../../components/tyresize/tyresize";
 import { useTyreSizeStore } from "../../store/store";
-import { SellItemapi } from "../../helper/helper";
-
+import {SellItemapi} from "../../helper/adsHelper"
 const SellItem = () => {
 
   const tyresize=useTyreSizeStore((state)=>state)

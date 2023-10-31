@@ -1,13 +1,10 @@
 
-
-import axios from "axios";
-import checkMode from "../helper/devOrProduction";
+import axios from "../helper/axiosConfig"
 
 import { useEffect, useState } from "react";
 import { myAdsStore } from "../store/store";
 
 
-axios.defaults.baseURL=checkMode()?'http://localhost:3000/api':"https://rimrubberbackend.onrender.com/api"
 
 
 const useFecthMyAds = () => {

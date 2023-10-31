@@ -4,6 +4,7 @@ import AssistantIcon from '@mui/icons-material/Assistant';
 import FeedbackIcon from '@mui/icons-material/Feedback';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import { useFormik } from "formik";
+import { giveFeedback } from "../../helper/feedbackHelper";
 
 const FeedBackForm = () => {
   const [selected, setSelected] = useState("suggestion");
@@ -16,34 +17,35 @@ const FeedBackForm = () => {
         validateOnChange:false,
         onSubmit:async(value)=>{
             value=await Object.assign(value,{feedback:selected})
-            alert(value.feedback)
+            giveFeedback({feedbackType:value.feedback,feedbackContent:value.content})
         }
     })
   return (
     <div className={Style.main}>
       <div>
         <ul className={Style.selectors}>
-          <li
-            className={selected === "suggestion" && Style.selected}
-            onClick={() => setSelected("suggestion")}
-          >
-            {" "}
-            Suggestions 
-          </li>
-          <li
-            className={selected === "feedback" && Style.selected}
-            onClick={() => setSelected("feedback")}
-          >
-            {" "}
-            FeedBack 
-          </li>
-          <li
-            className={selected === "bugs" && Style.selected}
-            onClick={() => setSelected("bugs")}
-          >
-            {" "}
-            Bugs
-          </li>
+        <li
+  className={selected === "suggestion" ? `${Style.selected}` : ""}
+  onClick={() => setSelected("suggestion")}
+>
+  Suggestions
+</li>
+<li
+  className={selected === "feedback" ? `${Style.selected}` : ""}
+  onClick={() => setSelected("feedback")}
+>
+  Feedback
+</li>
+<li
+  className={selected === "bugs" ? `${Style.selected}` : ""}
+  onClick={() => setSelected("bugs")}
+>
+  Bugs
+</li>
+
+         
+          
+          
         </ul>
       </div>
       <div className={Style.selectcontent}>

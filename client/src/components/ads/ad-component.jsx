@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import demoImage from "../../assets/demoimg.png"
-import { delAd } from "../../helper/helper"
+import { delAd } from "../../helper/adsHelper"
 import Style from "./ads.module.css"
 import { myAdsStore } from "../../store/store"
 import { toast } from "react-hot-toast"

@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Dropdown from "../setting/dropdown";
 import { useEffect, useState } from "react";
 import FeedbackIcon from "@mui/icons-material/Feedback";
-import { authenticateUser } from "../../helper/helper";
+import {authenticateUser} from "../../helper/loginHelper"
+
 const Header = () => {
   const [authenticated, setauthenticated] = useState(false);
   useEffect(() => {

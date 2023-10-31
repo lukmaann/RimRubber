@@ -4,9 +4,8 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { LoginValidate } from "../../helper/validate";
-import { loginUser, userExist } from "../../helper/helper";
+import { loginUser, userExist,googleauth } from "../../helper/loginHelper";
 import { useNavigate } from "react-router-dom";
-import { googleauth } from "../../helper/helper";
 import toast from "react-hot-toast";
 
 const LoginForm = () => {

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { authenticateUser } from "./helper";
+import { authenticateUser } from "./loginHelper";
 import { Navigate } from "react-router-dom";
 import { useUserStore } from "../store/store";
 

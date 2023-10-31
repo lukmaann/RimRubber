@@ -1,24 +1,39 @@
 import userModel from "../models/userModel.js";
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import adminModel from "../models/adminmodel.js";
 import findOrCreate from "mongoose-findorcreate";
 import dotenv from "dotenv";
 dotenv.config();
 
 passport.use(userModel.createStrategy());
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  // console.log("called from appserialise");
+  // console.log(user)
+
+  done(null, user);
 });
 
-passport.deserializeUser((id, done) => {
-  userModel
-    .findById(id)
-    .then((user) => {
-      done(null, user);
-    })
-    .catch((err) => {
-      done(err, null);
-    });
+passport.deserializeUser((user, done) => {
+  if (user.isadmin) {
+    adminModel
+      .findById(user._id)
+      .then((user) => {
+        done(null, user);
+      })
+      .catch((err) => {
+        done(err, null);
+      });
+  } else {
+    userModel
+      .findById(user._id)
+      .then((user) => {
+        done(null, user);
+      })
+      .catch((err) => {
+        done(err, null);
+      });
+  }
 });
 
 // ----------------login user useing google with passportjs-------------------
@@ -96,7 +111,6 @@ export const registerUser = async (req, res) => {
 
 // ------------------------------login user------------------------------------
 export const loginuser = async (req, res, next) => {
- 
   try {
     passport.authenticate("local", (err, user, info) => {
       if (err) return res.status(500).json({ error: "internal error" });
@@ -117,12 +131,20 @@ export const loginuser = async (req, res, next) => {
 
 export const auth = async (req, res) => {
   try {
-    const user=req.user
-    res.json({authenticated:req.isAuthenticated(),user});
+    const user = req.user;
+    // console.log(req.isAuthenticated());
+    if(req.isAuthenticated()){
+    res.status(200).json({ authenticated: req.isAuthenticated(), user });
+    // res.status(200)
+    }else{
+      res.status(401).json("unauthorised")
+    }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
+// -----------------------check admin is authenticated------------------
 
 export const authuser = async (req, res, next) => {
   try {

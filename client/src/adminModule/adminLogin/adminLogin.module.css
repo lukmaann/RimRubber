@@ -4,7 +4,7 @@
 }    
 
 .main form{
-    @apply w-[320px] flex flex-col justify-center
+    @apply w-[320px] flex flex-col justify-center text-black
 }
 
 .main form input{

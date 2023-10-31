@@ -99,3 +99,20 @@ export const googleauth = async () => {
 
 
 
+// ---------------------------calls api to login admin----------------------
+
+
+export const loginAdmin=async(values)=>{
+  try {
+    const {username,password}=values;
+    const {status}=await axios.post('/adminlogin',{username,password},{withCredentials:true});
+    if(status===200){
+      return Promise.resolve()
+    }else{
+      return Promise.reject()
+    }
+
+  } catch (error) {
+    return Promise.reject(error.message)
+  }
+}

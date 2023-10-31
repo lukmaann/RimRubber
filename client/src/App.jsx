@@ -9,6 +9,8 @@ import TyreSizeHelp from "./pages/help/tyresizehelp";
 import Myads from "./pages/myads/myads";
 import FeedBack from "./pages/feedback/feedback";
 import AdminLogin from "./adminModule/adminLogin/adminLogin";
+import AdminDashboard from "./adminModule/dashboard/dashboard";
+import { AuthorisedAdmin } from "./helper/adminauth";
 
 const router=createBrowserRouter([
   {
@@ -41,6 +43,9 @@ const router=createBrowserRouter([
   {
     path:"/adminlogin",
     element:<AdminLogin/>
+  },{
+    path:'/admindashboard',
+    element:<AuthorisedAdmin><AdminDashboard/></AuthorisedAdmin>
   }
 ])
 

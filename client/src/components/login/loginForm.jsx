@@ -47,7 +47,7 @@ const LoginForm = () => {
           {...formik.getFieldProps("username")}
           className={Style.credentials}
         />
-        <section className="relative">
+        <section className="relative h-10 mb-2">
           <input
             type={showPass ? "text" : "password"}
             placeholder="Password"
@@ -65,7 +65,7 @@ const LoginForm = () => {
           )}
         </section>
 
-        <button className={`${Style.btn} bg-yellow-400`} type="submit">
+        <button className={`${Style.btn} `} type="submit">
           Login
         </button>
         <section className="flex h-8 justify-center items-center text-gray-400 ">
@@ -83,7 +83,7 @@ const LoginForm = () => {
             alt="google-logo"
             className="w-[8%] mx-2"
           />
-          <h1>continue with google</h1>
+          continue with google
         </button>
       </form>
     </div>

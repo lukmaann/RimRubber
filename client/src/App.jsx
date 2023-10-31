@@ -8,6 +8,7 @@ import BuyItem from "./pages/BuyItem/buyitem";
 import TyreSizeHelp from "./pages/help/tyresizehelp";
 import Myads from "./pages/myads/myads";
 import FeedBack from "./pages/feedback/feedback";
+import AdminLogin from "./adminModule/adminLogin/adminLogin";
 
 const router=createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router=createBrowserRouter([
   },{
     path:'/feedback',
     element:<FeedBack/>
+  },
+  {
+    path:"/adminlogin",
+    element:<AdminLogin/>
   }
 ])
 

@@ -1,0 +1,24 @@
+.main{
+    @apply h-[100vh] w-[100vw] bg-gradient-to-b from-black via-gray-950 
+     to-gray-900 p-2 flex justify-center items-center flex-col text-white
+}    
+
+.main form{
+    @apply w-[320px] flex flex-col justify-center
+}
+
+.main form input{
+    @apply p-2 m-2 rounded-sm w-[90%]
+}
+
+.submitbtn{
+    @apply border text-white w-[90%] p-2 m-2
+}
+
+.main h1{
+    @apply text-2xl mb-10
+}
+
+.logo{
+    @apply w-[10vh] rounded-full border border-white p-2 m-2
+}

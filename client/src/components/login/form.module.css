@@ -1,5 +1,5 @@
 .main{
-    @apply w-[100%] mx-auto m-5 
+    @apply w-[100%] mx-auto m-5 mt-0 
 
 }
 
@@ -12,7 +12,7 @@
 
 .btn{
     transition: all ease-in-out 0.4s;
-    @apply rounded-sm p-2 bg-yellow-400 w-full capitalize shadow-md mb-1 border border-black
+    @apply rounded-sm p-2  w-full capitalize shadow-md mb-1 border border-white text-white
 }
 .btn:hover{
     @apply bg-black  text-white border-black
@@ -22,7 +22,7 @@
 
 .gbtn{
     
-    @apply my-2 bg-gray-100 flex  items-center justify-center shadow-md border 
+    @apply my-2  flex  items-center justify-center shadow-md border 
 }
 
 .gbtn:hover{

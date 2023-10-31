@@ -76,7 +76,7 @@ const SignupForm = () => {
           placeholder="Email"
           className={`${Style.credentials}`}
         />
-        <section className="relative">
+        <section className="relative h-10 mb-2">
           <input
             type={showPass ? "text" : "password"}
             placeholder="Password"
@@ -101,7 +101,7 @@ const SignupForm = () => {
           className={`${Style.credentials} `}
         />
 
-        <button type="submit" className={`${Style.btn} bg-yellow-400`}>
+        <button type="submit" className={`${Style.btn}`}>
           Sign UP
         </button>
         <section className="flex h-8 justify-center items-center text-gray-400 ">
@@ -119,7 +119,7 @@ const SignupForm = () => {
             alt="google-logo"
             className="w-[8%] mx-2"
           />
-          <h1>continue with google</h1>
+          continue with google
         </button>
       </form>
     </div>

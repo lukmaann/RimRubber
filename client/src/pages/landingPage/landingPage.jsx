@@ -1,57 +1,44 @@
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header/header";
 import Style from "./landingPage.module.css";
-import tyre from "../../assets/tyre2.jpg";
 import { useState } from "react";
 import SignupForm from "../../components/login/signupForm";
 import LoginForm from "../../components/login/loginForm";
-import Arrow from "../../assets/arrow.png"
-// import tyre2 from "../../assets/tyre.png"
 import { Toaster } from "react-hot-toast";
-
-
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const [login, selectLogin] = useState("signUp");
   return (
-    <div className={Style.main} >
-    <Toaster position="top-center"></Toaster>
+    <div>
+      <Toaster position="top-center"></Toaster>
       <Header />
-      <div className="h-[100vh] bg-black">
-        <div className={Style.topdiv}>
-        <img src={tyre} alt="Tyre image" className={`${Style.mainimg} `} />
-          <div className={`${Style.login} `}>
-
-            <div className="flex bg-yellow-400 justify-between w-[70%] mx-auto p-1 rounded-sm">
-              <h1
-                className={
-                  login == "signUp"
-                    ? `${Style.loginSelector} bg-white border rounded-xl`
-                    : `${Style.loginSelector}`
-                }
-                onClick={() => selectLogin("signUp")}
-              >
-                Sign up
-              </h1>
-              <h1
-                className={
-                  login == "login"
-                    ? `${Style.loginSelector} bg-white rounded-xl border `
-                    : `${Style.loginSelector}`
-                }
-                onClick={() => selectLogin("login")}
-              >
-                Login{" "}
-              </h1>
-            </div>
-
-            {login === "signUp" ? <SignupForm /> : <LoginForm />}
-          </div>
-          <h1 className={Style.tagline}>Get Started</h1>
-          <h1 className={Style.txt}>To buy and sell the second hand Tyres</h1>
+      <div className="h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900">
+      <div className={Style.main}>
+        <div className={Style.txt}>
+          <h1 className="">Welcome To RimRubber </h1>
+          <h2>
+            RimRubber is a web app for buying and selling second-hand tyres.
+            List your tire or buy one by creating an account or logging in.
+          </h2>
         </div>
-        <img src={Arrow} alt="" className={`${Style.arrow}`}/>
-        {/* <img src={tyre2} className={Style.rotatetyre} alt="" /> */}
+
+        <div>
+        <div className="flex w-[350px]    py-3 justify-around">
+          {" "}
+          <button onClick={()=>selectLogin('signUp') } className={login==='signUp'?`${Style.selected}`:`${Style.selector}`}>signUp</button>
+          <button onClick={()=>selectLogin('login')} className={login==='login'?`${Style.selected}`:`${Style.selector}`}>Login</button>
+        </div>
+        <div className="w-[350px] text-black ">
+        {
+          login==='login'?<LoginForm/>:<SignupForm/>
+        }
+        <button onClick={()=>navigate('/adminlogin')} className={Style.adminbtn}>Login as Administrator</button>
+
+        </div>
+        </div>
+      </div>
       </div>
 
       <Footer />

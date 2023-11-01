@@ -4,8 +4,11 @@ import AdminHeader from "../adminComponents/admin-header/adminheader";
 // import { sampledata } from "../../data/sample";
 import ReviewAds from "../adminComponents/reviewads/reviewad";
 import { useFecthAds } from "../../hooks/usefecthad";
+import { myAdsStore } from "../../store/store";
 const AdminDashboard = () => {
 
+  
+  const {ads}=myAdsStore((state)=>state)
   const [{apiData,isLoading}]=useFecthAds({type:'pending'});
 
   
@@ -23,7 +26,7 @@ if(isLoading){
         <AdminHeader />
 
         <div>
-          {apiData.Items.map((item, index) => {
+          {ads.map((item, index) => {
             return (
               <ReviewAds
                 image={item.image}

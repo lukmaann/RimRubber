@@ -1,8 +1,57 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import Style from "./reviewad.module.css";
+import { myAdsStore } from "../../../store/store";
+import { updateAdsStatus } from "../../../helper/adsHelper";
+import toast from "react-hot-toast";
+
+
+
+
 const ReviewAds = (props) => {
-  const { image, seller, price, description, rim, profile, width ,brand} = props;
+
+  const removeAds=myAdsStore((state)=>state.removeAds)
+  const { image, seller, price, description, rim, profile, width ,brand,id} = props;
+
+
+
+
+  const Approve=()=>{
+    const update=updateAdsStatus({id,type:"active"});
+
+    toast.promise(update,{
+      loading:"Wait",
+      error:"Error",
+      success:"Done"
+    })
+
+    update.then(()=>{
+    removeAds(id)
+
+    })
+
+    
+
+
+  }
+
+  
+  const reject=()=>{
+
+    const update=updateAdsStatus({id,type:"rejected"});
+    toast.promise(update,{
+      loading:"Wait",
+      error:"Error",
+      success:"Done"
+    })
+
+    update.then(()=>{
+      removeAds(id)
+    })
+
+    
+
+  }
 
   return (
     <div className={Style.main}>
@@ -32,8 +81,8 @@ const ReviewAds = (props) => {
       </div>
       <h1 className="text-left max-sm:w-[90%] px-2"> <span className="text-gray-400">Brand:</span> {brand}</h1>
       <div className={Style.btnbox}>
-            <button>Approve Ad</button>
-            <button>Reject Ad</button>
+            <button onClick={Approve}>Approve Ad</button>
+            <button onClick={reject}>Reject Ad</button>
 
 
         </div>

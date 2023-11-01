@@ -28,13 +28,27 @@ export const delad=async(req,res)=>{
 export const getAds=async(req,res)=>{
   try {
     const {status}=req.params;
-    const Items=await Item.find({status});
+    const items=await Item.find({status});
 
-    res.status(200).json({Items})
+    res.status(200).json({items})
 
 
     
   } catch (error) {
     res.status(500).json({error:error.message})
+  }
+}
+
+
+export const updateadsstatus=async(req,res)=>{
+  try {
+    const {type,id}=req.params;
+
+    
+
+    const item=await Item.findByIdAndUpdate({_id:id},{status:type})
+    res.status(200).json(item)
+  } catch (error) {
+    res.status(500).send({error:error.message})
   }
 }

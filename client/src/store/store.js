@@ -23,3 +23,5 @@ export const myAdsStore=create((set)=>({
     removeAds:(id)=>set((state)=>({ads:state.ads.filter((ad)=>ad._id!==id)}))
     
 }))
+
+

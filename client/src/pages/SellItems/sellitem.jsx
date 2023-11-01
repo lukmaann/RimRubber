@@ -10,7 +10,12 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import TyreSize from "../../components/tyresize/tyresize";
 import { useTyreSizeStore } from "../../store/store";
 import {SellItemapi} from "../../helper/adsHelper"
+import { useNavigate } from "react-router-dom";
+
+
+
 const SellItem = () => {
+  const navigate=useNavigate()
 
   const tyresize=useTyreSizeStore((state)=>state)
   const [file, setfile] = useState();
@@ -39,7 +44,9 @@ const SellItem = () => {
         error:"Cant post now , please try later"
       })
       sell.then(()=>{
+        
         resetForm()
+        navigate('/myads')
       })
 
 

@@ -55,3 +55,21 @@ export const delAd = async (id) => {
       Promise.reject(error.message);
     }
   };
+
+  // ------------------------------------------update ads status------------------------
+
+  export const updateAdsStatus=async(values)=>{
+    try {
+      const {type,id}=values;
+ 
+      const {status}=await axios.get(`/adsstatus/${id}/${type}`)
+      if(status===200){
+        return Promise.resolve();
+      }else{
+        return Promise.reject();
+      }
+      
+    } catch (error) {
+      Promise.reject()
+    }
+  }

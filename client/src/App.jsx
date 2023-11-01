@@ -11,6 +11,7 @@ import FeedBack from "./pages/feedback/feedback";
 import AdminLogin from "./adminModule/adminLogin/adminLogin";
 import AdminDashboard from "./adminModule/dashboard/dashboard";
 import { AuthorisedAdmin } from "./helper/adminauth";
+import UserReviews from "./adminModule/userReviews/userReviews";
 
 const router=createBrowserRouter([
   {
@@ -45,7 +46,13 @@ const router=createBrowserRouter([
     element:<AdminLogin/>
   },{
     path:'/admindashboard',
-    element:<AuthorisedAdmin><AdminDashboard/></AuthorisedAdmin>
+    // element:<AuthorisedAdmin><AdminDashboard/></AuthorisedAdmin>
+    element:<AdminDashboard/>
+
+  },
+  {
+    path:"/reviewfeedback",
+    element:<UserReviews/>
   }
 ])
 

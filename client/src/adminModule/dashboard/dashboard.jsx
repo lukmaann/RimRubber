@@ -1,32 +1,50 @@
-import { useNavigate } from "react-router-dom"
-import { logoutUser } from "../../helper/loginHelper"
-import toast, { Toaster } from "react-hot-toast"
+import { Toaster } from "react-hot-toast";
+import Style from "./dashboard.module.css";
+import AdminHeader from "../adminComponents/admin-header/adminheader";
+// import { sampledata } from "../../data/sample";
+import ReviewAds from "../adminComponents/reviewads/reviewad";
+import { useFecthAds } from "../../hooks/usefecthad";
+const AdminDashboard = () => {
+
+  const [{apiData,isLoading}]=useFecthAds({type:'pending'});
+
+  
+if(isLoading){
+  return <div>Loading</div>
+}else{
 
 
-const AdminDashboard=()=>{
-
-    const navigate=useNavigate()
 
 
-    const logout=()=>{
-        const lo=logoutUser();
-        toast.promise(lo,{
-            loading:"logging out",
-            error:"error",
-            success:"Loged out"
-        })
-        lo.then(()=>navigate('/adminlogin'))
-    }
-    
+  return (
+    <div>
+      <Toaster position="top-center" />
+      <div className={Style.main}>
+        <AdminHeader />
 
-    return <div>
-    <Toaster position="top-center"/>
+        <div>
+          {apiData.Items.map((item, index) => {
+            return (
+              <ReviewAds
+                image={item.image}
+                key={index}
+                seller={item.seller}
+                price={item.price}
+                description={item.description}
+                rim={item.rim}
+                profile={item.profile}
+                width={item.width}
+                id={item._id}
+                brand={item.brand}
 
-
-    <button onClick={logout} className="p-3 border m-10 border-black">Logout</button>
-
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
-
+  );
 }
+};
 
-export default AdminDashboard
+export default AdminDashboard;

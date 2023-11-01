@@ -1,0 +1,4 @@
+.main{
+    @apply min-h-screen bg-gradient-to-b from-black via-gray-950
+     to-gray-900 flex flex-col  items-center 
+}

@@ -24,3 +24,17 @@ export const delad=async(req,res)=>{
    res.status(500).json({error:error.message})
   }
 }
+
+export const getAds=async(req,res)=>{
+  try {
+    const {status}=req.params;
+    const Items=await Item.find({status});
+
+    res.status(200).json({Items})
+
+
+    
+  } catch (error) {
+    res.status(500).json({error:error.message})
+  }
+}

@@ -1,0 +1,53 @@
+.main{
+    @apply w-[95vw] border my-2  rounded-sm bg-gradient-to-br from-black to-gray-950 border-gray-800 h-[30vh]  flex justify-between items-center  text-white  capitalize
+}
+
+.img{
+    @apply h-[100%]  object-contain w-[20%]
+}
+
+.content{
+    @apply mx-10
+}
+
+.description{
+    @apply  p-2
+}
+
+.btnbox{
+    @apply w-[20%]  flex flex-col justify-center items-center my-10
+}
+
+.btnbox button{
+    @apply p-2 block m-2 bg-white  text-black rounded-md w-[150px]
+}
+
+.btnbox :nth-child(2){
+    @apply bg-purple-600 text-white
+}
+
+@media only screen and (max-width:600px) {
+    .main{
+        @apply h-[90vh] flex-col justify-between 
+    }
+    .btnbox{
+        @apply w-[90%] flex flex-row justify-between my-10
+    }
+
+    .btnbox button{
+        @apply p-2    rounded-md w-[150px]
+    }
+
+    .img{
+        @apply  h-[50%]  w-[90%]
+
+    }
+
+    .content{
+        @apply flex justify-between w-[90%] mt-5 text-lg bg-gray-600 p-4 rounded-lg   mb-5
+    }
+
+    .description{
+        @apply w-[90%]
+    }
+}

@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import demoImage from "../../assets/demoimg.png"
-import { delAd } from "../../helper/adsHelper"
+import { delAd, updateAdsStatus } from "../../helper/adsHelper"
 import Style from "./ads.module.css"
 import { myAdsStore } from "../../store/store"
 import { toast } from "react-hot-toast"
 
 const AdComponent=(props)=>{
-    const removeAds=myAdsStore((state)=>state.removeAds)
+    const myads=myAdsStore((state)=>state)
 
     const {image,brand,price,id,status}=props
     const delItem=()=>{
@@ -15,7 +15,7 @@ const AdComponent=(props)=>{
             success:"Ad deleted",
             error:"error"
         })
-        removeAds(id)
+        myads.removeAds(id)
 
     }
 
@@ -28,6 +28,19 @@ const AdComponent=(props)=>{
     statusbg='bg-red-500'
    }else if(status==='sold'){
     statusbg='bg-purple-500'
+   }
+
+   const updateAd=()=>{
+    const update=updateAdsStatus({type:'sold',id});
+    toast.promise(update,{
+        loading:"Updating status",
+        error:"cant update now",
+        success:"Status updated"
+    })
+
+    update.then(()=>{
+        myads.updateAdStatus({id:id,status:'sold'})
+    })
    }
     
     return (
@@ -42,7 +55,7 @@ const AdComponent=(props)=>{
            <h1 className={statusbg} >{status}</h1>
            </div>
            <div className="flex flex-col">
-            <button>Mark as sold</button>
+            <button onClick={updateAd}>Mark as sold</button>
             <button onClick={delItem}> Delete Ad</button>
            </div>
 

@@ -20,7 +20,8 @@ export const useUserStore=create((set)=>({
 export const myAdsStore=create((set)=>({
     ads:[],
     setAds:(data)=>set({ads:data}),
-    removeAds:(id)=>set((state)=>({ads:state.ads.filter((ad)=>ad._id!==id)}))
+    removeAds:(id)=>set((state)=>({ads:state.ads.filter((ad)=>ad._id!==id)})),
+    updateAdStatus:({id,status})=>set((state)=>({ads:state.ads.map((item)=>item._id===id ? {...item,status:status}:item)}))
     
 }))
 

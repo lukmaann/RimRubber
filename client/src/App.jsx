@@ -12,6 +12,7 @@ import AdminLogin from "./adminModule/adminLogin/adminLogin";
 import AdminDashboard from "./adminModule/dashboard/dashboard";
 import { AuthorisedAdmin } from "./helper/adminauth";
 import UserReviews from "./adminModule/userReviews/userReviews";
+import ConstructionPage from "./pages/construction/constructionPage";
 
 const router=createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router=createBrowserRouter([
   },
   {
     path:"/buyitem",
-    element:<BuyItem/>
+    element:<ConstructionPage/>
   },
   {
     path:"/identifysize",
@@ -56,7 +57,7 @@ const router=createBrowserRouter([
   },
   {
     path:"/lukmaan",
-    element:<div>Lukmaan</div>
+    element:<div className="bg-black">Lukmaan</div>
   }
 ])
 

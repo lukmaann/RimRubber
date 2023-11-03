@@ -23,7 +23,7 @@ const Header = () => {
       <div>
         <ul className="flex">
           {authenticated && (
-            <li className={`${Style.navItem}  text-yellow-400`}>
+            <li className={`${Style.navItem}  `}>
               <button
                 onClick={() => {
                   navigate("/feedback");

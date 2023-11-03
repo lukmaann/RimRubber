@@ -1,0 +1,16 @@
+.main{
+    @apply h-[100vh] bg-gradient-to-b from-black via-gray-950 to-gray-900 flex flex-col justify-start items-center
+}
+
+.main h1{
+    @apply text-2xl text-gray-500 capitalize
+}
+
+.main button{
+    transition:  all ease-in-out 0.3s;
+    @apply p-2 border m-10 bg-black text-white capitalize px-3 border-b-2 rounded-sm
+}
+
+.main button:hover{
+    @apply bg-white text-black
+}

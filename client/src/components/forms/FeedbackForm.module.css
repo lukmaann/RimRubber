@@ -3,11 +3,14 @@
 }
 
 .selectors{
-    @apply bg-gray-400 h-[60px] rounded-sm items-center px-2 flex justify-between text-black
+    /* transition: all ease-in-out 0.5s; */
+    @apply  h-[60px] rounded-sm items-center px-3 flex justify-between text-white 
 }
 
 .selected{
-    @apply bg-white p-2 rounded-sm 
+    transition:   linear 0.2s;
+
+    @apply bg-gray-800 p-2 rounded-sm  px-3 rounded border 
 }
 
 .selectcontent h1{

@@ -1,15 +1,27 @@
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header/header";
 import Style from "./landingPage.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SignupForm from "../../components/login/signupForm";
 import LoginForm from "../../components/login/loginForm";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { loadServer } from "../../helper/loginHelper";
 
 const LandingPage = () => {
   const navigate = useNavigate();
   const [login, selectLogin] = useState("signUp");
+
+  useEffect(()=>{
+
+    toast.promise(loadServer(),{
+      loading:"Booting server",
+      success:"server started",
+      error:"Network not available"
+    })
+  },[])
+
+
   return (
     <div>
       <Toaster position="top-center"></Toaster>

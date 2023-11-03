@@ -116,3 +116,19 @@ export const loginAdmin=async(values)=>{
     return Promise.reject(error.message)
   }
 }
+
+
+// -------------------------------------load server----------------------------------/
+
+export const loadServer=async()=>{
+  try {
+    const {status}=await axios.get('/');
+    if(status===200){
+      Promise.resolve()
+    }else{
+      Promise.reject()
+    }
+  } catch (error) {
+    Promise.reject()
+  }
+}

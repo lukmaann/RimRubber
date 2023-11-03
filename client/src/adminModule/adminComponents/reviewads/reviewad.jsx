@@ -58,7 +58,7 @@ const ReviewAds = (props) => {
       <img src={image} alt="img" className={Style.img} />
 
       <div className={Style.content}>
-        <h1>Seller : {seller}</h1>
+        <h1>Seller : {seller.username}</h1>
         <h1> ₹ {price}</h1>
       </div>
       <div className={Style.description}>

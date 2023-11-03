@@ -28,7 +28,7 @@ export const delad=async(req,res)=>{
 export const getAds=async(req,res)=>{
   try {
     const {status}=req.params;
-    const items=await Item.find({status});
+    const items=await Item.find({status}).populate('seller');
 
     res.status(200).json({items})
 

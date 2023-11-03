@@ -11,7 +11,7 @@
 }
 
 .description{
-    @apply  p-2
+    @apply  p-2 w-[300px]
 }
 
 .btnbox{

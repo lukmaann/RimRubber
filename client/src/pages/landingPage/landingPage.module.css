@@ -25,7 +25,7 @@
 }
 
 .adminbtn{
-  @apply w-[100%] p-2 text-gray-100 border capitalize rounded-sm  shadow-md shadow-gray-500 border-white
+  @apply w-[100%] p-2 text-gray-100 border capitalize rounded-sm   border-white
 }
 
 @media only screen and (max-width:600px){

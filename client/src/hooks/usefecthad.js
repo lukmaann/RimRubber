@@ -41,8 +41,6 @@ export const useFecthMyAds = () => {
   return [getdata, setdata];
 };
 
-
-
 // -------------------------------------fecth ads based on status--------------------
 
 export const useFecthAds = (query) => {
@@ -81,4 +79,41 @@ export const useFecthAds = (query) => {
   }, []);
 
   return [data, setdata];
+};
+
+
+
+export const useSingleAd = (query) => {
+  const [getdata, setdata] = useState({
+    apidata: null,
+    serverError: null,
+    isLoading: true,
+    status: null,
+  });
+
+  useEffect(() => {
+    const fecth = async () => {
+      const { id } = query;
+
+      try {
+        setdata((prev) => ({ ...prev, isLoading: true }));
+        const { status, data } = await axios.get(`/getsinglead/${id}`);
+        if (status === 200) {
+          setdata((prev) => ({ ...prev, isLoading: false }));
+          setdata((prev) => ({ ...prev, apidata: data }));
+        }
+        setdata((prev) => ({ ...prev, isLoading: false }));
+      } catch (error) {
+        setdata((prev) => ({
+          ...prev,
+          isLoading: false,
+          serverError: error.message,
+        }));
+      }
+    };
+
+    fecth();
+  }, []);
+
+  return [getdata, setdata];
 };

@@ -70,3 +70,24 @@ export const sampledata = [
   },
   
 ]
+
+
+export const sampleMyad={
+  data:{
+    brand: "MRF",
+    createdAt: "2023-10-22T13:25:16.728Z",
+    image:"http://res.cloudinary.com/dtjcwbf9t/image/upload/v1698661266/f0f8bekthj1oxbqqyw0l.png",
+
+    description: "its nice but i want new ",
+    location: "Belgaum",
+    price: 900,
+    profile: "70",
+    rim: "14",
+    seller: "lukmaan",
+    updatedAt: "2023-10-22T13:25:16.728Z",
+    width: "175",
+    status:'rejected',
+    __v: 0,
+    _id: "653522bc9256a1b8c1f75a35",
+  }
+}

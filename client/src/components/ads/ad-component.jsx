@@ -4,8 +4,11 @@ import { delAd, updateAdsStatus } from "../../helper/adsHelper"
 import Style from "./ads.module.css"
 import { myAdsStore } from "../../store/store"
 import { toast } from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
 
 const AdComponent = (props) => {
+
+    const navigate=useNavigate()
     const myads = myAdsStore((state) => state)
 
     const { image, brand, price, id, status } = props
@@ -52,7 +55,7 @@ const AdComponent = (props) => {
     }
 
     return (
-        <div className={Style.main}>
+        <div className={Style.main} onClick={()=>navigate('/singlead',{state:{id}})}>
             <div className={Style.topdiv}>
                 <h1 className={Style.tag}>my Ad</h1>
 

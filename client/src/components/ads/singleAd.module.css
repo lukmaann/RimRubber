@@ -1,0 +1,69 @@
+.main{
+    @apply min-h-screen p-10 capitalize bg-black border-b text-white justify-between  flex
+}
+
+.topdiv{
+    @apply w-[50%] min-h-[80vh] border border-gray-800 shadow-sm
+}
+
+.topdiv img{
+    @apply w-[100%] min-h-[100%] object-contain bg-black
+}
+
+.bottomdiv {
+    @apply w-[40%] min-h-[80vh] p-5
+}
+
+.price{
+    @apply w-[90%] mx-auto h-[30%] bg-gray-900 rounded-sm p-5 my-2
+}
+
+.price h1{
+    @apply text-3xl font-bold capitalize mb-5
+}
+
+
+.details {
+    @apply w-[90%] mx-auto min-h-[65%] bg-gray-900 my-2 p-5 rounded-sm
+}
+
+.price h2{
+    @apply text-gray-500
+}
+
+.detailsname{
+    @apply text-gray-400
+}
+
+.buttonbox{
+    @apply w-[90%] mt-10
+}
+
+.buttonbox button {
+    @apply p-2 border rounded-sm capitalize
+}
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply flex-col 
+    }
+
+    .topdiv{
+        @apply w-[100%] min-h-min mx-auto 
+    }
+
+    .topdiv img{
+        @apply w-[100%]
+    }
+
+    .bottomdiv{
+        @apply w-[100%] p-0 m-0 
+    }
+
+    .details{
+        @apply w-[100%]
+    }
+    .price{
+        @apply w-[100%]
+    }
+}

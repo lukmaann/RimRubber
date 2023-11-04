@@ -25,4 +25,3 @@ export const myAdsStore=create((set)=>({
     
 }))
 
-

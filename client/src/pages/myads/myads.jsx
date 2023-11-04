@@ -7,8 +7,7 @@ import { useFecthMyAds } from "../../hooks/usefecthad";
 import { myAdsStore } from "../../store/store";
 import AdComponent from "../../components/ads/ad-component";
 import { useNavigate } from "react-router-dom";
-import { ColorRing } from 'react-loader-spinner'
-
+import Loadingscreen from "../../components/widjets/loadingsppiner";
 const Myads = () => {
   const [getdata] = useFecthMyAds();
   const navigate = useNavigate()
@@ -18,25 +17,7 @@ const Myads = () => {
 
   if (getdata.isLoading) {
     return (
-      <div className={Style.main}>
-        <Toaster position="top-center"></Toaster>
-        <Header />
-
-        <div className={Style.topdiv}>
-          <div className="w-[100%] justify-center items-center flex">
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#111827','#111827','#111827','#111827','#111827']}
-          />
-          </div>
-        </div>
-        <Footer />
-      </div>
+      <Loadingscreen/>
     );
   } else {
     return (

@@ -20,11 +20,11 @@ const AdminHeader = () => {
   const logout=()=>{
     const lo=logoutUser();
     toast.promise(lo,{
-        loading:"logging out",
+        loading:"Logging out",
         error:"error",
-        success:"Loged out"
+        success:"Logged Out"
     })
-    lo.then(()=>navigate('/adminlogin'))
+    lo.then(()=>navigate('/'))
 }
 
   return (

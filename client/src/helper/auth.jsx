@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useUserStore } from "../store/store";
+import { ColorRing } from "react-loader-spinner";
 import axios from "../helper/axiosConfig"
 
 export const AuthorisedUser = ({ children }) => {
@@ -47,7 +48,19 @@ export const AuthorisedUser = ({ children }) => {
   }, []);
 
   if(data.isLoading){
-    return <div>Loading</div>
+    return <div className="w-[100vw] h-screen bg-gradient-to-b from-black via-gray-950 p-20 to-gray-900">
+    <div className="w-[100%] justify-center items-center flex ">
+    <ColorRing
+      visible={true}
+      height="80"
+      width="80"
+      ariaLabel="blocks-loading"
+      wrapperStyle={{}}
+      wrapperClass="blocks-wrapper"
+      colors={['#111827','#111827','#111827','#111827','#111827']}
+    />
+    </div>
+  </div>
   }
 
   if (!data.authenticated || data.isadmin ) {

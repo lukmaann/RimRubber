@@ -15,10 +15,11 @@ const LandingPage = () => {
   useEffect(()=>{
 
     toast.promise(loadServer(),{
-      loading:"Booting server",
+      loading:"Booting up the server",
       success:"server started",
       error:"Network not available"
     })
+
   },[])
 
 

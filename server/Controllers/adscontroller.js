@@ -52,3 +52,21 @@ export const updateadsstatus=async(req,res)=>{
     res.status(500).send({error:error.message})
   }
 }
+
+export const getSingleAd=async(req,res)=>{
+
+  try {
+
+    const {id}=req.params;
+    console.log(id);
+    const item= Item.findById(id).populate('seller');
+    item.then((data)=>{
+    res.status(200).json({data})
+
+    })
+
+    
+  } catch (error) {
+    res.status(500).json({error:error.message})
+  }
+}

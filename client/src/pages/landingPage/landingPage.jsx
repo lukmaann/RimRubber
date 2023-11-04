@@ -34,7 +34,7 @@ const LandingPage = () => {
             RimRubber is a web app for buying and selling second-hand tyres.
             List your tire or buy one by creating an account or logging in.
           </h2>
-        </div>``
+        </div>
 
         <div>
         <div className="flex w-[350px]    py-3 justify-around">

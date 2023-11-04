@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/footer";
 import Style from "./myads.module.css";
 import { Toaster } from "react-hot-toast";
 import {useFecthMyAds} from "../../hooks/usefecthad";
-// import { sampledata } from "../../../data/sample";
+// import { sampledata } from "../../data/sample";
 import { myAdsStore } from "../../store/store";
 import AdComponent from "../../components/ads/ad-component";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const Myads = () => {
           <div>
             
          <h1> You havent posted Anything yet</h1>
-         <button onClick={()=>navigate('/sellitem')} className="bg-yellow-400 rounded-sm p-2  text-black my-5 ">Sell your Tyre</button>
+         <button onClick={()=>navigate('/sellitem')} className=" border  rounded-sm p-2 capitalize text-white my-5 ">Start selling now</button>
           </div>
           
           

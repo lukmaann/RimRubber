@@ -1,45 +1,81 @@
-.main{
-    @apply m-2 h-[150px] flex items-center p-5 justify-between border
+
+.main {
+    @apply w-[90%] m-auto h-[310px] border-b-4 border-l-4 border rounded-md my-5 bg-black border-gray-900 flex relative
 }
 
-.main h1{
-    @apply capitalize font-bold
+
+
+.tag{
+    @apply absolute capitalize text-gray-600 font-bold underline underline-offset-2  top-5 left-0 rotate-[-45deg]
 }
 
-.main button{
-    @apply bg-white text-black rounded-md p-2 m-2
-}
 
-.img{
-    @apply w-[100px] h-[100px]
-}
 
 .topdiv{
-    @apply flex gap-5 items-center w-[20%]
+    @apply h-[100%] w-[50%]  m-auto flex justify-start items-center p-10
 }
 
-.middiv{
-    @apply flex justify-between m-2 gap-2 w-[50%] 
+.topdiv img{
+    @apply w-[5vw]  rounded-md mr-5
 }
-.middiv h1{
-    @apply  p-1 px-2 rounded-sm text-black font-thin
+
+.topdiv .price{
+    @apply text-lg capitalize text-gray-400
 }
+
+
+.bottomdiv{
+    @apply p-2 w-[50%] h-[100%] flex items-center justify-between
+}
+.bottomdiv button{
+    @apply  my-3 mt-4 border px-3 w-[100px] rounded-xl capitalize border-black
+}
+
+.bottomdiv h1{
+    @apply px-2
+}
+.buttonbox{
+    @apply w-min
+
+}
+.buttonbox button{
+    @apply w-[200px] border border-white p-2 m-2 block
+}
+
+
 
 @media only screen and (max-width:600px){
-    .main{
-        @apply block h-min
-    }
-
-    .img{
-        @apply w-[200px] h-[200px] bg-white
-    }
-
-    .topdiv{
-        @apply flex flex-col w-[90%]
+    .main {
+        @apply w-[100%]  border-b-4 border-l-4 border rounded-md my-5 bg-black border-gray-900 flex-col
     }
     
-
-    .middiv{
-        @apply w-[90%]
+    .topdiv{
+        @apply h-[50%] w-[95%] border-b border-gray-800 m-auto flex justify-start items-center 
+    }
+    
+    .topdiv img{
+        @apply w-[30%] h-[100%] rounded-md mr-5
+    }
+    
+    .topdiv .price{
+        @apply text-lg capitalize text-gray-400
+    }
+    
+    
+    .bottomdiv{
+        @apply p-2 w-[95%] h-[50%] flex items-start justify-between  mx-auto flex-col
+    }
+    .bottomdiv button{
+        @apply  my-3 mt-4 border px-3 w-[100px] rounded-xl capitalize border-black
+    }
+    
+    .bottomdiv h1{
+        @apply px-2 
+    }
+    .buttonbox{
+        @apply flex w-[100%] justify-between 
+    }
+    .buttonbox button{
+        @apply w-[45%] border border-gray-100 p-2 mb-2 
     }
 }

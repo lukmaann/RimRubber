@@ -1,4 +1,6 @@
 .topdiv {
-  @apply min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-900 p-10 text-white
+  @apply w-[100vw] min-h-screen bg-gradient-to-b from-black via-black to-black border-b p-2 text-white
   
 }
+
+

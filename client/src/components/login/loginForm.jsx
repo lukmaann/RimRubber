@@ -6,9 +6,11 @@ import { useState } from "react";
 import { LoginValidate } from "../../helper/validate";
 import { loginUser, userExist,googleauth } from "../../helper/loginHelper";
 import { useNavigate } from "react-router-dom";
+import { useUserStore } from "../../store/store";
 import toast from "react-hot-toast";
 
 const LoginForm = () => {
+  const {setUser}=useUserStore((state)=>state)
   const navigate = useNavigate();
 
   const [showPass, setShowPass] = useState(false);
@@ -32,7 +34,8 @@ const LoginForm = () => {
             error: "Invalid credentials",
             success: "Logged in successfully",
           });
-          login.then(() => {
+          login.then((data) => {
+            setUser(data)
             navigate("/home");
           });
         });

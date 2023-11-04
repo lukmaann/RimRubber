@@ -8,9 +8,11 @@ import { useLocation } from "react-router-dom";
 import PopUp from "../widjets/popUp";
 import MakeOffer from "../setting/makeOffer";
 import postAge from "../../helper/postage";
+import { useUserStore } from "../../store/store";
 // import {sampleMyad} from "../../data/sample"
 
 const SingleAd = () => {
+  const {user}=useUserStore((state)=>state)
   const location = useLocation();
   const id = location.state.id;
 
@@ -25,7 +27,7 @@ const SingleAd = () => {
   }
 
   return (
-    <div>
+    <div className={Style.cointainer}>
       <Header />
       <div className={Style.main}>
         <div className={Style.topdiv}>
@@ -46,7 +48,10 @@ const SingleAd = () => {
           <h2><span className={Style.detailsname}>profile size :</span> {apidata.data.profile}</h2>
           <h2><span className={Style.detailsname}>width :</span> {apidata.data.width}</h2>
           <div className={Style.buttonbox}>
-            <button onClick={()=>setModal(true)}>Make an Offer</button>
+          {
+           apidata.data.seller._id===user._id?<h1 className="w-full text-end">Ad {apidata.data.status}</h1> :<button onClick={()=>setModal(true)}>Make an Offer</button>
+
+          }
           </div>
 
 

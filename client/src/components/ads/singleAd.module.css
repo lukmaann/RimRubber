@@ -36,7 +36,7 @@
 }
 
 .buttonbox{
-    @apply w-[90%] mt-10
+    @apply w-[100%] mt-10
 }
 
 .buttonbox button {
@@ -44,8 +44,9 @@
 }
 
 @media only screen and (max-width:600px){
+    
     .main{
-        @apply flex-col 
+        @apply flex-col w-[100%] p-5 m-0
     }
 
     .topdiv{

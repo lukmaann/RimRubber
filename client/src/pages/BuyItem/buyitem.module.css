@@ -1,0 +1,15 @@
+.main{
+    @apply min-h-screen flex flex-col  items-center text-white w-[100vw] bg-gradient-to-b from-black via-gray-950 to-gray-950
+}
+
+.heading{
+    @apply p-2 m-5 text-3xl text-gray-600 capitalize
+}
+
+.topdiv{
+    @apply w-[300px]
+}
+
+.findbtn{
+    @apply p-3 border w-full my-5 
+}

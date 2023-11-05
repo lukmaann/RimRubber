@@ -3,6 +3,7 @@ import { useTyreSizeStore } from "../../store/store";
 import { useState } from "react";
 import HelpIcon from '@mui/icons-material/Help';
 import { Link } from "react-router-dom";
+import AdsClickIcon from '@mui/icons-material/AdsClick';
 
 const TyreSize = () => {
   const store = useTyreSizeStore((state) => state);
@@ -78,7 +79,7 @@ const TyreSize = () => {
 
   return (
    <div className="w-[100%]">
-         <Link className={`${Style.helplink} `} to={"/identifysize"}><HelpIcon fontSize="small" className="text-yellow-400"/> Identify Tyre Size </Link>
+         <Link className={`${Style.helplink} `} to={"/identifysize"}><HelpIcon fontSize="small" className="text-yellow-400"/> Identify Tyre Size <AdsClickIcon fontSize="smal"/> </Link>
 
      <div className="flex  justify-start gap-3 max-sm:justify-between mt-2 w-[100%] px-1">
 

@@ -1,0 +1,22 @@
+.main{
+    @apply min-h-screen bg-black text-white 
+}
+
+.txt{
+    @apply w-[100%] p-2 text-gray-500 font-bold border-gray-700  mx-auto flex justify-between 
+}
+
+.txt h1:nth-child(2){
+    @apply bg-purple-400 px-2 rounded-xl text-black
+}
+
+.itemcointainer{
+    @apply w-[95%] p-1  flex  mx-auto h-min justify-between items-center
+}
+
+
+@media only screen and (max-width:600px){
+    .itemcointainer{
+        @apply  flex-wrap
+    }
+}

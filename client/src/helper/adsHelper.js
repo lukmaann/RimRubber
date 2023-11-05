@@ -73,3 +73,19 @@ export const delAd = async (id) => {
       Promise.reject()
     }
   }
+
+  // --------------------------------------------findads by width-------------------
+
+  export const findAdsByWidth=async(value)=>{
+    try {
+      const {width}=value;
+
+      const {status,data}=await axios.post('/findbywidth',{width})
+      if(status===200){
+
+        return Promise.resolve(data)
+      }
+    } catch (error) {
+      Promise.reject(error.message)
+    }
+  }

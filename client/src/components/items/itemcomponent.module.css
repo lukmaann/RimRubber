@@ -1,0 +1,21 @@
+.main{
+    @apply w-[300px] h-[300px] p-1 border m-2 mx-auto rounded border-gray-700 bg-gradient-to-r from-black via-gray-900 to-gray-800
+}
+
+.img{
+    @apply w-[100%] h-[60%] bg-white rounded  
+}
+
+.img img{
+    @apply object-cover w-[100%] h-[100%] mx-auto 
+}
+
+.topdiv{
+    @apply w-full flex 
+}
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply w-[180px]
+    }
+}

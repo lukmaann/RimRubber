@@ -4,7 +4,7 @@ import LandingPage from "./pages/landingPage/landingPage";
 import Home from "./pages/Home/home";
 import { AuthorisedUser } from "./helper/auth";
 import SellItem from "./pages/SellItems/sellitem";
-// import BuyItem from "./pages/BuyItem/buyitem";
+import BuyItem from "./pages/BuyItem/buyitem";
 import TyreSizeHelp from "./pages/help/tyresizehelp";
 import Myads from "./pages/myads/myads";
 import FeedBack from "./pages/feedback/feedback";
@@ -12,8 +12,9 @@ import AdminLogin from "./adminModule/adminLogin/adminLogin";
 import AdminDashboard from "./adminModule/dashboard/dashboard";
 // import { AuthorisedAdmin } from "./helper/adminauth";
 import UserReviews from "./adminModule/userReviews/userReviews";
-import ConstructionPage from "./pages/construction/constructionPage";
+// import ConstructionPage from "./pages/construction/constructionPage";
 import SingleAd from "./components/ads/singleAd";
+import Items from "./pages/Items/items";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/buyitem",
-    element: <ConstructionPage />,
+    element: <BuyItem />,
   },
   {
     path: "/identifysize",
@@ -70,7 +71,10 @@ const router = createBrowserRouter([
   {
     path:'/singlead',
     element:<SingleAd/>
-  },
+  },{
+    path:'/resultitems',
+    element:<Items/>
+  }
 ]);
 
 const App = () => {

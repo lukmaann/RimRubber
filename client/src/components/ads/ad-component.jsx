@@ -55,8 +55,8 @@ const AdComponent = (props) => {
     }
 
     return (
-        <div className={Style.main} onClick={()=>navigate('/singlead',{state:{id}})}>
-            <div className={Style.topdiv}>
+        <div className={Style.main} >
+            <div className={Style.topdiv} onClick={()=>navigate('/singlead',{state:{id}})}>
                 <h1 className={Style.tag}>my Ad</h1>
 
                 <img src={image || demoImage} alt="" />

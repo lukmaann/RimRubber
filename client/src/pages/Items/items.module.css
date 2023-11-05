@@ -11,7 +11,12 @@
 }
 
 .itemcointainer{
-    @apply w-[95%] p-1  flex  mx-auto h-min justify-between items-center
+    @apply w-[95%] p-1  flex  mx-auto h-min justify-between items-center flex-wrap
+}
+
+
+.filter{
+    @apply p-2 flex justify-between w-[300px] mx-auto
 }
 
 

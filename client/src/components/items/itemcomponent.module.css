@@ -1,5 +1,5 @@
 .main{
-    @apply w-[300px] h-[300px] p-1 border m-2 mx-auto rounded border-gray-700 bg-gradient-to-r from-black via-gray-900 to-gray-800
+    @apply min-w-[300px]  h-[300px] p-1 border m-2 mx-auto rounded border-gray-700 bg-gradient-to-r from-black via-gray-900 to-gray-800
 }
 
 .img{

@@ -28,5 +28,6 @@ export const myAdsStore=create((set)=>({
 
 export const buyItemstore=create((set)=>({
     ads:[],
-    setAds:(data)=>set({ads:data})
+    
+    setAds:(data)=>set({ads:data}),
 }))

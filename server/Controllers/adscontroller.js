@@ -1,4 +1,5 @@
 import Item from "../models/itemsmodel.js";
+import {sampledata} from "../../client/src/data/sample.js"
 
 export const getMyAd = async (req, res) => {
   try {
@@ -57,8 +58,8 @@ export const getSingleAd = async (req, res) => {
 
 export const findItemsByWidth = async (req, res) => {
   try {
-    const { width } = req.body;
-    const items = await Item.find({ width: width, status: "active" }).populate(
+    const { width ,profile,rim} = req.body;
+    const items = await Item.find({ width: width, status: "active",profile }).populate(
       "seller"
     );
     if (!items) {
@@ -69,3 +70,10 @@ export const findItemsByWidth = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+
+
+export const feeddata=async(req,res)=>{
+  await Item.insertMany(sampledata())
+  res.send("done")
+}

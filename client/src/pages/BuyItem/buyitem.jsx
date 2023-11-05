@@ -12,14 +12,16 @@ import { useNavigate } from "react-router-dom";
 const BuyItem = () => {
   const navigate = useNavigate();
   const { setAds } = buyItemstore((state) => state);
-  const { width } = useTyreSizeStore((state) => state);
+  const { width,profile } = useTyreSizeStore((state) => state);
   const formik = useFormik({
     initialValues: {},
     validateOnBlur: false,
     validateOnChange: false,
-    onSubmit: async (value) => {
+    onSubmit:async(value)=>{
       value = Object.assign(value, { width });
-      const find = findAdsByWidth({ width: value.width });
+      value = Object.assign(value, { profile });
+
+      const find = findAdsByWidth({ width: value.width ,profile:value.profile });
       toast.promise(find, {
         loading: "Finding Items",
         error: "Cant find Item",

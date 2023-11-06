@@ -20,7 +20,6 @@ const TyreSize = () => {
   const widthchange = (e) => {
     const value = e.target.value;
     store.setwidth(value);
-    console.log(value);
 
     switch (value) {
       case "145":

@@ -25,7 +25,7 @@ const TyreSizeHelp = () => {
               setDimension(width);
               setsize(widthsize);
             }}
-            className={dimension === width && "bg-yellow-300 text-black p-2"}
+            className={dimension === width ? "bg-yellow-300 text-black p-2":""}
           >
             width
           </button>
@@ -34,7 +34,7 @@ const TyreSizeHelp = () => {
               setDimension(profile);
               setsize(profilesize);
             }}
-            className={dimension === profile && "bg-yellow-300 text-black p-2"}
+            className={dimension === profile ? "bg-yellow-300 text-black p-2":""}
           >
             Profile
           </button>
@@ -43,7 +43,7 @@ const TyreSizeHelp = () => {
               setDimension(rim);
               setsize(rimsize);
             }}
-            className={dimension === rim && "bg-yellow-300 text-black p-2"}
+            className={dimension === rim ? "bg-yellow-300 text-black p-2":""}
           >
             Rim
           </button>
@@ -51,22 +51,22 @@ const TyreSizeHelp = () => {
 
         <div className="flex w-[100vw] border-t-2 border-gray-400 items-center mt-4 p-5 max-sm:my-10 justify-around">
           <img src={size} alt="" className="w-[200px] my-10" />
-          {size === widthsize && (
+          {size === widthsize ? 
             <h1 className="text-white capitalize">
               Indicates the section width of a tyre in millimetres.
-            </h1>
-          )}
-          {size === profilesize && (
+            </h1>:undefined
+          }
+          {size === profilesize ?
             <h1 className="text-white capitalize">
               The sidewall height measured from the base of the tread to the
               rim.
-            </h1>
-          )}
-          {size === rimsize && (
+            </h1>:undefined
+          }
+          {size === rimsize ? 
             <h1 className="text-white capitalize">
               Indicates the diameter of the wheel rim..
-            </h1>
-          )}
+            </h1>:undefined
+          }
         </div>
       </div>
       <Footer />

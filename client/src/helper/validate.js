@@ -64,3 +64,16 @@ export const SignUpValidate = async (values) => {
 };
 
 
+ const tyreSizeVerify=(error={},value)=>{
+  if(!value.width||!value.profile){
+   return error.tyreSize=toast.error("Select the tyre Size Please")
+  }
+}
+
+export const tyreSizevalidate= async(values)=>{
+
+  const error=tyreSizeVerify({},values);
+  return error
+
+
+}

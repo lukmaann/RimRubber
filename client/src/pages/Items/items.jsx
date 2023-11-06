@@ -20,7 +20,7 @@ const Items = () => {
       
 
       <div className="text-center">
-      <h1>Selected Range {query}</h1>
+      <h1>Selected Range  ₹{query}</h1>
       <div className={Style.filter}>
       1000
       <input type="range" defaultValue={2500}  min={1000} max={3000} onChange={e=>setQuery(e.target.value)}/>

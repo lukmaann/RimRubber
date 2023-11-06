@@ -1,4 +1,5 @@
 import {create} from "zustand"
+import {persist} from "zustand/middleware"
 
 
 export const useTyreSizeStore=create((set)=>({
@@ -12,22 +13,24 @@ export const useTyreSizeStore=create((set)=>({
 }))
 
 
-export const useUserStore=create((set)=>({
+export const useUserStore=create(persist((set)=>({
     user:null,
     setUser:(data)=>set({user:data})
-}))
+}),{name:"user"}))
 
-export const myAdsStore=create((set)=>({
+export const myAdsStore=create(persist((set)=>({
     ads:[],
     setAds:(data)=>set({ads:data}),
     removeAds:(id)=>set((state)=>({ads:state.ads.filter((ad)=>ad._id!==id)})),
     updateAdStatus:({id,status})=>set((state)=>({ads:state.ads.map((item)=>item._id===id ? {...item,status:status}:item)}))
     
-}))
+}),{name:"my ads"}))
 
 
-export const buyItemstore=create((set)=>({
+export const buyItemstore=create(persist((set)=>({
     ads:[],
     
     setAds:(data)=>set({ads:data}),
+}),{
+    name:"find ads"
 }))

@@ -28,7 +28,7 @@ const MakeOffer = (props) => {
       <div className={Style.btnbox}>
         {prices.map((item, index) => {
           return (
-            <button onClick={handleclick} key={index} value={item}>
+            <button onClick={handleclick} key={index} className={item==formik.values.price?Style.selected:""} value={item}>
             ₹{item}
             </button>
           );

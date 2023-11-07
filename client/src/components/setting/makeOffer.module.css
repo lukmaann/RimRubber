@@ -3,26 +3,29 @@
 }
 
 .btnbox {
-@apply w-full flex justify-between
+@apply w-[90%] flex justify-between mx-auto border border-black rounded-sm
 }
 
 .btnbox button{
-    transition: all ease-in-out 0.3s;
-    @apply border p-1 border-black px-3 rounded-md
+    flex: 1;
+    transition: all ease-in-out 0.2s;
+    @apply  p-1 border-black  
 }
 
-.btnbox button:hover{
-    @apply text-white bg-black
-}
+
 
 .inputFeild{
     @apply my-2  flex-col flex w-full
 }
 
 .inputFeild input{
-    @apply  p-2 border border-gray-700 rounded-lg w-full focus:outline-none
+    @apply  p-2 border border-gray-300 rounded-lg w-[90%] focus:outline-none mx-auto
+}
+
+.selected{
+    @apply bg-gray-800 text-white
 }
 
 .inputFeild button{
-    @apply p-2 px-4 bg-gray-800 m-2 text-white w-full mx-auto
+    @apply p-2 px-4 bg-gray-800 m-2 text-white w-[90%] mx-auto
 }

@@ -1,3 +1,28 @@
 .main{
-    @apply w-[300px]
+    @apply w-[300px] 
+}
+
+.btnbox {
+@apply w-full flex justify-between
+}
+
+.btnbox button{
+    transition: all ease-in-out 0.3s;
+    @apply border p-1 border-black px-3 rounded-md
+}
+
+.btnbox button:hover{
+    @apply text-white bg-black
+}
+
+.inputFeild{
+    @apply my-2  flex-col flex w-full
+}
+
+.inputFeild input{
+    @apply  p-2 border border-gray-700 rounded-lg w-full focus:outline-none
+}
+
+.inputFeild button{
+    @apply p-2 px-4 bg-gray-800 m-2 text-white w-full mx-auto
 }

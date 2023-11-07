@@ -58,7 +58,7 @@ const SingleAd = () => {
           </div>
         </div>
         <PopUp openPopUp={modal} setopenPopup={setModal} title={" Select Amount"}>
-          <MakeOffer/>
+          <MakeOffer price={apidata.data.price}/>
         </PopUp>
       </div>
 

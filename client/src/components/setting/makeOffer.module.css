@@ -1,5 +1,5 @@
 .main{
-    @apply w-[300px] 
+    @apply w-[300px] max-sm:w-[250px]
 }
 
 .btnbox {

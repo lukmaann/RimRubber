@@ -10,6 +10,7 @@ import authRoute from "./Routes/auth.js";
 import sellRoute from "./Routes/sellRoutes.js";
 import adRoutes from "./Routes/adRoute.js";
 import feedbackRoutes from "./Routes/feedbackRoutes.js"
+import offerRoute from "./Routes/offerRoutes.js"
 import {v2 as cloudinary} from 'cloudinary';
 
 
@@ -90,7 +91,8 @@ app.use("/api", loginRoutes);
 app.use("/auth", authRoute);
 app.use("/api", sellRoute);
 app.use("/api", adRoutes);
-app.use("/api",feedbackRoutes)
+app.use("/api",feedbackRoutes);
+app.use("/api",offerRoute);
 
 connectDB().then(() => {
   app.listen(process.env.PORT || 3000, () => {

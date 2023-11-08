@@ -9,6 +9,7 @@ import PopUp from "../widjets/popUp";
 import MakeOffer from "../setting/makeOffer";
 import postAge from "../../helper/postage";
 import { useUserStore } from "../../store/store";
+import {Toaster} from "react-hot-toast";
 // import {sampleMyad} from "../../data/sample"
 
 const SingleAd = () => {
@@ -28,6 +29,7 @@ const SingleAd = () => {
 
   return (
     <div className={Style.cointainer}>
+    <Toaster position="top-center"/>
       <Header />
       <div className={Style.main}>
         <div className={Style.topdiv}>
@@ -58,7 +60,7 @@ const SingleAd = () => {
           </div>
         </div>
         <PopUp openPopUp={modal} setopenPopup={setModal} title={" Select Amount"}>
-          <MakeOffer price={apidata.data.price}/>
+          <MakeOffer price={apidata.data.price} id={apidata.data._id}/>
         </PopUp>
       </div>
 

@@ -89,3 +89,5 @@ export const delAd = async (id) => {
       Promise.reject(error.message)
     }
   }
+
+  

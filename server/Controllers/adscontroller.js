@@ -25,7 +25,7 @@ export const delad = async (req, res) => {
 export const getAds = async (req, res) => {
   try {
     const { status } = req.params;
-    const items = await Item.find({ status }).populate("seller");
+    const items = await Item.find({ status }).populate("seller").populate('offers');
 
     res.status(200).json({ items });
   } catch (error) {
@@ -47,7 +47,7 @@ export const updateadsstatus = async (req, res) => {
 export const getSingleAd = async (req, res) => {
   try {
     const { id } = req.params;
-    const item = Item.findById(id).populate("seller");
+    const item = Item.findById(id).populate("seller").populate('offers');
     item.then((data) => {
       res.status(200).json({ data });
     });
@@ -61,7 +61,7 @@ export const findItemsByWidth = async (req, res) => {
     const { width ,profile,rim} = req.body;
     const items = await Item.find({ width: width, status: "active",profile }).populate(
       "seller"
-    );
+    ).populate('offers');
     if (!items) {
       res.status(404).json({ message: "item not found" });
     }

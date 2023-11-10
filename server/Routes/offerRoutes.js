@@ -1,8 +1,10 @@
 import {Router} from "express";
-import { makeOffer } from "../Controllers/offersController.js";
+import { getMyOffers, makeOffer } from "../Controllers/offersController.js";
 
 const router=Router();
 
-router.route('/makeoffer').post(makeOffer)
+router.route('/makeoffer').post(makeOffer);
+router.route('/getmyoffers/:buyer').get(getMyOffers);
+
 
 export default router

@@ -1,0 +1,13 @@
+.main{
+    @apply min-h-screen bg-black py-5 flex bg-white  flex-wrap justify-start items-start 
+}
+
+.offers{
+    @apply w-[90%] mx-auto flex flex-wrap
+}
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply flex-col
+    }
+}

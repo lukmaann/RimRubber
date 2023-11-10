@@ -117,3 +117,5 @@ export const useSingleAd = (query) => {
 
   return [getdata, setdata];
 };
+
+

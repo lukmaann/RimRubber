@@ -15,6 +15,7 @@ import UserReviews from "./adminModule/userReviews/userReviews";
 // import ConstructionPage from "./pages/construction/constructionPage";
 import SingleAd from "./components/ads/singleAd";
 import Items from "./pages/Items/items";
+import OfferPage from "./pages/Myoffers/offersPage";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/buyitem",
-    element: <BuyItem />,
+    element: (
+      <AuthorisedUser>
+        <BuyItem />
+      </AuthorisedUser>
+    ),
   },
   {
     path: "/identifysize",
@@ -48,7 +53,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/myads",
-    element: <Myads />,
+    element: (
+      <AuthorisedUser>
+        <Myads />
+      </AuthorisedUser>
+    ),
   },
   {
     path: "/feedback",
@@ -69,12 +78,29 @@ const router = createBrowserRouter([
   },
 
   {
-    path:'/singlead',
-    element:<SingleAd/>
-  },{
-    path:'/resultitems',
-    element:<Items/>
-  }
+    path: "/singlead",
+    element: (
+      <AuthorisedUser>
+        <SingleAd />
+      </AuthorisedUser>
+    ),
+  },
+  {
+    path: "/resultitems",
+    element: (
+      <AuthorisedUser>
+        <Items />
+      </AuthorisedUser>
+    ),
+  },
+  {
+    path: "myoffers",
+    element: (
+      <AuthorisedUser>
+        <OfferPage />
+      </AuthorisedUser>
+    ),
+  },
 ]);
 
 const App = () => {

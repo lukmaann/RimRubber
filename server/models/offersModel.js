@@ -20,6 +20,7 @@ const offerSchema=new mongoose.Schema({
 
 })
 
+
 const Offers=mongoose.model('offer',offerSchema);
 
 export default Offers

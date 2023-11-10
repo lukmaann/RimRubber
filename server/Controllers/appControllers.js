@@ -26,7 +26,7 @@ passport.deserializeUser((user, done) => {
       });
   } else {
     userModel
-      .findById(user._id)
+      .findById(user._id).populate('offers')
       .then((user) => {
         done(null, user);
       })

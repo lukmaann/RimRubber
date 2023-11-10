@@ -34,3 +34,9 @@ export const buyItemstore=create(persist((set)=>({
 }),{
     name:"find ads"
 }))
+
+
+export const myOffers=create(persist((set)=>({
+    offers:[],
+    setOffers:(data)=>set({offers:data})
+}),{name:"my offers"}))

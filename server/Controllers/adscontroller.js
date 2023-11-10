@@ -4,7 +4,13 @@ import {sampledata} from "../../client/src/data/sample.js"
 export const getMyAd = async (req, res) => {
   try {
     const user = req.user;
-    const items = await Item.find({ seller: user._id });
+    const items = await Item.find({ seller: user._id }).populate({
+      path:'offers',
+      populate:{
+        path:'buyer',
+        model:'user'
+      }
+    });
     // console.log(item);
     return res.status(200).json({ items });
   } catch (error) {
@@ -25,7 +31,13 @@ export const delad = async (req, res) => {
 export const getAds = async (req, res) => {
   try {
     const { status } = req.params;
-    const items = await Item.find({ status }).populate("seller").populate('offers');
+    const items = await Item.find({ status }).populate("seller").populate({
+      path:'offer',
+      populate:{
+        path:'buyer',
+        model:'user'
+      },
+    });
 
     res.status(200).json({ items });
   } catch (error) {

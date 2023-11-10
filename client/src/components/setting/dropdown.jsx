@@ -2,10 +2,11 @@ import Style from "./dropdown.module.css";
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import TireRepairIcon from "@mui/icons-material/TireRepair";
-import SellIcon from "@mui/icons-material/Sell";
+import SwipeLeftAltIcon from '@mui/icons-material/SwipeLeftAlt';
 import StoreIcon from '@mui/icons-material/Store';
 import FeedbackIcon from "@mui/icons-material/Feedback";
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 import { logoutUser } from "../../helper/loginHelper";
 
 
@@ -14,6 +15,7 @@ const Dropdown = () => {
   const navigate = useNavigate();
   const logout = () => {
     logoutUser().then(() => {
+      localStorage.clear()
       navigate("/");
     });
   };
@@ -29,7 +31,7 @@ const Dropdown = () => {
         <li>
           <button onClick={() => navigate("/sellitem")}>
             {" "}
-            <SellIcon /> Sell 
+            <StorefrontIcon /> Sell 
           </button>
         </li>
 
@@ -41,6 +43,12 @@ const Dropdown = () => {
         </li>
         <li>
           <button onClick={() => navigate("/myoffers")}>
+            {" "}
+            <SwipeLeftAltIcon /> Asks
+          </button>
+        </li>
+        <li>
+          <button onClick={() => navigate("/offersgot")}>
             {" "}
           <LocalOfferIcon/> Offers
           </button>

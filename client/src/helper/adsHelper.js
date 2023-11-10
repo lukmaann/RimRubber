@@ -35,6 +35,7 @@ export const getAds = async () => {
       const { status, data } = await axios.get("/getmyad", {
         withCredentials: true,
       });
+
   
       return Promise.resolve(data);
     } catch (error) {

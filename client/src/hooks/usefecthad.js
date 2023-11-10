@@ -22,6 +22,7 @@ export const useFecthMyAds = () => {
 
       if (status === 200) {
         setdata((prev) => ({ ...prev, isLoading: false }));
+        console.log(data);
         myads.setAds(data.items);
         setdata((prev) => ({ ...prev, apiData: data.items }));
       }

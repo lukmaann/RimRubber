@@ -40,3 +40,9 @@ export const myOffers=create(persist((set)=>({
     offers:[],
     setOffers:(data)=>set({offers:data})
 }),{name:"my offers"}))
+
+
+export const offersIgot=create(persist((set)=>({
+    offers:[],
+    setOffers:(data)=>set({offers:data})
+}),{name:"offers i got"}))

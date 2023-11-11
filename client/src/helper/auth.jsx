@@ -3,9 +3,12 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useUserStore } from "../store/store";
 import { ColorRing } from "react-loader-spinner";
-import axios from "../helper/axiosConfig"
+import axios from "../helper/axiosConfig";
+import { authStore } from "../store/store";
 
 export const AuthorisedUser = ({ children }) => {
+
+  const {setAuth}=authStore((state)=>state)
 
   const {setUser} =useUserStore((state)=>state)
   const [data, setData] = useState({
@@ -21,8 +24,15 @@ export const AuthorisedUser = ({ children }) => {
         const {status,data}=await axios.get('/auth',{withCredentials:true});
         if(status===200){
         setData((prev)=>({...prev,isLoading:false}))
-        setData((prev)=>({...prev,authenticated:data.authenticated}))
+        await setData((prev)=>({...prev,authenticated:data.authenticated}))
         setData((prev)=>({...prev,isadmin:data.user.isadmin}))
+
+        if(data.authenticated){
+          setAuth(true);
+        }
+        
+        
+        
 
         setUser(data.user)
 

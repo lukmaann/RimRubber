@@ -13,6 +13,13 @@ export const useTyreSizeStore=create((set)=>({
 }))
 
 
+export const authStore=create(persist((set)=>({
+    auth:false,
+    setAuth:(data)=>set({auth:data})
+        
+
+}),{name:"auth"}))
+
 export const useUserStore=create(persist((set)=>({
     user:null,
     setUser:(data)=>set({user:data})

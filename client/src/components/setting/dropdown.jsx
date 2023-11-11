@@ -8,14 +8,17 @@ import FeedbackIcon from "@mui/icons-material/Feedback";
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { logoutUser } from "../../helper/loginHelper";
+import { authStore } from "../../store/store";
 
 
 
 const Dropdown = () => {
+  const {setAuth}=authStore((state)=>state)
   const navigate = useNavigate();
   const logout = () => {
     logoutUser().then(() => {
       localStorage.clear()
+      setAuth(false)
       navigate("/");
     });
   };

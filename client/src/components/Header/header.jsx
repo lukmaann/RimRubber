@@ -3,17 +3,14 @@ import HomeIcon from "@mui/icons-material/Home";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "../setting/dropdown";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import FeedbackIcon from "@mui/icons-material/Feedback";
-import {authenticateUser} from "../../helper/loginHelper"
+import { authStore } from "../../store/store";
 
 const Header = () => {
-  const [authenticated, setauthenticated] = useState(false);
-  useEffect(() => {
-    authenticateUser().then((data) => {
-      setauthenticated(data.authenticated);
-    });
-  }, []);
+
+  const {auth}=authStore((state)=>state);
+  
 
   const [dropdown, setdropdown] = useState(false);
   const navigate = useNavigate();
@@ -22,7 +19,7 @@ const Header = () => {
       <h1 className={Style.logo}>RimRubber </h1>
       <div>
         <ul className="flex">
-          {authenticated && (
+          {auth && (
             <li className={`${Style.navItem}  `}>
               <button
                 onClick={() => {
@@ -43,7 +40,7 @@ const Header = () => {
               <HomeIcon />
             </button>
           </li>
-          {authenticated && (
+          {auth ? (
             <li className={Style.navItem}>
               <button
                 onClick={() => {
@@ -53,7 +50,7 @@ const Header = () => {
                 <SettingsIcon />
               </button>
             </li>
-          )}
+          ):""}
         </ul>
       </div>
       {dropdown && <Dropdown />}

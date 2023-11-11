@@ -39,7 +39,7 @@
 @media only screen and (max-width:600px){
 
     .main{
-        @apply h-[20vh] w-[80%] mx-auto
+        @apply h-[20vh] w-[90%] mx-auto
     }
     .img{
       @apply  w-[30%]

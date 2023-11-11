@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 const MakeOffer = (props) => {
   const { user } = useUserStore((state) => state);
-  const { price, id } = props;
+  const { price, id,modal } = props;
 
   const formik = useFormik({
     initialValues: {
@@ -28,6 +28,10 @@ const MakeOffer = (props) => {
         success: "Offer sent to seller",
         error: "Network error",
       });
+
+      offer.then(()=>{
+        modal(false)
+      })
     },
   });
 

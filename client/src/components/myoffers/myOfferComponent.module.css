@@ -1,5 +1,5 @@
 .main{
-    @apply w-[25vw] border  h-[30vh]  p-2 flex border-black text-black m-2 relative
+    @apply w-[25vw] border bg-white  h-[30vh]  p-2 flex border-black text-black m-2 relative
 }
 
 .img{
@@ -8,11 +8,11 @@
 
 
 .img img{
-    @apply w-full h-full object-contain
+    @apply w-full h-[100px] object-contain
 }
 
 .details{
-    @apply p-2 text-black
+    @apply p-2 text-black justify-center flex flex-col
 }
 
 .details button {
@@ -24,10 +24,22 @@
 }
 
 
+.btnbox{
+    @apply flex p-2 justify-between
+}
+
+.btnbox button{
+    @apply p-2 rounded-sm text-sm border border-black bg-white
+}
+
+.details button {
+    @apply m-1 w-[150px] 
+}
+
 @media only screen and (max-width:600px){
 
     .main{
-        @apply h-[20vh] w-[90%] mx-auto
+        @apply h-[20vh] w-[80%] mx-auto
     }
     .img{
       @apply  w-[30%]

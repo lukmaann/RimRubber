@@ -22,7 +22,7 @@ for (let r of rim) {
         profile: p.toString(),
         location:locations[Math.floor(Math.random()*locations.length)],
         status: 'active',
-        seller:"654c811f6b19deec62acbf50"
+        seller:"654f101586ce37111bfe4845"
       };
       tires.push(tire);
     }

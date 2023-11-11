@@ -10,7 +10,7 @@ export const getMyAd = async (req, res) => {
         path:'buyer',
         model:'user'
       }
-    });
+    }).populate('seller');
     // console.log(item);
     return res.status(200).json({ items });
   } catch (error) {

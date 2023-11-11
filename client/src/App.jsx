@@ -105,7 +105,7 @@ const router = createBrowserRouter([
   {
     path:'/offersgot',
     element:<AuthorisedUser>
-      <ConstructionPage/>
+      <OffersGot/>
     </AuthorisedUser>
   }
 ]);

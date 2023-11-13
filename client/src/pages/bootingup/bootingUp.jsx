@@ -5,18 +5,17 @@ import { loadServer } from "../../helper/loginHelper";
 import { useNavigate } from "react-router-dom";
 const BootingUp = () => {
   const [text, setText] = useState("booting");
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const load =loadServer();
+    const load = loadServer();
 
-    load.then(()=>{
-        setTimeout(()=>{
-            setText("Redirecting")
-        },1000)
-
-        navigate('/login')
-    })
+    load.then(async () => {
+      setText("Redirecting");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    });
     setTimeout(() => {
       setText("Setting Up");
     }, 4000);
@@ -25,9 +24,6 @@ const BootingUp = () => {
       setText("Server taking to long to respond please refresh the page");
     }, 10000);
   }, []);
-
-  
-
 
   return (
     <div className={Style.main}>

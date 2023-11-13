@@ -59,21 +59,33 @@ export const getOffersIgot = async (req, res) => {
     const { userId } = req.params;
 
     await Items.find({
-        $and:[
-            {seller:userId},
-            {$expr:{$gt:[{$size:"$offers"},0]}}
-        ]
-    }).populate({
-        path:'offers',
-        populate:{
-            path:'buyer',
-            model:'user'
-        }
-    }).then((data)=>{
-        res.status(200).json(data)
+      $and: [{ seller: userId }, { $expr: { $gt: [{ $size: "$offers" }, 0] } }],
     })
-    
+      .populate({
+        path: "offers",
+        populate: {
+          path: "buyer",
+          model: "user",
+        },
+      })
+      .then((data) => {
+        res.status(200).json(data);
+      });
   } catch (error) {
     res.status(500).json(error.message);
+  }
+};
+
+export const WithdrawOffer = async (req, res) => {
+  try {
+    const { offerId, postId ,userId} = req.params;
+
+    await Offers.findByIdAndDelete(offerId).then(async () => {
+      await Users.findByIdAndUpdate({ _id:userId }, { $pull: { offers: offerId } });
+      await Items.findByIdAndUpdate({ _id:postId }, { $pull: { offers: offerId } });
+      res.status(200).json({ message: "Offer withdraw successfull" });
+    });
+  } catch (error) {
+    res.status(500).json({ err: error.message });
   }
 };

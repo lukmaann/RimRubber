@@ -32,7 +32,7 @@ export const getAds = async (req, res) => {
   try {
     const { status } = req.params;
     const items = await Item.find({ status }).populate("seller").populate({
-      path:'offer',
+      path:'offers',
       populate:{
         path:'buyer',
         model:'user'

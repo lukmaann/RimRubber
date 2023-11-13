@@ -17,10 +17,15 @@ import SingleAd from "./components/ads/singleAd";
 import Items from "./pages/Items/items";
 import OfferPage from "./pages/Myoffers/offersPage";
 import OffersGot from "./pages/Myoffers/offersGotPage";
+import BootingUp from "./pages/bootingup/bootingUp";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path:'/',
+    element:<BootingUp/>
+  },
+  {
+    path: "/login",
     element: <LandingPage />,
   },
   {

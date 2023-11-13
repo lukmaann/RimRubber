@@ -16,18 +16,29 @@ const OfferPage = () => {
   return (
     <div>
       <Header />
-      <h1 className="p-2 text-center text-lg  capitalize border border-gray-600 text-gray-600">
+      <h1 className={Style.offermade}>
         offers got
       </h1>
       <div className={Style.main}>
         <div className={Style.offers}>
-          {offers.map((item, index) => {
-
-            return item.offers.map((offer,index)=>{
-              return <OffersGot key={item.index} image={item.image} brand={item.brand} buyer={offer.buyer.username} price={item.price} offeredPrice={offer.offeredPrice}/>
+          {offers.length == 0 ? (
+            <h1 className={Style.nooffer}>You have not received any offers</h1>
+          ) : (
+            offers.map((item, index) => {
+              return item.offers.map((offer, index) => {
+                return (
+                  <OffersGot
+                    key={item.index}
+                    image={item.image}
+                    brand={item.brand}
+                    buyer={offer.buyer.username}
+                    price={item.price}
+                    offeredPrice={offer.offeredPrice}
+                  />
+                );
+              });
             })
-            
-          })}
+          )}
         </div>
       </div>
       <Footer />

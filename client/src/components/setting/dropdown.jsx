@@ -19,7 +19,7 @@ const Dropdown = () => {
     logoutUser().then(() => {
       localStorage.clear()
       setAuth(false)
-      navigate("/");
+      navigate("/login"); 
     });
   };
   return (
@@ -47,13 +47,13 @@ const Dropdown = () => {
         <li>
           <button onClick={() => navigate("/myoffers")}>
             {" "}
-            <SwipeLeftAltIcon /> Asks
+            <SwipeLeftAltIcon /> Bids
           </button>
         </li>
         <li>
           <button onClick={() => navigate("/offersgot")}>
             {" "}
-          <LocalOfferIcon/> Offers
+          <LocalOfferIcon/> Offers Got
           </button>
         </li>
         <li>

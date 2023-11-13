@@ -45,7 +45,8 @@ export const buyItemstore=create(persist((set)=>({
 
 export const myOffers=create(persist((set)=>({
     offers:[],
-    setOffers:(data)=>set({offers:data})
+    setOffers:(data)=>set({offers:data}),
+    withdraw:(id)=>set((state)=>({offers:state.offers.filter((offer)=>offer._id!==id)}))
 }),{name:"my offers"}))
 
 

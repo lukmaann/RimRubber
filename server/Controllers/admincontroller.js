@@ -30,18 +30,18 @@ export const adminlogin=async(req,res,next)=>{
 
             if(!admin){
                 res.status(401).send("unaythorised")
-
-
             }
 
             req.login(admin,(err)=>{
-                if(err){
-                    res.status(400).send("cant login")
+                if (err){
+                    console.log("un authorised");
+                    return
                 }
+              
 
                 const {hash,salt,...rest}=admin._doc;
 
-                res.status(200).json(rest)
+               return res.status(200).json(rest)
                 
             })
 

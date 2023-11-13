@@ -6,7 +6,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 const OffersGot = (props) => {
   const { brand, offeredPrice, status, image, location, buyer, price } = props;
   return (
-    <div className="border border-black bg-gray-100 m-2">
+    <div className="border border-black  m-2 ">
     <div className={`${Style.main} h-min pb-0`}>
       <div className={Style.img}>
         <img src={image} />

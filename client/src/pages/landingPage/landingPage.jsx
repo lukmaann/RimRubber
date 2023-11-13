@@ -12,15 +12,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [login, selectLogin] = useState("signUp");
 
-  useEffect(()=>{
 
-    toast.promise(loadServer(),{
-      loading:"Booting up the server",
-      success:"server started",
-      error:"Network not available"
-    })
-
-  },[])
 
 
   return (

@@ -108,9 +108,9 @@ export const loginAdmin=async(values)=>{
     const {status}=await axios.post('/adminlogin',{username,password},{withCredentials:true});
     if(status===200){
       return Promise.resolve()
-    }else{
-      return Promise.reject()
     }
+      return Promise.reject()
+    
 
   } catch (error) {
     return Promise.reject(error.message)

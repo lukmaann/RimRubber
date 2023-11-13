@@ -1,0 +1,45 @@
+.tyre{
+
+
+    animation: rotate ease-in-out 0.6s infinite;
+
+
+    @apply w-[100px]  rounded-full 
+}
+
+.main{
+    @apply h-[100vh] w-full flex flex-col  justify-center items-center text-2xl capitalize bg-gradient-to-b from-black to-gray-700 
+}
+
+.txt{
+    animation:  fadeInout infinite 4s;
+    @apply text-center text-lg w-[300px] text-gray-500 m-5
+}
+
+
+@keyframes fadeInout{
+    0%,100%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+@keyframes rotate{
+    0%{
+       @apply rotate-[90deg]
+    }
+    50%{
+        @apply rotate-[180deg]
+    }
+    100%{
+        @apply rotate-[360deg]
+    }
+}
+
+@media only screen and (max-width:600px){
+    .tyre{
+        @apply w-[60px]
+    }
+}

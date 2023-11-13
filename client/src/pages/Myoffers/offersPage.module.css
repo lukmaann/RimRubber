@@ -6,6 +6,14 @@
     @apply w-[90%] mx-auto flex flex-wrap
 }
 
+.nooffer{
+    @apply text-center w-full text-2xl text-gray-200 capitalize
+}
+
+.offermade{
+    @apply p-2 text-center text-lg  capitalize border bg-gray-100 border-gray-600 text-gray-600
+}
+
 @media only screen and (max-width:600px){
     .main{
         @apply flex-col

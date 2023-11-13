@@ -8,7 +8,7 @@
 }
 
 .main{
-    @apply h-[100vh] w-full flex flex-col  justify-center items-center text-2xl capitalize bg-gradient-to-b from-black to-gray-700 
+    @apply h-[100vh] w-full flex flex-col  justify-center items-center text-2xl capitalize bg-gradient-to-b from-black via-gray-950 to-black 
 }
 
 .txt{

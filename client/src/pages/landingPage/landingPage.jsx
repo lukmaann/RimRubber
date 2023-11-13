@@ -1,12 +1,11 @@
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header/header";
 import Style from "./landingPage.module.css";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import SignupForm from "../../components/login/signupForm";
 import LoginForm from "../../components/login/loginForm";
-import toast, { Toaster } from "react-hot-toast";
+import  { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { loadServer } from "../../helper/loginHelper";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -19,7 +18,7 @@ const LandingPage = () => {
     <div>
       <Toaster position="top-center"></Toaster>
       <Header />
-      <div className="h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900">
+      <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900">
       <div className={Style.main}>
         <div className={Style.txt}>
           <h1 className="">Welcome To RimRubber </h1>
@@ -30,12 +29,12 @@ const LandingPage = () => {
         </div>
 
         <div>
-        <div className="flex w-[350px]    py-3 justify-around">
+        <div className={Style.loginselectors}>
           {" "}
           <button onClick={()=>selectLogin('signUp') } className={login==='signUp'?`${Style.selected}`:`${Style.selector}`}>signUp</button>
           <button onClick={()=>selectLogin('login')} className={login==='login'?`${Style.selected}`:`${Style.selector}`}>Login</button>
         </div>
-        <div className="w-[350px] text-black ">
+        <div className={Style.logincointainer}>
         {
           login==='login'?<LoginForm/>:<SignupForm/>
         }

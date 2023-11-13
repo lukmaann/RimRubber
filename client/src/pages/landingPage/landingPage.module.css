@@ -28,6 +28,13 @@
   @apply w-[100%] p-2 text-gray-100 border capitalize rounded-sm   border-white
 }
 
+.loginselectors{
+  @apply flex w-[350px]    py-3 justify-around
+}
+.logincointainer{
+  @apply w-[350px] text-black
+}
+
 @media only screen and (max-width:600px){
   .txt{
       @apply w-[320px]
@@ -35,5 +42,13 @@
 
   .main{
       @apply flex-wrap 
+  }
+
+.adminbtn{
+  @apply w-[90vw]
+}
+
+  .logincointainer{
+    @apply w-[90vw] mx-auto
   }
 }

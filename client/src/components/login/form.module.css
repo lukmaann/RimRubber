@@ -28,3 +28,15 @@
 .gbtn:hover{
     @apply bg-gray-200 text-black border-b-4 border-black
 }
+
+
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply w-[90vw]
+    }
+
+    .logincointainer{
+        @apply w-[90vw] mx-auto
+    }
+}

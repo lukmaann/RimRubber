@@ -48,6 +48,10 @@
   @apply w-[90vw]
 }
 
+.loginselectors{
+  @apply w-[90vw]
+}
+
   .logincointainer{
     @apply w-[90vw] mx-auto
   }

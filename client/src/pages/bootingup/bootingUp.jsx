@@ -1,5 +1,5 @@
 import Style from "./booting.module.css";
-import Tyre from "../../assets/tyre.png";
+import Tyre from "../../assets/logo.png";
 import { useEffect, useState } from "react";
 import { loadServer } from "../../helper/loginHelper";
 import { useNavigate } from "react-router-dom";
@@ -7,15 +7,17 @@ import toast, {Toaster} from "react-hot-toast"
 const BootingUp = () => {
   const [text, setText] = useState("booting");
   const navigate = useNavigate();
+  const [started,setStarted]=useState(false)
 
   useEffect(() => {
     const load = loadServer();
 
     load.then(async () => {
-      setText("Redirecting");
+      setStarted(true)
+      // setText("Redirecting");
       setTimeout(() => {
         navigate("/login");
-      }, 2000);
+      }, 4000);
     });
     setTimeout(() => {
       setText("Setting Up The Servers");
@@ -49,7 +51,10 @@ const BootingUp = () => {
   return (
     <div className={Style.main}>
     <Toaster position="bottom-right"/>
-      <img src={Tyre} alt="" className={Style.tyre} />
+    <div className={started?`${Style.logobox} shadow-xl bg-blend-overlay border-2 w-[6000px]  border-gray-700 shadow-gray-600`:Style.logobox}>
+    <img src={Tyre} alt="" className={Style.logo} />
+
+    </div>
       <h1 className={Style.txt}>{text}</h1>
     </div>
   );

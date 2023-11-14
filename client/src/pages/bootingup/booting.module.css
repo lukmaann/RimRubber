@@ -1,46 +1,50 @@
-.tyre{
-
-
-    animation: rotate  0.2s infinite;
-
-
-    @apply w-[100px] 
+.logo {
+    transition: all ease-in-out 4s;
+  @apply w-[100%] rounded-full border border-black;
 }
 
-.main{
-    @apply h-[100vh] w-full flex flex-col  justify-center items-center  capitalize bg-gradient-to-b from-black via-gray-950 to-black 
-}
+.logobox {
+  transition: all ease-in-out 4s;
 
-.txt{
-    transition: all ease-in-out 2s;
-    animation:  fadeInout infinite 4s;
-    @apply text-center text-lg w-[80vw] text-gray-500 m-5 
+  @apply p-[2px]  rounded-full w-[70px];
 }
 
 
-@keyframes fadeInout{
-    0%,100%{
-        opacity: 0.3;
-    }
-    50%{
-        opacity: 1;
-    }
+
+.main {
+  @apply h-[100vh] w-full flex flex-col  justify-center items-center  capitalize bg-gradient-to-b from-black via-gray-950 to-black;
 }
 
-@keyframes rotate{
-    0%{
-       @apply rotate-[90deg] w-[50px]
-    }
-    50%{
-        @apply rotate-[180deg] 
-    }
-    100%{
-        @apply rotate-[360deg] w-[50px]
-    }
+.txt {
+  transition: all ease-in-out 2s;
+  animation: fadeInout infinite 4s;
+  @apply text-center text-lg w-[80vw] text-gray-500 m-5;
 }
 
-@media only screen and (max-width:600px){
-    .tyre{
-        @apply w-[60px]
-    }
+@keyframes fadeInout {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    @apply rotate-[90deg] w-[50px];
+  }
+  50% {
+    @apply rotate-[180deg];
+  }
+  100% {
+    @apply rotate-[360deg] w-[50px];
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .tyre {
+    @apply w-[60px];
+  }
 }

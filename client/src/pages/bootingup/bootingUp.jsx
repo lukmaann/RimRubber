@@ -51,7 +51,7 @@ const BootingUp = () => {
   return (
     <div className={Style.main}>
     <Toaster position="bottom-right"/>
-    <div className={started?`${Style.logobox} shadow-xl bg-blend-overlay border-2 w-[6000px]  border-gray-700 shadow-gray-600`:Style.logobox}>
+    <div className={started?`${Style.logobox} shadow-xl bg-blend-overlay  w-[6000px]   shadow-gray-600`:Style.logobox}>
     <img src={Tyre} alt="" className={Style.logo} />
 
     </div>

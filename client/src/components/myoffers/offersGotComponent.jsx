@@ -3,12 +3,11 @@
 import Style from "./myOfferComponent.module.css";
 import { callUpdateOffer } from "../../helper/offerHelper";
 import toast from "react-hot-toast"
-import { useState } from "react";
 import { offersIgot } from "../../store/store";
 
 const OffersGot = (props) => {
-  const {filterOffers}=offersIgot((state)=>state)
-  const { brand, offeredPrice, status, image,  buyer, price,id,postId } = props;
+  const {filterOffers,updateStatus}=offersIgot((state)=>state)
+  const { brand, offeredPrice, status, image,  buyer, price,id,postId ,userId} = props;
   let statusbg = '';
   if (status === 'accepted') {
       statusbg = 'bg-green-400'
@@ -21,6 +20,8 @@ const OffersGot = (props) => {
   } else if (status === 'sold') {
       statusbg = 'bg-purple-500'
 
+  }else{
+    statusbg='bg-pink-300'
   }
 
   
@@ -29,7 +30,7 @@ const OffersGot = (props) => {
   
   const Accept=()=>{
 
-    const update=callUpdateOffer({query:'accepted',offerId:id,postId});
+    const update=callUpdateOffer({query:'accepted',offerId:id,postId,userId});
 
     toast.promise(update,{
       loading:"Accepting Offer",
@@ -38,8 +39,8 @@ const OffersGot = (props) => {
     })
 
     update.then(()=>{
-      filterOffers({id})
-      // updateStatus({id,statusType:'accepted',postId})
+      filterOffers({id,postId})
+      updateStatus({id,status:'accepted',postId})
       // updateStatus({id,status:'accepted'})
     })
 
@@ -57,7 +58,7 @@ const OffersGot = (props) => {
     })
 
     update.then(()=>{
-      // updateStatus({id,statusType:'rejected',postId})
+      updateStatus({id,status:'rejected',postId})
     })
 
 
@@ -74,7 +75,7 @@ const OffersGot = (props) => {
       success:"Done"
     })
     update.then(()=>{
-      // updateStatus({id,statusType:'sold',postId})
+      updateStatus({id,status:'sold',postId})
       
     })
 

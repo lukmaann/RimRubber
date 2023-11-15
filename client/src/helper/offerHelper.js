@@ -34,8 +34,8 @@ export const callWithdrawOffer=async(values)=>{
 export const callUpdateOffer=async(values)=>{
     try {
 
-        const {query,offerId,postId}=values;
-        const {status}=await axios.get(`/updateofferstatus/${offerId}/${query}/${postId}`);
+        const {query,offerId,postId,userId}=values;
+        const {status}=await axios.get(`/updateofferstatus/${offerId}/${query}/${postId}/${userId}`);
         if(status===200){
             return Promise.resolve();
         }else{

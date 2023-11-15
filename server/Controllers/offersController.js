@@ -44,7 +44,6 @@ export const getMyOffers = async (req, res) => {
         },
       })
       .then((data) => {
-        console.log(data);
         res.status(200).json(data);
       })
       .catch((err) => {
@@ -80,6 +79,7 @@ export const getOffersIgot = async (req, res) => {
 export const WithdrawOffer = async (req, res) => {
   try {
     const { offerId, postId, userId } = req.params;
+  
 
     await Offers.findByIdAndDelete(offerId).then(async () => {
       await Users.findByIdAndUpdate(
@@ -90,6 +90,7 @@ export const WithdrawOffer = async (req, res) => {
         { _id: postId },
         { $pull: { offers: offerId } }
       );
+      // await Items.findByIdAndUpdate({_id:postId},{status:"active"})
       res.status(200).json({ message: "Offer withdraw successfull" });
     });
   } catch (error) {
@@ -99,12 +100,16 @@ export const WithdrawOffer = async (req, res) => {
 
 export const updateOfferStatus = async (req, res) => {
   try {
-    const { query, offerId, postId } = req.params;
+    const { query, offerId, postId, userId } = req.params;
 
     if(query==='sold'){
       await Items.findByIdAndUpdate({_id:postId},{status:"sold"})
     }
     
+
+    if(query=='rejected' ){
+      await Items.findByIdAndUpdate({_id:postId},{status:"active"})
+    }
     
 
     if (query === "accepted") {
@@ -112,11 +117,17 @@ export const updateOfferStatus = async (req, res) => {
 
       const offersToDelete = offers.filter((offer) => offer._id != offerId);
 
-      Offers.deleteMany({
+      await Offers.deleteMany({
         _id: { $in: offersToDelete.map((offers) => offers._id) },
       }).then((data) => {
         console.log(data);
       });
+
+      await Users.findByIdAndUpdate({_id:userId},{$pull:{offers:{$in:offersToDelete.map((offer)=>offer._id)}}})
+      await Items.findByIdAndUpdate({_id:postId},{$pull:{offers:{$in:offersToDelete.map((offer)=>offer._id)}},status:'sold'})
+
+
+      
     }
 
     await Offers.findOneAndUpdate({ _id: offerId }, { status: query }).then(

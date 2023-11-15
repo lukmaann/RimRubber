@@ -55,6 +55,27 @@ export const offersIgot=create(persist((set)=>({
     setOffers:(data)=>set({offers:data}),
     filterOffers:({id,postId})=>set((state)=>({offers:state.offers.map((item)=>item._id===postId ? {...item,offers:item.offers.filter((offer)=>offer._id===id)}:item)})),
     
-    // updateStatus:({id,statusType,postId})=>set((state)=>{console.log(state.offers)})
+    updateStatus:({id,postId,status})=>{
+        set((state)=>({
+            offers:state.offers.map((post)=>{
+                if(post._id===postId){
+                    const updatedOffer= post.offers.map((offer)=>{
+                        
+                        if(offer._id===id){
+                            
+                            return {...offer,status:status}
+                            
+
+                        }
+                        return offer
+
+                    })
+                    return {...post,offers:updatedOffer}
+
+                }
+                return post
+            })
+        }))
+    }
 
 }),{name:"offers i got"}))

@@ -38,6 +38,7 @@ const OfferPage = () => {
                     id={offer._id}
                     postId={item._id}
                     status={offer.status}
+                    userId={offer.buyer._id}
                   />
                 );
               });

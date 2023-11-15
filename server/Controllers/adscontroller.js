@@ -23,6 +23,7 @@ export const delad = async (req, res) => {
   try {
     const { id } = req.params;
     const del = await Item.findByIdAndDelete({ _id: id });
+    await Offers.deleteMany({item:id})
     res.status(200).send("item deleted");
   } catch (error) {
     res.status(500).json({ error: error.message });

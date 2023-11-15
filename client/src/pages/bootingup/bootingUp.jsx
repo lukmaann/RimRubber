@@ -3,7 +3,7 @@ import Tyre from "../../assets/logo.png";
 import { useEffect, useState } from "react";
 import { loadServer } from "../../helper/loginHelper";
 import { useNavigate } from "react-router-dom";
-import toast, {Toaster} from "react-hot-toast"
+import  {Toaster} from "react-hot-toast"
 const BootingUp = () => {
   const [text, setText] = useState("booting");
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const BootingUp = () => {
       // setText("Redirecting");
       setTimeout(() => {
         navigate("/login");
-      }, 4000);
+      }, 3000);
     });
     setTimeout(() => {
       setText("Setting Up The Servers");
@@ -25,27 +25,12 @@ const BootingUp = () => {
 
     setTimeout(() => {
       setText("Slow network detected");
-    }, 9000);
+    }, 10000);
 
     setTimeout(() => {
-      setText("Server taking to long");
-      toast((t) => (
-        <span className="w-full " >
-          
-          <button  className="w-full" onClick={() => {
-            location.reload()
-            toast.dismiss(t.id)}}>
-           Reload
-          </button>
-        </span>
-      ),{
-        style:{
-          width:'90vw',
-          border:'1px solid #713200',
-          color: '#713200'
-        }
-      });
-    }, 13000);
+      setText("Server taking to long please refresh the page");
+      
+    }, 15000);
   }, []);
 
   return (

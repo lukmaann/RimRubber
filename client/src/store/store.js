@@ -52,5 +52,9 @@ export const myOffers=create(persist((set)=>({
 
 export const offersIgot=create(persist((set)=>({
     offers:[],
-    setOffers:(data)=>set({offers:data})
+    setOffers:(data)=>set({offers:data}),
+    filterOffers:({id,postId})=>set((state)=>({offers:state.offers.map((item)=>item._id===postId ? {...item,offers:item.offers.filter((offer)=>offer._id===id)}:item)})),
+    
+    // updateStatus:({id,statusType,postId})=>set((state)=>{console.log(state.offers)})
+
 }),{name:"offers i got"}))

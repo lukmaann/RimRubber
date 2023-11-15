@@ -1,5 +1,6 @@
 import Item from "../models/itemsmodel.js";
-import {sampledata} from "../../client/src/data/sample.js"
+import {sampledata} from "../../client/src/data/sample.js";
+import Offers from "../models/offersModel.js";
 
 export const getMyAd = async (req, res) => {
   try {
@@ -50,6 +51,7 @@ export const updateadsstatus = async (req, res) => {
     const { type, id } = req.params;
 
     const item = await Item.findByIdAndUpdate({ _id: id }, { status: type });
+    const offer=await Offers.updateMany({item:id},{status:'sold'});
     res.status(200).json(item);
   } catch (error) {
     res.status(500).send({ error: error.message });

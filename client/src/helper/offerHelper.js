@@ -30,3 +30,19 @@ export const callWithdrawOffer=async(values)=>{
         Promise.reject(error.message)
     }
 }
+
+export const callUpdateOffer=async(values)=>{
+    try {
+
+        const {query,offerId,postId}=values;
+        const {status}=await axios.get(`/updateofferstatus/${offerId}/${query}/${postId}`);
+        if(status===200){
+            return Promise.resolve();
+        }else{
+
+            return Promise.reject();
+        }
+    } catch (error) {
+        return Promise.reject()
+    }
+}

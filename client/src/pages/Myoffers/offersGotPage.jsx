@@ -6,15 +6,16 @@ import { offersIgot } from "../../store/store";
 import { useOffersIGot } from "../../hooks/usefecthOffers";
 import OffersGot from "../../components/myoffers/offersGotComponent";
 import { useUserStore } from "../../store/store";
+import { Toaster } from "react-hot-toast";
 
 const OfferPage = () => {
   const { user } = useUserStore((state) => state);
   const { offers } = offersIgot((state) => state);
-  console.log(offers);
   const [{ isLoading }] = useOffersIGot({ sellerId: user._id });
 
   return (
     <div>
+    <Toaster position="top-center"/>
       <Header />
       <h1 className={Style.offermade}>
         offers got
@@ -27,13 +28,16 @@ const OfferPage = () => {
             offers.map((item, index) => {
               return item.offers.map((offer, index) => {
                 return (
-                  <OffersGot
-                    key={item.index}
+                 offer.status!==''&& <OffersGot
+                    key={offer._id}
                     image={item.image}
                     brand={item.brand}
                     buyer={offer.buyer.username}
                     price={item.price}
                     offeredPrice={offer.offeredPrice}
+                    id={offer._id}
+                    postId={item._id}
+                    status={offer.status}
                   />
                 );
               });

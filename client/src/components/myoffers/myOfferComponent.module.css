@@ -1,5 +1,5 @@
 .main{
-    @apply w-[25vw] border bg-white  h-[30vh]  p-2 flex border-black text-black m-2 relative
+    @apply w-[25vw] border bg-white  h-[30vh]  p-2 flex  text-black m-2 relative
 }
 
 
@@ -30,7 +30,7 @@
 }
 
 .btnbox button{
-    @apply p-2 rounded-sm text-sm border border-black bg-white
+    @apply p-2 rounded-sm text-sm border  border-gray-500 bg-white
 }
 
 .details button {

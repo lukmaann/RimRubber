@@ -6,13 +6,18 @@ import Style from "./myOfferComponent.module.css"
 import PlaceIcon from '@mui/icons-material/Place';
 import { myOffers } from "../../store/store";
 import { useUserStore } from "../../store/store";
+import { useState } from "react";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 
 
 const MyOfferComponent = (props) => {
   const {withdraw}=myOffers((state)=>state);
+  const [contact,showcontact]=useState(false)
   const {user}=useUserStore((state)=>state)
-    const {brand,offeredPrice,status,image,location,seller,price,postId,offerId}=props;
+    const {brand,offeredPrice,status,email,image,location,seller,price,postId,offerId}=props;
+
+    console.log(email);
 
     const withdrawOffer=()=>{
       const call=callWithdrawOffer({postId,offerId,userId:user._id});
@@ -26,6 +31,10 @@ const MyOfferComponent = (props) => {
 
       })
      
+    }
+
+    const viewcontact=()=>{
+      showcontact(!contact)
     }
   return (
     <div className={Style.main}>
@@ -43,7 +52,18 @@ const MyOfferComponent = (props) => {
     <h1><span className={Style.detailhead}> Price : </span>{price}</h1>
     <h1><span className={Style.detailhead}>Your offer : </span>{offeredPrice}</h1>
 
-    <button onClick={withdrawOffer}>Withdraw offer</button>
+    <div className={Style.btnbox2}>
+    {status==='accepted'?<div className=" h-10 flex justify-start items-center">
+    
+    <a href={`mailto:${email}`} >Mail {seller} ↗</a>
+    
+    <h1 className=" absolute right-1 bottom-1"><DeleteForeverIcon/></h1>
+    
+    </div>
+    :<button onClick={withdrawOffer}>{status==="accepted"?"del":"Withdraw offer"}</button>}
+
+    
+    </div>
 
 
 

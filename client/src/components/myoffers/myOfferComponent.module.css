@@ -1,5 +1,5 @@
 .main{
-    @apply w-[25vw] border bg-white  h-[30vh]  p-2 flex  text-black m-2 relative
+    @apply w-[25vw] border bg-white  h-[30vh]  p-1 flex  text-black m-2 relative
 }
 
 
@@ -13,11 +13,11 @@
 }
 
 .details{
-    @apply p-2 text-black justify-center flex flex-col
+    @apply p-2 text-black justify-center flex flex-col  
 }
 
 .details button {
-    @apply p-1 border capitalize border-black rounded-sm my-2 text-gray-500 px-3 text-sm
+    @apply p-1 border capitalize  border-black rounded-sm my-2 text-gray-500 px-3 text-sm
 }
 
 .detailhead{
@@ -34,7 +34,11 @@
 }
 
 .details button {
-    @apply m-1 w-[150px] 
+    @apply m-0 w-[150px] 
+}
+
+.details a{
+    @apply p-2  border border-black  rounded-sm text-gray-100 text-sm bg-gray-600
 }
 
 @media only screen and (max-width:600px){

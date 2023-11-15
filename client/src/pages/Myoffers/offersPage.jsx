@@ -49,6 +49,7 @@ const OfferPage = () => {
                   price={item.item.price}
                   location={item.item.location}
                   offerId={item._id}
+                  email={item.item.seller.email}
                   postId={item.item._id}
                 />
               );

@@ -57,7 +57,10 @@ const BuyItem = () => {
         <div className="">
           <h1>items you may also like</h1>
         </div>
-        <div className={Style.otheritemsbox}></div>
+        <div className={Style.otheritemsbox}>
+        UNDER CONSTRUCTION 🏗️
+
+        </div>
 
         </div>
       </div>

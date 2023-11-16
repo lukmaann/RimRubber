@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AdminHeader from "../adminComponents/admin-header/adminheader";
 import UploadItem from "../adminComponents/uploadItem/uploadItem";
-import Style from "./managestocks.module.css";
+import Style from "./manageStocks.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import { fecthListedItems } from "../../helper/adminItemhelper";

@@ -3,5 +3,5 @@
 }
 
 .topdiv{
-    @apply h-[80vh] flex flex-col  w-[100%] items-center  min-h-[600px] bg-gradient-to-b from-black via-slate-900  to-gray-900
+    @apply h-[80vh] flex flex-col  w-[100%] items-center  min-h-[600px] bg-gradient-to-b from-black via-slate-950  to-gray-950
 }

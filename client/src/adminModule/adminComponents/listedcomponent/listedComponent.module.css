@@ -1,0 +1,45 @@
+.main{
+    @apply border p-1 m-2 w-[90%] mx-auto h-[100px] flex justify-between items-center px-5 border-black flex 
+}
+
+.imgbox{
+    @apply h-full w-[100px]  
+}
+
+.main h1{
+    @apply font-bold  text-gray-500
+}
+.details h2{
+    @apply text-center
+}
+.details{
+    @apply flex w-[70%] justify-between items-center
+}
+
+
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply flex-col h-[50vh] p-1 justify-center relative rounded-lg
+    }
+
+    .imgbox{
+        @apply h-[200px] w-[200px]
+    }
+
+    .details{
+        @apply flex-col m-4 w-[90%]
+    }
+
+    .details div{
+        @apply flex  w-[300px] gap-5
+    }
+
+    .details button{
+        @apply absolute bottom-2 w-[300px] rounded-lg border p-3 bg-gray-900 text-white
+    }
+
+
+    
+
+}

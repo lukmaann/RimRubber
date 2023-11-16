@@ -11,6 +11,7 @@ import sellRoute from "./Routes/sellRoutes.js";
 import adRoutes from "./Routes/adRoute.js";
 import feedbackRoutes from "./Routes/feedbackRoutes.js"
 import offerRoute from "./Routes/offerRoutes.js"
+import otherItemRoute from "./Routes/otherItemRoutes.js"
 import {v2 as cloudinary} from 'cloudinary';
 
 
@@ -93,6 +94,7 @@ app.use("/api", sellRoute);
 app.use("/api", adRoutes);
 app.use("/api",feedbackRoutes);
 app.use("/api",offerRoute);
+app.use('/api',otherItemRoute)
 
 connectDB().then(() => {
   app.listen(process.env.PORT || 3000, () => {

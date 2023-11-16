@@ -18,6 +18,7 @@ import Items from "./pages/Items/items";
 import OfferPage from "./pages/Myoffers/offersPage";
 import OffersGot from "./pages/Myoffers/offersGotPage";
 import BootingUp from "./pages/bootingup/bootingUp";
+import ManageStockPage from "./adminModule/listItems/manageStocks";
 
 const router = createBrowserRouter([
   {
@@ -48,9 +49,9 @@ const router = createBrowserRouter([
   {
     path: "/buyitem",
     element: (
-      <AuthorisedUser>
+      // <AuthorisedUser>
         <BuyItem />
-      </AuthorisedUser>
+      // {/* </AuthorisedUser> */}
     ),
   },
   {
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
     element:<AuthorisedUser>
       <OffersGot/>
     </AuthorisedUser>
+  },
+  {
+    path:"/admin/managestocks",
+    element:<ManageStockPage/>
   }
 ]);
 

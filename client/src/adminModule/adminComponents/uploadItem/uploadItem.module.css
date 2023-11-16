@@ -1,0 +1,43 @@
+.main{
+    transition: all ease-in-out 0.4s;
+    @apply bg-black relative min-h-[50vh] mb-20 flex justify-center items-center p-2 rounded-xl
+}
+
+.inputs{
+    @apply p-2 m-1 w-[300px] block mx-auto text-black focus:outline-double border border-gray-800 rounded-md bg-gray-100
+}
+
+.form{
+    @apply  my-2 h-[30vh] w-[80%]  flex  justify-start items-center text-black p-1
+
+}
+
+.form button{
+    @apply w-[250px] m-0 bg-yellow-400
+}
+.img{
+    @apply w-[300px] h-[100%] m-2 border border-black rounded-lg
+}
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply h-[90vh] rounded-xl p-2 items-start
+    }
+    .form{
+        @apply  my-2 h-min w-[90%] mx-auto flex flex-col justify-center items-center
+
+    }
+
+    .form button {
+        @apply static
+    }
+
+    .img{
+
+    @apply w-[90%]
+    }
+
+  
+
+    
+}

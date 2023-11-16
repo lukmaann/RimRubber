@@ -13,3 +13,11 @@
 .findbtn{
     @apply p-3 border w-full my-5 
 }
+
+.otheritems{
+    @apply h-screen w-[100%] bg-white mt-20 rounded-t-xl border-t-2 border-gray-600
+}
+
+.otheritems h1{
+    @apply text-black text-start p-2 m-2 text-transparent bg-clip-text bg-gradient-to-t shadow-sm border-b from-zinc-600 via-zinc-700  to-zinc-950 capitalize text-lg font-semibold
+}

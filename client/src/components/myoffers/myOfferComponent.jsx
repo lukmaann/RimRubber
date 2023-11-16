@@ -6,14 +6,12 @@ import Style from "./myOfferComponent.module.css"
 import PlaceIcon from '@mui/icons-material/Place';
 import { myOffers } from "../../store/store";
 import { useUserStore } from "../../store/store";
-import { useState } from "react";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 
 
 const MyOfferComponent = (props) => {
   const {withdraw}=myOffers((state)=>state);
-  const [contact,showcontact]=useState(false)
   const {user}=useUserStore((state)=>state)
     const {brand,offeredPrice,status,email,image,location,seller,price,postId,offerId}=props;
 
@@ -33,9 +31,9 @@ const MyOfferComponent = (props) => {
      
     }
 
-    const viewcontact=()=>{
-      showcontact(!contact)
-    }
+    // const viewcontact=()=>{
+    //   showcontact(!contact)
+    // }
   return (
     <div className={Style.main}>
     <div className={Style.img}>
@@ -55,9 +53,9 @@ const MyOfferComponent = (props) => {
     <div className={Style.btnbox2}>
     {status==='accepted'?<div className=" h-10 flex justify-start items-center">
     
-    <a href={`mailto:${email}`} >Mail {seller} ↗</a>
+    <a href={`mailto:${email}`}  >Mail {seller} ↗</a>
     
-    <h1 className=" absolute right-1 bottom-1"><DeleteForeverIcon/></h1>
+    <h1 onClick={withdrawOffer} className=" absolute right-1 bottom-1"><DeleteForeverIcon/></h1>
     
     </div>
     :<button onClick={withdrawOffer}>{status==="accepted"?"del":"Withdraw offer"}</button>}

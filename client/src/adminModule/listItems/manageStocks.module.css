@@ -1,0 +1,11 @@
+.main{
+    @apply min-h-screen w-full bg-black text-white
+}
+
+.uploadbtn{
+    @apply p-2 m-2 rounded-lg bg-white text-black w-[300px] mx-auto
+}
+
+.listeditems{
+    @apply bg-white h-[100vh] w-full text-black rounded-xl p-4
+}

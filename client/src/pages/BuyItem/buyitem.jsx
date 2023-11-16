@@ -53,6 +53,13 @@ const BuyItem = () => {
             </form>
           </div>
         </div>
+        <div className={Style.otheritems}>
+        <div className="">
+          <h1>items you may also like</h1>
+        </div>
+        <div className={Style.otheritemsbox}></div>
+
+        </div>
       </div>
       <Footer />
     </div>

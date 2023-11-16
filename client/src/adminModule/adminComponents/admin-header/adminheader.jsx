@@ -13,8 +13,8 @@ const AdminHeader = () => {
   let txt = "";
   if (location === "/admindashboard") {
     txt = "Admin Dashboard";
-  } else if (location === "/reviewfeedback") {
-    txt = "User Feedbacks";
+  } else if (location === "/admin/managestocks") {
+    txt = "Manage Stocks";
   }
 
   const logout=()=>{
@@ -33,7 +33,7 @@ const AdminHeader = () => {
 
       <div >
       {location === "/admindashboard" ? (
-        <button onClick={() => navigate("/reviewfeedback")}>
+        <button onClick={() => navigate("/admin/managestocks")}>
           <ReviewsIcon />
         </button>
       ) : (

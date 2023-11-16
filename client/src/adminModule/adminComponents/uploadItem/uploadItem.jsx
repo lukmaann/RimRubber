@@ -1,4 +1,4 @@
-import Style from "./uploaditem.module.css";
+import Style from "./uploadItem.module.css";
 import Avtar from "../../../assets/uploadimg.png";
 import { useFormik } from "formik";
 import convertToBase64 from "../../../helper/convert";

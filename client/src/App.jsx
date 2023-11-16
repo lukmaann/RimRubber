@@ -12,7 +12,7 @@ import AdminLogin from "./adminModule/adminLogin/adminLogin";
 import AdminDashboard from "./adminModule/dashboard/dashboard";
 // import { AuthorisedAdmin } from "./helper/adminauth";
 import UserReviews from "./adminModule/userReviews/userReviews";
-import ConstructionPage from "./pages/construction/constructionPage";
+// import ConstructionPage from "./pages/construction/constructionPage";
 import SingleAd from "./components/ads/singleAd";
 import Items from "./pages/Items/items";
 import OfferPage from "./pages/Myoffers/offersPage";

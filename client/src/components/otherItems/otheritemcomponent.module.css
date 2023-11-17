@@ -17,6 +17,10 @@
 
 @media only screen and (max-width:600px){
     .main{
-        @apply w-[45vw]
+        @apply w-[45vw]  h-[250px]
+    }
+
+    .details h1{
+        @apply text-xs
     }
 }

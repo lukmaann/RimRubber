@@ -12,25 +12,29 @@ const BootingUp = () => {
   useEffect(() => {
     const load = loadServer();
 
-    load.then(async () => {
-      setStarted(true)
-      // setText("Redirecting");
-      setTimeout(() => {
-        navigate("/login");
-      }, 3000);
-    });
     setTimeout(() => {
       setText("Setting Up The Servers");
-    }, 4000);
+    }, 5000);
 
     setTimeout(() => {
       setText("Slow network detected");
     }, 10000);
 
     setTimeout(() => {
-      setText("Server taking to long please refresh the page");
+      setText("Server taking to long please Wait");
       
     }, 15000);
+
+    setTimeout(()=>{
+      setStarted(true)
+
+      setTimeout(()=>{
+        navigate('/login')
+      },2000)
+
+    },17000)
+
+    
   }, []);
 
   return (

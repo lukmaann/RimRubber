@@ -47,7 +47,6 @@ passport.use(
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
-      console.log(email);
       console.log(profile)
       userModel.findOrCreate(
         {

@@ -23,7 +23,7 @@
 }
 
 .otheritemsbox{
-    @apply text-black w-full h-[50vh] flex justify-center items-center text-2xl 
+    @apply text-black w-full min-h-[50vh] flex justify-center items-center text-2xl 
 }
 
 

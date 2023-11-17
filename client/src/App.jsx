@@ -117,6 +117,9 @@ const router = createBrowserRouter([
   {
     path:"/admin/managestocks",
     element:<ManageStockPage/>
+  },{
+    path:"/mycart",
+    element:<h1>UNDERCONSTRUCTION 🏗️</h1>
   }
 ]);
 

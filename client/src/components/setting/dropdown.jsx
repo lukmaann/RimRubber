@@ -10,6 +10,8 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import { logoutUser } from "../../helper/loginHelper";
 import {useState} from "react"
 import UpdateProfile from "../updateProfile/updateProfile";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import PopUp from "../widjets/popUp";
 import { useUserStore } from "../../store/store";
 import { authStore } from "../../store/store";
@@ -58,6 +60,12 @@ const Dropdown = () => {
           <button onClick={() => navigate("/myads")}>
             {" "}
             <TireRepairIcon /> My Ads
+          </button>
+        </li>
+        <li>
+          <button onClick={() => navigate("/mycart")}>
+            {" "}
+            <ShoppingCartIcon /> My Cart
           </button>
         </li>
         <li>

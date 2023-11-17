@@ -4,8 +4,8 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "../setting/dropdown";
 import {  useState } from "react";
-import FeedbackIcon from "@mui/icons-material/Feedback";
 import { authStore } from "../../store/store";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Header = () => {
 
@@ -23,13 +23,14 @@ const Header = () => {
             <li className={`${Style.navItem}  `}>
               <button
                 onClick={() => {
-                  navigate("/feedback");
+                  navigate("/mycart");
                 }}
               >
                 {" "}
-                <FeedbackIcon fontSize="small" />
+                <ShoppingCartIcon fontSize="small" />
               </button>
             </li>
+            
           )}
           <li className={Style.navItem}>
             <button

@@ -13,3 +13,10 @@
 .addtocartbtn{
     @apply p-2 bg-yellow-400 text-sm w-full rounded text-gray-800
 }
+
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply w-[45vw] h-[200px]
+    }
+}

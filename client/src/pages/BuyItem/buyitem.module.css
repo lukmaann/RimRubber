@@ -15,7 +15,7 @@
 }
 
 .otheritems{
-    @apply h-screen w-[100%] bg-white mt-20 rounded-t-xl border-t-2 border-gray-600
+    @apply min-h-screen w-[100%] bg-white mt-20 rounded-t-xl border-t-2 border-gray-600
 }
 
 .otheritems h1{

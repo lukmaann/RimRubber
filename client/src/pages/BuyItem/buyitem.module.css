@@ -25,3 +25,10 @@
 .otheritemsbox{
     @apply text-black w-full h-[50vh] flex justify-center items-center text-2xl 
 }
+
+
+@media only screen and (max-width:600px){
+    .otheritemsbox{
+        @apply flex-wrap
+    }
+}

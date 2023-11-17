@@ -8,8 +8,23 @@ import { findAdsByWidth } from "../../helper/adsHelper";
 import toast, { Toaster } from "react-hot-toast";
 import { buyItemstore } from "../../store/store";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { fecthListedItems } from "../../helper/adminItemhelper";
+import OtherItems from "../../components/otherItems/otheritemcomponent";
 
 const BuyItem = () => {
+  const [data,setdata]=useState();
+  useEffect(()=>{
+    const fetch=fecthListedItems();
+    toast.promise(fetch,{
+      loading:"Fecthing All Items",
+      success:"Items Fecthed",
+      error:"Cant Fecth Items Right Now"
+    })
+    fetch.then((res)=>{
+      setdata(res)
+    })
+  },[])
   const navigate = useNavigate();
   const { setAds } = buyItemstore((state) => state);
   const { width, profile } = useTyreSizeStore((state) => state);
@@ -58,7 +73,12 @@ const BuyItem = () => {
           <h1>items you may also like</h1>
         </div>
         <div className={Style.otheritemsbox}>
-        UNDER CONSTRUCTION 🏗️
+        {
+          data?.map((item)=>{
+            return <OtherItems key={item._id} image={item.image} name={item.name} price={item.price}/>
+          })
+        }
+        
 
         </div>
 

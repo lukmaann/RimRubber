@@ -17,7 +17,6 @@ const ManageStockPage = () => {
       error:"Cant Fecth Items Right Now"
     })
     fetch.then((res)=>{
-      console.log(res);
       setdata(res)
     })
   },[])

@@ -7,5 +7,5 @@
 }
 
 .listeditems{
-    @apply bg-white h-[100vh] w-full text-black rounded-xl p-4
+    @apply bg-white min-h-[100vh] w-full text-black rounded-xl p-4
 }

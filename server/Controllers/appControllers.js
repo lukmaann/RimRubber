@@ -178,7 +178,6 @@ export const logoutUser = async (req, res) => {
 export const updateProfile=async(req,res)=>{
   try {
     const {mobile,id,email}=req.body;
-    console.log(id);
     const user=await userModel.findByIdAndUpdate({_id:id},{mobile,email});
 
     user.save().then(()=>{

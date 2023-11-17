@@ -1,0 +1,15 @@
+.main{
+    @apply w-[200px] h-[300px] m-2 p-2 border border-gray-600 rounded-lg shadow-md 
+}
+
+.imgbox{
+    @apply w-full h-[60%] rounded-md border  p-1
+}
+
+.details h1{
+    @apply text-sm shadow-none border-0 p-1 m-1 text-black font-thin
+}
+
+.addtocartbtn{
+    @apply p-2 bg-yellow-400 text-sm w-full rounded text-gray-800
+}

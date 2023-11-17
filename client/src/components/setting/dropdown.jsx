@@ -8,12 +8,19 @@ import FeedbackIcon from "@mui/icons-material/Feedback";
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { logoutUser } from "../../helper/loginHelper";
+import {useState} from "react"
+import UpdateProfile from "../updateProfile/updateProfile";
+import PopUp from "../widjets/popUp";
+import { useUserStore } from "../../store/store";
 import { authStore } from "../../store/store";
 
 
 
 const Dropdown = () => {
+  const {user}=useUserStore((state)=>state)
   const {setAuth}=authStore((state)=>state)
+  const [pop,setPop]=useState(false)
+
   const navigate = useNavigate();
   const logout = () => {
     logoutUser().then(() => {
@@ -22,6 +29,15 @@ const Dropdown = () => {
       navigate("/login"); 
     });
   };
+
+  const sellitem=()=>{
+    if(!user.email){
+      setPop(true)
+    }else{
+
+      navigate('/sellitem')
+    }
+  }
   return (
     <div className={Style.main}>
       <ul>
@@ -32,7 +48,7 @@ const Dropdown = () => {
           </button>
         </li>
         <li>
-          <button onClick={() => navigate("/sellitem")}>
+          <button onClick={sellitem}>
             {" "}
             <StorefrontIcon /> Sell 
           </button>
@@ -68,6 +84,9 @@ const Dropdown = () => {
           </button>
         </li>
       </ul>
+      <PopUp openPopUp={pop} setopenPopup={setPop} title={`Hey, ${user.username} 🫡 `}>
+        <UpdateProfile id={user._id} setPopup={setPop}/>
+      </PopUp>
     </div>
   );
 };

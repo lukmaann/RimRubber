@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 
 const mobileverify = (error = {}, value) => {
   if (!value.mobile) {
-    error.mobile = toast.error("Enter Username");
+    error.mobile = toast.error("Enter Mobile number");
   } else if (!/^(\+91)?[6-9]\d{9}$/.test(value.mobile)) {
     error.mobile = toast.error("Invalid Mobile Number");
   }
@@ -76,4 +76,10 @@ export const tyreSizevalidate= async(values)=>{
   return error
 
 
+}
+
+export const profileUpdateValidate=async(values)=>{
+  const error=emailVerify({},values);
+  mobileverify(error,values);
+  return error
 }

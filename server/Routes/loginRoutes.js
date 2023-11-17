@@ -13,6 +13,7 @@ router.route('/userexist').post(controller.userVerify);
 router.route('/logout').get(controller.logoutUser)
 router.route('/adminlogin').post(adminlogin)
 router.route('/feeddata').get(feeddata)
+router.route('/updatemyprofile').post(controller.updateProfile)
 
 router.route('/adminauth').get(adminAuth)
 

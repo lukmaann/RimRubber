@@ -1,0 +1,23 @@
+.main{
+    @apply w-[350px]  border border-black rounded-md mx-auto p-2
+}
+
+
+.main h1{
+    @apply capitalize p-2 text-gray-400 text-center
+}
+.inputs{
+    @apply w-[100%] p-2 my-2 border 
+}
+
+.main form button{
+    @apply p-2 bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 rounded-md text-gray-700 w-full border border-black
+
+}
+
+@media only screen and (max-width:600px) {
+    .main{
+        @apply w-[100%]
+    }
+    
+}

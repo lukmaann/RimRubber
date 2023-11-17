@@ -47,7 +47,6 @@ passport.use(
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
-      console.log(profile)
       userModel.findOrCreate(
         {
           googleId: profile._json.sub,
@@ -173,3 +172,23 @@ export const logoutUser = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+
+
+export const updateProfile=async(req,res)=>{
+  try {
+    const {mobile,id,email}=req.body;
+    console.log(id);
+    const user=await userModel.findByIdAndUpdate({_id:id},{mobile,email});
+
+    user.save().then(()=>{
+      userModel.findById({_id:id}).then((data)=>{
+        res.status(200).json(data)
+      })
+    })
+    
+    
+  } catch (error) {
+    res.status(500).json(error.message)
+  }
+}

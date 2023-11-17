@@ -132,3 +132,23 @@ export const loadServer=async()=>{
     Promise.reject()
   }
 }
+
+// --------------------------------------callupdateProfile----------------
+
+export const callUpdateProfile=async(values)=>{
+  try {
+    const {id,mobile,email}=values;
+  
+
+    const {status,data}=await axios.post('/updatemyprofile',{id,mobile,email});
+    if(status==200){
+      return Promise.resolve(data);
+    }
+
+    return Promise.reject()
+
+
+  } catch (error) {
+    return Promise.reject()
+  }
+}

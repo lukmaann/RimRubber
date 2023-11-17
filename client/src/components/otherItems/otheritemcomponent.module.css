@@ -21,6 +21,6 @@
     }
 
     .details h1{
-        @apply text-[8px]
+        @apply text-xs
     }
 }

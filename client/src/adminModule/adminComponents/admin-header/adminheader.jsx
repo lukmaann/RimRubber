@@ -24,7 +24,7 @@ const AdminHeader = () => {
         error:"error",
         success:"Logged Out"
     })
-    lo.then(()=>navigate('/'))
+    lo.then(()=>navigate('/login'))
 }
 
   return (

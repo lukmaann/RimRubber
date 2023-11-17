@@ -47,6 +47,7 @@ passport.use(
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
+      console.log(profile._json);
       userModel.findOrCreate(
         {
           googleId: profile._json.sub,

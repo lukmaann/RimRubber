@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  cart:{
+    type:[{type:mongoose.Schema.Types.ObjectId ,ref:'otheritem'}],
+    default:[]
+  },
   googleId: String,
   offers: [{ type: mongoose.Schema.Types.ObjectId, ref: "offer" }],
 });

@@ -19,6 +19,7 @@ import OfferPage from "./pages/Myoffers/offersPage";
 import OffersGot from "./pages/Myoffers/offersGotPage";
 import BootingUp from "./pages/bootingup/bootingUp";
 import ManageStockPage from "./adminModule/listItems/manageStocks";
+import MyCart from "./pages/mycart/myCart";
 
 const router = createBrowserRouter([
   {
@@ -119,7 +120,7 @@ const router = createBrowserRouter([
     element:<ManageStockPage/>
   },{
     path:"/mycart",
-    element:<h1>UNDERCONSTRUCTION 🏗️</h1>
+    element:<MyCart/>
   }
 ]);
 

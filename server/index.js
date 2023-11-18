@@ -8,12 +8,12 @@ import passport from "passport";
 import session from "express-session";
 import authRoute from "./Routes/auth.js";
 import sellRoute from "./Routes/sellRoutes.js";
+import cartRoutes from "./Routes/cartRoutes.js";
 import adRoutes from "./Routes/adRoute.js";
-import feedbackRoutes from "./Routes/feedbackRoutes.js"
-import offerRoute from "./Routes/offerRoutes.js"
-import otherItemRoute from "./Routes/otherItemRoutes.js"
-import {v2 as cloudinary} from 'cloudinary';
-
+import feedbackRoutes from "./Routes/feedbackRoutes.js";
+import offerRoute from "./Routes/offerRoutes.js";
+import otherItemRoute from "./Routes/otherItemRoutes.js";
+import { v2 as cloudinary } from "cloudinary";
 
 dotenv.config();
 const app = express();
@@ -21,16 +21,11 @@ app.set("trust proxy", 1);
 
 dotenv.config();
 
-          
-
-          
-cloudinary.config({ 
-  cloud_name: process.env.CLOUDINARY_CLOUD, 
-  api_key: process.env.CLOUDINARY_APIKEY, 
-  api_secret: process.env.CLOUDINARY_SECRET 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD,
+  api_key: process.env.CLOUDINARY_APIKEY,
+  api_secret: process.env.CLOUDINARY_SECRET,
 });
-
-
 
 app.use(
   cors({
@@ -45,10 +40,13 @@ app.use(
   })
 );
 
-const domainname=process.env.NODE_ENV==='production'?"https://rimrubber.netlify.app":"http://localhost:5173"
+const domainname =
+  process.env.NODE_ENV === "production"
+    ? "https://rimrubber.netlify.app"
+    : "http://localhost:5173";
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", domainname );
+  res.header("Access-Control-Allow-Origin", domainname);
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header(
     "Access-Control-Allow-Headers",
@@ -67,9 +65,12 @@ app.get("/", (req, res) => {
 });
 // ----------------------------------session creation-----------
 
-let domain = process.env.NODE_ENV === 'production' ? ".rimrubberbackend.onrender.com" : ".localhost";
-let secure =process.env.NODE_ENV ==='production'
-let samesite=process.env.NODE_ENV ==='production'?'none':'lax'
+let domain =
+  process.env.NODE_ENV === "production"
+    ? ".rimrubberbackend.onrender.com"
+    : ".localhost";
+let secure = process.env.NODE_ENV === "production";
+let samesite = process.env.NODE_ENV === "production" ? "none" : "lax";
 
 app.use(
   session({
@@ -92,9 +93,10 @@ app.use("/api", loginRoutes);
 app.use("/auth", authRoute);
 app.use("/api", sellRoute);
 app.use("/api", adRoutes);
-app.use("/api",feedbackRoutes);
-app.use("/api",offerRoute);
-app.use('/api',otherItemRoute)
+app.use("/api", feedbackRoutes);
+app.use("/api", offerRoute);
+app.use("/api", otherItemRoute);
+app.use("/api", cartRoutes);
 
 connectDB().then(() => {
   app.listen(process.env.PORT || 3000, () => {

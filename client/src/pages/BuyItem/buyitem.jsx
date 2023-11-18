@@ -13,18 +13,18 @@ import { fecthListedItems } from "../../helper/adminItemhelper";
 import OtherItems from "../../components/otherItems/otheritemcomponent";
 
 const BuyItem = () => {
-  const [data,setdata]=useState();
-  useEffect(()=>{
-    const fetch=fecthListedItems();
-    toast.promise(fetch,{
-      loading:"Fecthing All Items",
-      success:"Items Fecthed",
-      error:"Cant Fecth Items Right Now"
-    })
-    fetch.then((res)=>{
-      setdata(res)
-    })
-  },[])
+  const [data, setdata] = useState();
+  useEffect(() => {
+    const fetch = fecthListedItems();
+    toast.promise(fetch, {
+      loading: "Fecthing All Items",
+      success: "Items Fecthed",
+      error: "Cant Fecth Items Right Now",
+    });
+    fetch.then((res) => {
+      setdata(res);
+    });
+  }, []);
   const navigate = useNavigate();
   const { setAds } = buyItemstore((state) => state);
   const { width, profile } = useTyreSizeStore((state) => state);
@@ -69,19 +69,22 @@ const BuyItem = () => {
           </div>
         </div>
         <div className={Style.otheritems}>
-        <div className="">
-          <h1>items you may also like</h1>
-        </div>
-        <div className={Style.otheritemsbox}>
-        {
-          data?.map((item)=>{
-            return <OtherItems key={item._id} image={item.image} name={item.name} price={item.price}/>
-          })
-        }
-        
-
-        </div>
-
+          <div className="">
+            <h1>items you may also like</h1>
+          </div>
+          <div className={Style.otheritemsbox}>
+            {data?.map((item) => {
+              return (
+                <OtherItems
+                  key={item._id}
+                  image={item.image}
+                  name={item.name}
+                  itemId={item._id}
+                  price={item.price}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       <Footer />

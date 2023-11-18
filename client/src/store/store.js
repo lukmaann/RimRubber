@@ -22,7 +22,10 @@ export const authStore=create(persist((set)=>({
 
 export const useUserStore=create(persist((set)=>({
     user:null,
-    setUser:(data)=>set({user:data})
+    setUser:(data)=>set({user:data}),
+    addcart:({id})=>set((state)=>({user:{...state.user,cart:[...state.user.cart,id]}})),
+    removefromcart:({id})=>set((state)=>({user:{...state.user,cart:state.user.cart.filter((item)=>item!==id)}}))
+
 }),{name:"user"}))
 
 export const myAdsStore=create(persist((set)=>({
@@ -79,3 +82,4 @@ export const offersIgot=create(persist((set)=>({
     }
 
 }),{name:"offers i got"}))
+

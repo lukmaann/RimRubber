@@ -1,0 +1,47 @@
+.main {
+  @apply min-h-screen flex p-2;
+}
+
+.cartItems {
+  @apply min-h-full w-[60%]  p-2;
+}
+
+.cartTotal {
+  @apply rounded-sm h-[70vh] border-black border w-[35%] m-2 mt-3  p-2 fixed right-10;
+}
+
+.cartTotalDetails {
+  @apply w-[90%] mx-auto min-h-[80%]   p-2 rounded-sm;
+}
+
+.proceed{
+    @apply  flex justify-between items-center p-2 h-[20%] text-xl capitalize w-[90%] mx-auto
+}
+
+.proceed button {
+    @apply p-1 bg-yellow-400 text-black rounded-lg px-3 border border-black
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    @apply flex-none p-0  w-[100vw];
+  }
+
+  .cartItems {
+    @apply w-[95%] mx-auto;
+  }
+
+  .cartTotal {
+    @apply w-[100vw] bottom-0 h-[10vh] m-0 bg-gray-950 right-0;
+  }
+
+  .cartTotalDetails {
+    @apply hidden;
+  }
+
+  .proceed{
+    @apply h-full text-white text-lg
+  }
+
+
+}

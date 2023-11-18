@@ -3,14 +3,15 @@ import HomeIcon from "@mui/icons-material/Home";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "../setting/dropdown";
-import {  useState } from "react";
+import { useState } from "react";
 import { authStore } from "../../store/store";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useUserStore } from "../../store/store";
+import Badge from "@mui/material/Badge";
 
 const Header = () => {
-
-  const {auth}=authStore((state)=>state);
-  
+  const { auth } = authStore((state) => state);
+  const { user } = useUserStore((state) => state);
 
   const [dropdown, setdropdown] = useState(false);
   const navigate = useNavigate();
@@ -27,10 +28,11 @@ const Header = () => {
                 }}
               >
                 {" "}
-                <ShoppingCartIcon fontSize="small" />
+                <Badge badgeContent={user.cart.length} color="secondary">
+                  <ShoppingCartIcon fontSize="small" />
+                </Badge>
               </button>
             </li>
-            
           )}
           <li className={Style.navItem}>
             <button
@@ -51,7 +53,9 @@ const Header = () => {
                 <SettingsIcon />
               </button>
             </li>
-          ):""}
+          ) : (
+            ""
+          )}
         </ul>
       </div>
       {dropdown && <Dropdown />}

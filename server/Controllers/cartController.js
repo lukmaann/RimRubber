@@ -38,6 +38,7 @@ export const getMyCart = async (req, res) => {
     await User.findById({ _id: userId })
       .populate("cart")
       .then((user) => {
+   
         res.status(200).json(user.cart);
       });
   } catch (error) {

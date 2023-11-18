@@ -121,6 +121,9 @@ const router = createBrowserRouter([
   },{
     path:"/mycart",
     element:<MyCart/>
+  },{
+    path:"/pay",
+    element:<h1>pay</h1>
   }
 ]);
 

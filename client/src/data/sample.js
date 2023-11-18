@@ -233,7 +233,78 @@ export const sampleoffers=[
 
 
 
-
+export const sampleCart=[
+    {
+        "_id": "65570ff01193a6da0376f02f",
+        "name": "Puncture remover kit",
+        "price": 300,
+        "description": "The puncture remover kit swiftly repairs tire punctures with tools like tire plugs, reaming, and needle tools. Essential for quick and reliable tubeless tire fixes on the go.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700204528/vbvxx20v7arzh6kdg08f.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "65570ff01193a6da0376f02f",
+        "name": "Puncture remover kit",
+        "price": 300,
+        "description": "The puncture remover kit swiftly repairs tire punctures with tools like tire plugs, reaming, and needle tools. Essential for quick and reliable tubeless tire fixes on the go.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700204528/vbvxx20v7arzh6kdg08f.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "655711581193a6da0376f041",
+        "name": "Pressure gauge ",
+        "price": 380,
+        "description": "The pressure gauge is a vital tool for accurate tire pressure measurement. Compact and easy to use, it ensures precise inflation, promoting safety and optimal tire performance.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700204887/mwf7kmof1skzc0tj1bxl.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "655710871193a6da0376f037",
+        "name": "Tyre inflator ",
+        "price": 1500,
+        "description": "The tire inflator is a crucial tool for maintaining optimal tire pressure. Compact and efficient, it ensures quick and convenient inflation, promoting safe and smooth travels.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700204678/a7avlxlfqlv7u2qbbkzm.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "65570ff01193a6da0376f02f",
+        "name": "Puncture remover kit",
+        "price": 300,
+        "description": "The puncture remover kit swiftly repairs tire punctures with tools like tire plugs, reaming, and needle tools. Essential for quick and reliable tubeless tire fixes on the go.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700204528/vbvxx20v7arzh6kdg08f.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "655711581193a6da0376f041",
+        "name": "Pressure gauge ",
+        "price": 380,
+        "description": "The pressure gauge is a vital tool for accurate tire pressure measurement. Compact and easy to use, it ensures precise inflation, promoting safety and optimal tire performance.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700204887/mwf7kmof1skzc0tj1bxl.jpg",
+        "__v": 0
+    },
+    {
+        "_id": "655711cd1193a6da0376f046",
+        "name": "stem covers",
+        "price": 10,
+        "description": "The tire steam cover provides an added layer of protection for tires in steam-prone environments. It shields against potential steam-related damage, enhancing tire durability and performance.",
+        "star": 0,
+        "stock": 100,
+        "image": "http://res.cloudinary.com/dtjcwbf9t/image/upload/v1700205004/xa0pxl091pq7p942mnsp.jpg",
+        "__v": 0
+    }
+]
 
 
 

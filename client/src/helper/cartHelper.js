@@ -28,3 +28,18 @@ export const callRemoveFromCart=async(values)=>{
         return Promise.reject(error.message)
     }
 }
+
+
+export const callgetMyCart=async(values)=>{
+    try {
+        const {userId}=values;
+        const {status,data}=await axios.get(`/getmycart/${userId}`);
+        if(status===200){
+            return Promise.resolve(data);
+        }else{
+            return Promise.reject()
+        }
+    } catch (error) {
+        return Promise.reject(error.message)
+    }
+}

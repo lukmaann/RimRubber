@@ -1,0 +1,38 @@
+.main{
+    @apply flex w-[100%] mx-auto border border-black h-min rounded-md p-2 m-2
+}
+
+.main .imgbox{
+    @apply w-[30%] h-[150px]
+}
+
+.main .detail{
+    @apply w-[70%] h-auto border p-4 relative
+}
+
+.main .detail button{
+    @apply px-2 py-1 absolute bottom-3 rounded-md bg-yellow-400 w-[150px] right-2 border hover:border-black
+}
+
+@media only screen and (max-width:600px){
+
+    
+
+    .main{
+        @apply  h-min capitalize text-start
+    }
+
+    .main .imgbox{
+        @apply w-[100px] h-[100px] mx-auto
+    }
+
+    .main .detail{
+        @apply w-[70%] border p-2 
+    }
+
+    .main .detail button{
+        @apply bottom-2
+    }
+
+
+}

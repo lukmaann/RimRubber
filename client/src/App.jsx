@@ -10,7 +10,7 @@ import Myads from "./pages/myads/myads";
 import FeedBack from "./pages/feedback/feedback";
 import AdminLogin from "./adminModule/adminLogin/adminLogin";
 import AdminDashboard from "./adminModule/dashboard/dashboard";
-// import { AuthorisedAdmin } from "./helper/adminauth";
+import { AuthorisedAdmin } from "./helper/adminauth";
 import UserReviews from "./adminModule/userReviews/userReviews";
 // import ConstructionPage from "./pages/construction/constructionPage";
 import SingleAd from "./components/ads/singleAd";
@@ -19,12 +19,14 @@ import OfferPage from "./pages/Myoffers/offersPage";
 import OffersGot from "./pages/Myoffers/offersGotPage";
 import BootingUp from "./pages/bootingup/bootingUp";
 import ManageStockPage from "./adminModule/listItems/manageStocks";
+
+import Pay from "./pages/pay/pay";
 import MyCart from "./pages/mycart/myCart";
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<BootingUp/>
+    path: "/",
+    element: <BootingUp />,
   },
   {
     path: "/login",
@@ -50,9 +52,9 @@ const router = createBrowserRouter([
   {
     path: "/buyitem",
     element: (
-      // <AuthorisedUser>
+      <AuthorisedUser>
         <BuyItem />
-      // {/* </AuthorisedUser> */}
+      </AuthorisedUser>
     ),
   },
   {
@@ -77,8 +79,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/admindashboard",
-    // element:<AuthorisedAdmin><AdminDashboard/></AuthorisedAdmin>
-    element: <AdminDashboard />,
+    element: (
+      <AuthorisedAdmin>
+        <AdminDashboard />
+      </AuthorisedAdmin>
+    ),
+    // element: <AdminDashboard />,
   },
   {
     path: "/reviewfeedback",
@@ -110,21 +116,33 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path:'/offersgot',
-    element:<AuthorisedUser>
-      <OffersGot/>
-    </AuthorisedUser>
+    path: "/offersgot",
+    element: (
+      <AuthorisedUser>
+        <OffersGot />
+      </AuthorisedUser>
+    ),
   },
   {
-    path:"/admin/managestocks",
-    element:<ManageStockPage/>
-  },{
-    path:"/mycart",
-    element:<MyCart/>
-  },{
-    path:"/pay",
-    element:<h1>pay</h1>
-  }
+    path: "/admin/managestocks",
+    element: (
+      <AuthorisedAdmin>
+        <ManageStockPage />
+      </AuthorisedAdmin>
+    ),
+  },
+  {
+    path: "/mycart",
+    element: (
+      <AuthorisedUser>
+        <MyCart />
+      </AuthorisedUser>
+    ),
+  },
+  {
+    path: "/pay",
+    element: <AuthorisedUser><Pay /></AuthorisedUser>,
+  },
 ]);
 
 const App = () => {

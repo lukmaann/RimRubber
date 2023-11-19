@@ -7,6 +7,6 @@
 }
 
 .main li button{
-     @apply w-full h-full
+     @apply w-full h-full text-start
 
 }

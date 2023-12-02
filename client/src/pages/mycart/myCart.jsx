@@ -70,7 +70,7 @@ const MyCart = () => {
 
           </div>
           <div className={Style.proceed}>
-          Total amt {total}
+          Total amt ₹{total}
           {
             total!==0? 
           <button onClick={()=>navigate('/pay')}>Pay Now <PaymentsIcon/></button>:""

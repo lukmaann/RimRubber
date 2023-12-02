@@ -13,7 +13,7 @@ const LandingPage = () => {
 
   useEffect(()=>{
     toast.promise(loadServer(),{
-      loading:"Processing Please Wait",
+      loading:"Please Wait , The app is loading",
       success:"You can Login or Signup 🔑"
     
     })

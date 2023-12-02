@@ -14,7 +14,7 @@ const Pay = () => {
   return (
     <div>
       <Header />
-      <div className="h-screen flex justify-center text-gray-600 items-center">
+      <div className="min-h-screen py-10 flex justify-center text-gray-600 items-center">
         <div className="w-[300px] gap-4 max-sm:w-[80vw]">
           <h1 className="text-xl">Hey {user?.username || "User"},</h1>
           <p>

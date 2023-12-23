@@ -141,8 +141,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pay",
-    // element: <AuthorisedUser><Pay /></AuthorisedUser>,
-    element:<Pay/>
+    element: <AuthorisedUser><Pay /></AuthorisedUser>,
   },
 ]);
 

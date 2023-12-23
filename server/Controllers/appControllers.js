@@ -26,7 +26,8 @@ passport.deserializeUser((user, done) => {
       });
   } else {
     userModel
-      .findById(user._id).populate('offers')
+      .findById(user._id)
+      .populate("offers")
       .then((user) => {
         done(null, user);
       })
@@ -48,6 +49,7 @@ passport.use(
     },
     function (accessToken, refreshToken, profile, cb) {
       userModel.findOrCreate(
+        { googleId: profile._json.sub },
         {
           googleId: profile._json.sub,
           username: profile._json.name,
@@ -133,11 +135,11 @@ export const auth = async (req, res) => {
   try {
     const user = req.user;
     // console.log(req.isAuthenticated());
-    if(req.isAuthenticated()){
-    res.status(200).json({ authenticated: req.isAuthenticated(), user });
-    // res.status(200)
-    }else{
-      res.status(401).json("unauthorised")
+    if (req.isAuthenticated()) {
+      res.status(200).json({ authenticated: req.isAuthenticated(), user });
+      // res.status(200)
+    } else {
+      res.status(401).json("unauthorised");
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -173,21 +175,20 @@ export const logoutUser = async (req, res) => {
   }
 };
 
-
-
-export const updateProfile=async(req,res)=>{
+export const updateProfile = async (req, res) => {
   try {
-    const {mobile,id,email}=req.body;
-    const user=await userModel.findByIdAndUpdate({_id:id},{mobile,email});
+    const { mobile, id, email } = req.body;
+    const user = await userModel.findByIdAndUpdate(
+      { _id: id },
+      { mobile, email }
+    );
 
-    user.save().then(()=>{
-      userModel.findById({_id:id}).then((data)=>{
-        res.status(200).json(data)
-      })
-    })
-    
-    
+    user.save().then(() => {
+      userModel.findById({ _id: id }).then((data) => {
+        res.status(200).json(data);
+      });
+    });
   } catch (error) {
-    res.status(500).json(error.message)
+    res.status(500).json(error.message);
   }
-}
+};

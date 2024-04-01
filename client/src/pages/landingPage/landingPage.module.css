@@ -53,6 +53,8 @@
 }
 
   .logincointainer{
+
     @apply w-[90vw] mx-auto 
+
   }
 }

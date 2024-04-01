@@ -53,6 +53,6 @@
 }
 
   .logincointainer{
-    @apply w-[80vw] mx-auto
+    @apply w-[100vw] mx-auto
   }
 }

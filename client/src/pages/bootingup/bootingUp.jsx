@@ -10,7 +10,11 @@ const BootingUp = () => {
   const [started,setStarted]=useState(false)
 
   useEffect(() => {
-    const load = loadServer();
+   const load= loadServer();
+   load.then(()=>{
+    navigate('/login');
+   })
+   console.log(load);
 
     setTimeout(() => {
       setText("Setting Up The Servers");
@@ -32,7 +36,7 @@ const BootingUp = () => {
         navigate('/login')
       },2000)
 
-    },17000)
+    },15000)
 
     
   }, []);

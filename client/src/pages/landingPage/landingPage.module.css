@@ -41,7 +41,7 @@
   }
 
   .main{
-      @apply flex-wrap 
+      @apply flex-wrap  p-0
   }
 
 .adminbtn{
@@ -53,6 +53,6 @@
 }
 
   .logincointainer{
-    @apply w-[90vw] mx-auto
+    @apply w-[90vw] mx-auto 
   }
 }

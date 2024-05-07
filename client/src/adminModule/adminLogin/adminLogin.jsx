@@ -39,6 +39,9 @@ const AdminLogin=()=>{
     <h1>RimRubber </h1>
     </div>
     <h2 className="text-start w-[320px] px-2 text-gray-500 capitalize">Login as administrator</h2>
+    <div className="text-center animate-pulse p-2  ">
+        Id: sysadmin | Password: helloadmin
+    </div>
         <form onSubmit={formik.handleSubmit}>
             <input type="text" placeholder="Admin Id 🪪"  {...formik.getFieldProps('username')}/>
             <input type="password" placeholder="Admin Password 🔑" {...formik.getFieldProps('password')}/>

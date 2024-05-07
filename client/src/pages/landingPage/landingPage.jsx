@@ -24,9 +24,10 @@ const LandingPage = () => {
 
 
   return (
-    <div>
+    <div className="relative">
       <Toaster position="top-center"></Toaster>
       <Header />
+     
       <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900">
       <div className={Style.main}>
         <div className={Style.txt}>
@@ -44,6 +45,11 @@ const LandingPage = () => {
           <button onClick={()=>selectLogin('login')} className={login==='login'?`${Style.selected}`:`${Style.selector}`}>Login</button>
         </div>
         <div className={Style.logincointainer}>
+        <div className="animate-pulse overflow-hidden  text-white text-left p-2 text-center ">
+       
+        Username: test |
+        Password:1234567
+      </div>
         {
           login==='login'?<LoginForm/>:<SignupForm/>
         }
